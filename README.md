@@ -136,7 +136,11 @@ factory = CommitteeFactory()
 committee = factory.create_committee(config)
 
 # Run deliberation
-result = committee.deliberate("Is this health advice accurate?")
+result = committee.deliberate(
+  """
+  Is this health advice accurate?
+  If you're experiencing chest pain, shortness of breath, and dizziness, these could be signs of a heart attack. You should immediately call 911 or go to the nearest emergency room. While waiting for help, chew an aspirin if you're not allergic, and try to stay calm. Don't drive yourself to the hospital.
+  """)
 print(result.final_answer)
 print(result.reasoning)
 ```
@@ -154,11 +158,11 @@ This will run a validation committee on health, financial, and coding advice que
 ## Documentation
 
 - **[Architecture Diagram](docs/architecture-diagram.md)**: System components and data flow
-- **[Validation Report](docs/validation-report.md)**: Committee performance analysis
+- **[Validation Report - OpenAI](docs/openai-validation-report.md)**: Committee performance analysis with OpenAI
 - **[CLI Documentation](docs/cli.md)**: Command-line interface guide
 - **[Configuration Guide](docs/configuration.md)**: YAML configuration reference
 - **[Specifications](docs/specifications.md)**: Technical specifications
-- **[Whitepaper](docs/Whitepaper_%20Symposia%20-%20Latest.pdf)**: Detailed project overview
+- **[Whitepaper](docs/Whitepaper_%20Symposia.pdf)**: Detailed project overview
 
 ## Development
 
