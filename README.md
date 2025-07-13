@@ -139,7 +139,10 @@ committee = factory.create_committee(config)
 result = committee.deliberate(
   """
   Is this health advice accurate?
-  If you're experiencing chest pain, shortness of breath, and dizziness, these could be signs of a heart attack. You should immediately call 911 or go to the nearest emergency room. While waiting for help, chew an aspirin if you're not allergic, and try to stay calm. Don't drive yourself to the hospital.
+  If you're experiencing chest pain, shortness of breath, and dizziness, 
+  these could be signs of a heart attack.You should immediately call 911 or 
+  go to the nearest emergency room. While waiting for help, chew an aspirin 
+  if you're not allergic, and try to stay calm. Don't drive yourself to the hospital.
   """)
 print(result.final_answer)
 print(result.reasoning)
