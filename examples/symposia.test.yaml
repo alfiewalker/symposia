@@ -1,0 +1,64 @@
+# Symposia Local Development Configuration File
+# This file is for local development and testing purposes.
+
+# 1. LLM Service Definitions
+# Using mock services for local development
+llm_services:
+  mock_openai:
+    provider: openai
+    model: gpt-4o-mini
+    cost_per_token:
+      input: 0.00000015
+      output: 0.0000006
+  mock_claude:
+    provider: anthropic
+    model: claude-3-5-sonnet-20240620
+    cost_per_token:
+      input: 0.000003
+      output: 0.000015
+  mock_gemini:
+    provider: google
+    model: gemini-1.5-flash
+    cost_per_token:
+      input: 0.000001
+      output: 0.0000025
+
+# 2. Intelligence Pool Definitions
+# Test committee for local development
+intelligence_pools:
+  test_committee:
+    name: "Test Committee"
+    
+    # --- Reputation Management Settings ---
+    reputation_management: true 
+    agreement_bonus: 0.1
+    dissent_penalty: 0.05
+
+    # --- Member Definitions ---
+    members:
+      - name: "Mock OpenAI"
+        service: "mock_openai"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a test OpenAI agent."
+      - name: "Mock Claude"
+        service: "mock_claude"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a test Claude agent."
+      - name: "Mock Gemini"
+        service: "mock_gemini"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a test Gemini agent."
+
+  # Simple committee for quick testing
+  simple_committee:
+    name: "Simple Test Committee"
+    reputation_management: false
+    members:
+      - name: "Simple Tester"
+        service: "mock_openai"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a simple test agent. Provide clear, concise responses." 

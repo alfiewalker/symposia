@@ -1,0 +1,56 @@
+# Symposia Configuration File
+# This file defines the LLM services and the composition of intelligence pools.
+
+# 1. LLM Service Definitions
+# Define each LLM service you want to make available to the committees.
+# The key for each service (e.g., 'openai_gpt4o_mini') is a unique identifier.
+llm_services:
+  openai_gpt4o_mini:
+    provider: openai
+    model: gpt-4o-mini
+    cost_per_token:
+      input: 0.00000015
+      output: 0.0000006
+  claude_sonnet:
+    provider: anthropic
+    model: claude-3-5-sonnet-20240620
+    cost_per_token:
+      input: 0.000003
+      output: 0.000015
+  gemini_1.5:
+    provider: google
+    model: gemini-1.5-flash
+    cost_per_token:
+      input: 0.000001
+      output: 0.0000025
+
+# 2. Intelligence Pool Definitions
+# Define the committees (pools) that will perform the deliberations.
+intelligence_pools:
+  fact_check_committee:
+    name: "Adaptive Fact Check Committee"
+    
+    # --- Reputation Management Settings ---
+    reputation_management: true 
+    agreement_bonus: 0.1
+    dissent_penalty: 0.05
+
+    # --- Member Definitions ---
+    members:
+      - name: "OpenAI Scientist"
+        service: "openai_gpt4o_mini"
+        weight: 1.5
+        initial_reputation: 1.0
+        role_prompt: "You are a skeptical scientist. Verify every claim."
+
+      - name: "Claude Ethicist"
+        service: "claude_sonnet"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are an ethicist. Consider the societal implications."
+
+      - name: "Gemini Pragmatist"
+        service: "gemini_1.5"
+        weight: 1.2
+        initial_reputation: 1.2
+        role_prompt: "You are a pragmatist. Focus on the real-world application." 

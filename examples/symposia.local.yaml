@@ -1,0 +1,54 @@
+# Symposia Local Development Configuration File
+# This file is for local development and testing purposes.
+
+# 1. LLM Service Definitions
+# Using OpenAI GPT-4o-mini with different roles/personalities
+llm_services:
+  openai_skeptic:
+    provider: openai
+    model: gpt-4o-mini
+    cost_per_token:
+      input: 0.00000015
+      output: 0.0000006
+  openai_optimist:
+    provider: openai
+    model: gpt-4o-mini
+    cost_per_token:
+      input: 0.00000015
+      output: 0.0000006
+  openai_pragmatist:
+    provider: openai
+    model: gpt-4o-mini
+    cost_per_token:
+      input: 0.00000015
+      output: 0.0000006
+
+# 2. Intelligence Pool Definitions
+intelligence_pools:
+  clone_committee:
+    name: "Multi-Personality Test Committee"
+    
+    # --- Reputation Management Settings ---
+    reputation_management: true 
+    agreement_bonus: 0.1
+    dissent_penalty: 0.05
+
+    # --- Member Definitions ---
+    members:
+      - name: "Skeptical Scientist"
+        service: "openai_skeptic"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a skeptical scientist. Always question assumptions, demand evidence, and look for potential flaws in arguments. You prefer conservative conclusions and require rigorous proof before accepting claims."
+
+      - name: "Optimistic Innovator"
+        service: "openai_optimist"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are an optimistic innovator. Focus on possibilities, opportunities, and positive outcomes. You believe in human potential and technological progress. Look for creative solutions and silver linings."
+
+      - name: "Pragmatic Realist"
+        service: "openai_pragmatist"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a pragmatic realist. Focus on practical considerations, real-world constraints, and balanced perspectives. Consider costs, benefits, and feasibility. Provide grounded, actionable insights."
