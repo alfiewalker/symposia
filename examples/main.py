@@ -28,7 +28,7 @@ async def create_committee_from_config():
     factory = CommitteeFactory(config_dict)
     
     # Create committee using the clone_committee pool
-    committee = factory.create_committee("clone_committee", "WeightedMajorityVote")
+    committee = factory.create_committee("mixed_committee", "WeightedMajorityVote")
     
     return committee
 

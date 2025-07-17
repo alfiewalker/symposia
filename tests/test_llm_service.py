@@ -270,22 +270,20 @@ async def test_gemini_service():
         mock_model = AsyncMock()
         mock_model_class.return_value = mock_model
         
-        # Mock the response
+        # Mock the response with usage_metadata
         mock_response = MagicMock()
         mock_response.text = "Gemini response"
+        mock_response.usage_metadata = MagicMock()
+        mock_response.usage_metadata.prompt_token_count = 15
+        mock_response.usage_metadata.candidates_token_count = 10
         mock_model.generate_content_async.return_value = mock_response
-        
-        # Mock token counting
-        mock_token_count = MagicMock()
-        mock_token_count.total_tokens = 30
-        mock_model.count_tokens_async.return_value = mock_token_count
         
         service = GeminiService(config)
         result = await service._perform_query("test prompt", "test role")
         
         assert result["response"] == "Gemini response"
-        assert result["tokens_used"] == 30
-        assert result["cost"] == 0.015  # 30 * 0.0005 (input cost)
+        assert result["tokens_used"] == 25  # 15 + 10
+        assert result["cost"] == 0.0125  # (15 * 0.0005) + (10 * 0.0005)
 
 
 @pytest.mark.asyncio
@@ -303,13 +301,11 @@ async def test_gemini_service_graceful_cost_failure():
         mock_model = AsyncMock()
         mock_model_class.return_value = mock_model
         
-        # Mock the response
+        # Mock the response without usage_metadata
         mock_response = MagicMock()
         mock_response.text = "Gemini response"
+        mock_response.usage_metadata = None  # No usage metadata available
         mock_model.generate_content_async.return_value = mock_response
-        
-        # Mock token counting to fail
-        mock_model.count_tokens_async.side_effect = Exception("Token counting failed")
         
         service = GeminiService(config)
         result = await service._perform_query("test prompt", "test role")

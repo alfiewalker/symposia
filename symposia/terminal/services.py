@@ -1,7 +1,7 @@
 import logging
 import os
 from typing import Optional
-from symposia.config import CommitteeFactory
+from symposia.config.factory import CommitteeFactory
 from symposia.config.loader import load_config, get_config_path
 from symposia.utils import SimpleCache
 

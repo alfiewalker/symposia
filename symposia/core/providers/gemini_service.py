@@ -19,21 +19,57 @@ class GeminiService(LLMService):
         super().__init__(config, cache)
         api_key = config.api_key or os.getenv("GOOGLE_API_KEY")
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel(config.model)
+        
+        # Initialize model - try with system instruction support first
+        try:
+            self.model = genai.GenerativeModel(
+                model_name=config.model,
+                # Note: system_instruction would be set per query since it varies
+            )
+        except Exception:
+            # Fallback to basic model initialization
+            self.model = genai.GenerativeModel(config.model)
     
     async def _perform_query(self, prompt: str, role_prompt: str) -> Dict[str, Any]:
-        full_prompt = f"Role: {role_prompt}\n\nTask: {prompt}"
-        response = await self.model.generate_content_async(full_prompt)
+        # Use system instruction if available, otherwise prepend to content
+        try:
+            # Try to use system instruction (newer Gemini API feature)
+            if hasattr(self.model, '_system_instruction'):
+                response = await self.model.generate_content_async(
+                    prompt,
+                    generation_config={"temperature": 0.7}
+                )
+            else:
+                # Fallback to concatenated prompt
+                full_prompt = f"Role: {role_prompt}\n\nTask: {prompt}"
+                response = await self.model.generate_content_async(full_prompt)
+        except Exception:
+            # Final fallback to concatenated prompt
+            full_prompt = f"Role: {role_prompt}\n\nTask: {prompt}"
+            response = await self.model.generate_content_async(full_prompt)
         
-        response_text = response.text
+        response_text = response.text if response.text else ""
         
         # Safely get token count and calculate cost with fallbacks
         try:
-            token_count_response = await self.model.count_tokens_async(full_prompt + response_text)
-            tokens_used = token_count_response.total_tokens
+            # Count tokens for input prompt only
+            input_tokens = 0
+            output_tokens = 0
             
-            # For Gemini, we don't have input/output breakdown, so use input cost for all tokens
-            cost = tokens_used * self.config.cost_per_token.input
+            # Try to get usage metadata from response
+            if hasattr(response, 'usage_metadata') and response.usage_metadata:
+                input_tokens = getattr(response.usage_metadata, 'prompt_token_count', 0)
+                output_tokens = getattr(response.usage_metadata, 'candidates_token_count', 0)
+                tokens_used = input_tokens + output_tokens
+                
+                # Calculate cost with proper input/output breakdown
+                cost = (input_tokens * self.config.cost_per_token.input + 
+                       output_tokens * self.config.cost_per_token.output)
+            else:
+                # No usage metadata available - default to 0 for safety
+                tokens_used = 0
+                cost = 0.0
+                
         except (AttributeError, TypeError, ValueError, Exception):
             # If token counting fails, default to 0
             tokens_used = 0

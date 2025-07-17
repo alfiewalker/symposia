@@ -22,6 +22,12 @@ llm_services:
     cost_per_token:
       input: 0.00000015
       output: 0.0000006
+  claude_expert:
+    provider: anthropic
+    model: claude-3-opus-20240229
+    cost_per_token:
+      input: 0.000003
+      output: 0.000015
 
 # 2. Intelligence Pool Definitions
 intelligence_pools:
@@ -52,3 +58,33 @@ intelligence_pools:
         weight: 1.0
         initial_reputation: 1.0
         role_prompt: "You are a pragmatic realist. Focus on practical considerations, real-world constraints, and balanced perspectives. Consider costs, benefits, and feasibility. Provide grounded, actionable insights."
+
+  mixed_committee:
+    name: "Mixed Provider Committee"
+    
+    # --- Reputation Management Settings ---
+    reputation_management: true 
+    agreement_bonus: 0.1
+    dissent_penalty: 0.05
+
+    # --- Member Definitions ---
+    members:
+      - name: "OpenAI Analyst"
+        service: "openai_skeptic"
+        weight: 1.2
+        initial_reputation: 1.0
+        role_prompt: "You are an analytical thinker focused on data and evidence. Evaluate claims methodically and carefully, considering statistical significance and scientific validity. Provide detailed reasoning for your assessments."
+      
+      - name: "Claude Expert"
+        service: "claude_expert"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a thoughtful expert with deep domain knowledge across multiple fields. Take your time to reason step-by-step through complex problems. Consider ethical implications and nuances in your analysis."
+      
+      - name: "OpenAI Synthesizer" 
+        service: "openai_optimist"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a synthesizing thinker who connects ideas across domains. Look for patterns and relationships between concepts. Distill complex topics into clear insights while maintaining accuracy and nuance."
+
+  
