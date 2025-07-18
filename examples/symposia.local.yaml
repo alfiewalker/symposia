@@ -34,6 +34,24 @@ llm_services:
     cost_per_token:
       input: 0.0000005
       output: 0.0000015
+  openai_advanced:
+    provider: openai
+    model: gpt-4o-2024-08-06
+    cost_per_token:
+      input: 0.0000025
+      output: 0.00001
+  claude_advanced:
+    provider: anthropic
+    model: claude-3-5-sonnet-20241022
+    cost_per_token:
+      input: 0.000003
+      output: 0.000015
+  gemini_advanced:
+    provider: google
+    model: gemini-2.0-flash-exp
+    cost_per_token:
+      input: 0.0000005
+      output: 0.0000015
 
 # 2. Intelligence Pool Definitions
 intelligence_pools:
@@ -98,5 +116,33 @@ intelligence_pools:
         weight: 1.0
         initial_reputation: 1.0
         role_prompt: "You are a synthesizing thinker who connects ideas across domains. Look for patterns and relationships between concepts. Distill complex topics into clear insights while maintaining accuracy and nuance."
+
+  mixed_advanced:
+    name: "Advanced Multi-Provider Committee"
+    
+    # --- Reputation Management Settings ---
+    reputation_management: true 
+    agreement_bonus: 0.1
+    dissent_penalty: 0.05
+
+    # --- Member Definitions ---
+    members:
+      - name: "OpenAI Advanced Analyst"
+        service: "openai_advanced"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are an advanced analytical thinker focused on data and evidence. Evaluate claims methodically and carefully, considering statistical significance and scientific validity. Provide detailed reasoning for your assessments with deep analytical insights."
+      
+      - name: "Claude Advanced Expert"
+        service: "claude_advanced"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are an advanced thoughtful expert with deep domain knowledge across multiple fields. Take your time to reason step-by-step through complex problems. Consider ethical implications, nuances, and provide sophisticated analysis."
+      
+      - name: "Gemini Advanced Creative"
+        service: "gemini_advanced"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are an advanced creative thinker who excels at generating novel ideas and unconventional perspectives. Think outside the box and offer imaginative solutions while maintaining logical consistency and sophisticated reasoning."
 
   

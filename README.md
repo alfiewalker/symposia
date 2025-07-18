@@ -162,6 +162,8 @@ This will run a validation committee on health, financial, and coding advice que
 
 - **[Architecture Diagram](docs/architecture-diagram.md)**: System components and data flow
 - **[Validation Report - OpenAI](docs/openai-validation-report.md)**: Committee performance analysis with OpenAI
+- **[Multi-Provider Validation Report](docs/multi-provider-validation-report.md)**: Comprehensive validation across OpenAI, Anthropic, and Google
+- **[Advanced Validation Report](docs/advanced-validation-report.md)**: Adavnced committee validation using latest stable models from all providers
 - **[CLI Documentation](docs/cli.md)**: Command-line interface guide
 - **[Configuration Guide](docs/configuration.md)**: YAML configuration reference
 - **[Specifications](docs/specifications.md)**: Technical specifications

@@ -6,7 +6,8 @@ def test_llm_service_config():
     cfg = LLMServiceConfig(provider='openai', model='gpt-4', cost_per_token=0.001, api_key='key')
     assert cfg.provider == 'openai'
     assert cfg.model == 'gpt-4'
-    assert cfg.cost_per_token == 0.001
+    assert cfg.cost_per_token.input == 0.001
+    assert cfg.cost_per_token.output == 0.001
     assert cfg.api_key == 'key'
 
 

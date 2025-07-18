@@ -13,11 +13,11 @@ In a groundbreaking demonstration of AI output validation, the Symposia committe
 
 Our validation panel comprised three distinct AI personalities, each bringing unique perspectives to the deliberation process:
 
-| **Expert** | **Role** | **Perspective** |
-|------------|----------|-----------------|
-| 🔬 **Skeptical Scientist** | Cautious Analyst | Demands evidence and questions assumptions |
-| 🚀 **Optimistic Innovator** | Forward-thinking Evaluator | Focuses on possibilities and opportunities |
-| ⚖️ **Pragmatic Realist** | Balanced Assessor | Considers practical implications and real-world constraints |
+| **Expert** | **Provider** | **Model** | **Role** | **Perspective** |
+|------------|--------------|-----------|----------|-----------------|
+| 🔬 **Skeptical Scientist** | OpenAI | GPT-4o-mini | Cautious Analyst | Demands evidence and questions assumptions |
+| 🚀 **Optimistic Innovator** | OpenAI | GPT-4o-mini | Forward-thinking Evaluator | Focuses on possibilities and opportunities |
+| ⚖️ **Pragmatic Realist** | OpenAI | GPT-4o-mini | Balanced Assessor | Considers practical implications and real-world constraints |
 
 This diverse composition ensures comprehensive evaluation from multiple angles while maintaining consistent, reliable outcomes.
 
