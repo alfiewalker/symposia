@@ -7,17 +7,34 @@ This module provides a comprehensive CLI for managing and running committee deli
 import asyncio
 import sys
 import argparse
+import os
 from .services import SymposiaCLI
 from dotenv import load_dotenv
-import os
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env.local'), override=True)
+from symposia.utils.logging import setup_logging
+
+# Look for env files in the current directory first, then in the project root
+env_paths = [
+    '.env.local',  # Current directory .env.local
+    '.env',        # Current directory .env
+    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env.local'),  # Project root .env.local
+    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env')  # Project root .env
+]
+
+# Configure logger (will be initialized in main)
+logger = None
+
+for env_path in env_paths:
+    if os.path.exists(env_path):
+        load_dotenv(dotenv_path=env_path, override=True)
+        # Continue checking other files to allow overriding
+        logger.info(f"Loaded environment from {env_path}")
 
 
 def create_parser():
     """Create the argument parser."""
     parser = argparse.ArgumentParser(
         prog='symposia',
-        description='🤖 Symposia - AI Committee Deliberation Framework',
+        description='Symposia - AI Committee Deliberation Framework',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -27,6 +44,7 @@ Examples:
   symposia ask clone_committee "Is AI safe?"  # Run single deliberation
   symposia interactive                   # Start interactive mode
   symposia --config examples/symposia.yaml list-pools  # Use specific config
+  symposia --env .env.local check        # Use specific environment file
         """
     )
     
@@ -35,6 +53,18 @@ Examples:
         '--config', '-c',
         type=str,
         help='Path to configuration file (overrides default search)'
+    )
+    
+    parser.add_argument(
+        '--env', '-e',
+        type=str,
+        help='Path to environment file (overrides default search)'
+    )
+    
+    parser.add_argument(
+        '--verbose', '-v',
+        action='store_true',
+        help='Enable verbose logging'
     )
     
     subparsers = parser.add_subparsers(dest='command', help='Available commands')
@@ -99,6 +129,15 @@ async def main():
     parser = create_parser()
     args = parser.parse_args()
     
+    # Setup logging
+    global logger
+    logger = setup_logging(args.verbose, name=__name__)
+    
+    # If user specified a custom env file, load it
+    if args.env and os.path.exists(args.env):
+        load_dotenv(dotenv_path=args.env, override=True)
+        logger.info(f"Loaded custom environment from {args.env}")
+    
     if not args.command:
         parser.print_help()
         return
@@ -108,7 +147,7 @@ async def main():
     # Load configuration for commands that need it
     if args.command not in ['check']:
         if not cli.load_configuration(config_path=args.config):
-            print("❌ Failed to load configuration")
+            logger.error("Failed to load configuration")
             sys.exit(1)
     
     # Execute commands

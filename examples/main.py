@@ -4,49 +4,59 @@ Symposia Example - AI Committee Deliberation Framework
 
 This example demonstrates how to use the Symposia API directly.
 It showcases committee creation, deliberation, and voting strategies.
+
+Usage:
+  python main.py [--pool POOL_NAME] [--verbose]
+
+Options:
+  --pool      Specify the intelligence pool to use (default: clone_committee)
+  --verbose   Enable verbose logging output
 """
 
 import asyncio
 import os
+import sys
+import argparse
 from dotenv import load_dotenv
 from symposia.config.factory import CommitteeFactory
 from symposia.strategies import WeightedMajorityVote, WeightedMeanScore
 from symposia.config.loader import load_config
+
 
 # Load environment variables
 # Try both the root and examples directory for .env.local
 for env_path in ["examples/.env.local", ".env.local"]:
     if os.path.exists(env_path):
         load_dotenv(dotenv_path=env_path, override=True)
-        print(f"✅ Loaded environment from {env_path}")
+        print(f"Loaded environment from {env_path}")
         break
 
 
-async def create_committee_from_config():
+async def create_committee_from_config(pool_name="clone_committee"):
     """Create a committee using the configuration file."""
-    print("🤖 Creating Committee from Configuration...")
+    print("Creating Committee from Configuration...")
     
     # Load configuration
     config_path = "examples/symposia.local.yaml"
     if not os.path.exists(config_path):
         config_path = "symposia.local.yaml"  # Try current directory as fallback
-        
+            
     config_dict = load_config(config_path)
-    print(f"✅ Loaded configuration from {config_path}")
+    print(f"Loaded configuration from {config_path}")
     
     # Create factory
     factory = CommitteeFactory(config_dict)
     
-    # Create committee using the clone_committee pool
-    committee = factory.create_committee("mixed_committee", "WeightedMajorityVote")
+    # Create committee using the specified pool
+    committee = factory.create_committee(pool_name, "WeightedMajorityVote")
     
     return committee
 
 
 async def run_deliberation(committee, question, strategy_class=WeightedMajorityVote):
     """Run a deliberation with the given committee and strategy."""
-    print(f"\n📝 Question: {question}")
-    print(f"🎯 Strategy: {strategy_class.__name__}")
+    print(f"Question: {question}")
+    print(f"Strategy: {strategy_class.__name__}")
     print("=" * 60)
     
     # Create voting strategy
@@ -55,26 +65,41 @@ async def run_deliberation(committee, question, strategy_class=WeightedMajorityV
     # Run deliberation
     result = await committee.deliberate(question)
     
-    print(f"\n🏆 Final Decision: {result.final_result}")
-    print(f"💰 Total Cost: ${result.total_cost:.6f}")
+    print(f"Final Decision: {result.final_result}")
+    print(f"Total Cost: ${result.total_cost:.6f}")
     
-    print("\n📋 Individual Votes:")
+    print("Individual Votes:")
     for trace in result.trace:
         if trace['status'] == "Success":
             vote = trace['parsed_vote'].get('vote', 'No vote')
             reasoning = trace['parsed_vote'].get('reasoning', 'No reasoning provided')
-            print(f"  • {trace['member_name']}: {vote}")
+            print(f"  - {trace['member_name']}: {vote}")
             print(f"    Reasoning: {reasoning}")
         else:
-            print(f"  • {trace['member_name']}: {trace['status']}")
+            print(f"  - {trace['member_name']}: {trace['status']}")
     
     return result
 
 
 async def main():
     """Main example function."""
-    print("🚀 Symposia Example - AI Committee Deliberation")
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Symposia - AI Committee Deliberation Framework')
+    parser.add_argument('--pool', type=str, default='clone_committee', 
+                        help='Intelligence pool to use (default: clone_committee)')
+    parser.add_argument('--verbose', '-v', action='store_true', 
+                        help='Enable verbose output')
+    
+    args = parser.parse_args()
+    
+    # Set verbose flag
+    global VERBOSE
+    VERBOSE = args.verbose
+    
+    print("Symposia Example - AI Committee Deliberation")
     print("=" * 50)
+    
+    args = parser.parse_args()
     
     # Check for API keys
     available_keys = []
@@ -84,16 +109,16 @@ async def main():
             available_keys.append(key.replace("_API_KEY", ""))
     
     if not available_keys:
-        print("❌ Error: No API keys found in environment variables")
-        print("Please set at least one API key in .env.local file")
+        print("ERROR: No API keys found in environment variables")
+        print("ERROR: Please set at least one API key in .env.local file")
         return
         
-    print(f"✅ Found API keys for: {', '.join(available_keys)}")
+    print(f"Found API keys for: {', '.join(available_keys)}")
     
     try:
-        # Create committee from configuration
-        committee = await create_committee_from_config()
-        print(f"✅ Created committee '{committee.name}' with {len(committee.members)} members")
+        # Create committee from configuration using pool from command line
+        committee = await create_committee_from_config(pool_name=args.pool)
+        print(f"Created committee '{committee.name}' with {len(committee.members)} members")
         
         # Example questions for validation scenarios
         topic_prompt_health = """If you're experiencing chest pain, shortness of breath, and dizziness, these could be signs of a heart attack. You should immediately call 911 or go to the nearest emergency room. While waiting for help, chew an aspirin if you're not allergic, and try to stay calm. Don't drive yourself to the hospital."""
@@ -127,22 +152,22 @@ This MD5 approach is efficient and provides good security for most applications.
         
         for i, question in enumerate(questions, 1):
             scenario_types = ["Health Advice", "Financial Advice", "Coding Solution"]
-            print(f"\n{'='*20} {scenario_types[i-1]} Validation {'='*20}")
+            print(f"{'='*20} {scenario_types[i-1]} Validation {'='*20}")
             
             for strategy in strategies:
                 try:
                     await run_deliberation(committee, question, strategy)
-                    print("\n" + "-" * 40)
+                    print("-" * 40)
                 except Exception as e:
-                    print(f"❌ Error with {strategy.__name__}: {e}")
+                    print(f"ERROR: Error with {strategy.__name__}: {e}")
                     continue
         
-        print("\n🎉 Example completed successfully!")
+        print("Example completed successfully!")
         
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"ERROR: {e}")
         import traceback
-        traceback.print_exc()
+        print(f"ERROR: {traceback.format_exc()}")
 
 
 if __name__ == "__main__":

@@ -1,14 +1,20 @@
-import logging
 import os
 from typing import Optional
 from symposia.config.factory import CommitteeFactory
 from symposia.config.loader import load_config, get_config_path
 from symposia.utils import SimpleCache
+from symposia.utils.logging import setup_logging
 
-logger = logging.getLogger(__name__)
+# Logger will be initialized in __init__
+logger = None
 
 class SymposiaCLI:
     def __init__(self):
+        # Set up logger
+        global logger
+        if logger is None:
+            logger = setup_logging(verbose=False, name=__name__)
+            
         self.config = None
         self.config_source = None
         self.cache = SimpleCache()
@@ -40,52 +46,52 @@ class SymposiaCLI:
     def list_pools(self, verbose: bool = False):
         """List available intelligence pools."""
         if not self._config_dict:
-            print("❌ No configuration loaded")
+            logger.error("No configuration loaded")
             return False
             
         pools = self._config_dict.get('intelligence_pools', {})
         if not pools:
-            print("❌ No intelligence pools found in configuration")
+            logger.error("No intelligence pools found in configuration")
             return False
         
-        print("🤖 Available Intelligence Pools:")
-        print("=" * 50)
+        logger.info("Available Intelligence Pools:")
+        logger.info("=" * 50)
         
         for name, config in pools.items():
             member_count = len(config.get('members', []))
             reputation_enabled = config.get('reputation_management', False)
-            status = "🟢 Active" if reputation_enabled else "🟡 Basic"
+            status = "Active" if reputation_enabled else "Basic"
             
-            print(f"\n📋 {name}")
-            print(f"   Name: {config.get('name', 'Unnamed')}")
-            print(f"   Members: {member_count}")
-            print(f"   Reputation: {status}")
+            logger.info(f"\n{name}")
+            logger.info(f"   Name: {config.get('name', 'Unnamed')}")
+            logger.info(f"   Members: {member_count}")
+            logger.info(f"   Reputation: {status}")
             
             if verbose:
-                print(f"   Agreement Bonus: {config.get('agreement_bonus', 'N/A')}")
-                print(f"   Dissent Penalty: {config.get('dissent_penalty', 'N/A')}")
+                logger.info(f"   Agreement Bonus: {config.get('agreement_bonus', 'N/A')}")
+                logger.info(f"   Dissent Penalty: {config.get('dissent_penalty', 'N/A')}")
                 
-                print("   Members:")
+                logger.info("   Members:")
                 for member in config.get('members', []):
                     service = member.get('service', 'Unknown')
                     weight = member.get('weight', 1.0)
-                    print(f"     • {member.get('name', 'Unnamed')} ({service}, weight: {weight})")
+                    logger.info(f"     • {member.get('name', 'Unnamed')} ({service}, weight: {weight})")
         
         return True
 
     def list_services(self):
         """List available LLM services."""
         if not self._config_dict:
-            print("❌ No configuration loaded")
+            logger.error("No configuration loaded")
             return False
             
         services = self._config_dict.get('llm_services', {})
         if not services:
-            print("❌ No LLM services found in configuration")
+            logger.error("No LLM services found in configuration")
             return False
         
-        print("🔧 Available LLM Services:")
-        print("=" * 40)
+        logger.info("Available LLM Services:")
+        logger.info("=" * 40)
         
         for name, config in services.items():
             provider = config.get('provider', 'Unknown')
@@ -99,32 +105,32 @@ class SymposiaCLI:
             else:
                 cost_str = f"${cost}"
             
-            print(f"\n🔗 {name}")
-            print(f"   Provider: {provider}")
-            print(f"   Model: {model}")
-            print(f"   Cost: {cost_str}")
+            logger.info(f"\n{name}")
+            logger.info(f"   Provider: {provider}")
+            logger.info(f"   Model: {model}")
+            logger.info(f"   Cost: {cost_str}")
         
         return True
 
     async def run_deliberation(self, pool_name: str, question: str, strategy: str = 'WeightedMajorityVote'):
         """Run a single deliberation."""
         if not self._config_dict:
-            print("❌ No configuration loaded")
+            logger.error("No configuration loaded")
             return False
             
         if pool_name not in self._config_dict['intelligence_pools']:
             available_pools = list(self._config_dict['intelligence_pools'].keys())
-            print(f"❌ Pool '{pool_name}' not found")
-            print(f"Available pools: {', '.join(available_pools)}")
+            logger.error(f"Pool '{pool_name}' not found")
+            logger.info(f"Available pools: {', '.join(available_pools)}")
             return False
         
         try:
             self._ensure_factory()
             committee = self.factory.create_committee(pool_name, strategy)
-            print(f"\n🤖 Running deliberation with: {committee.name}")
-            print(f"📝 Question: {question}")
-            print(f"🎯 Strategy: {strategy}")
-            print("=" * 60)
+            logger.info(f"\nRunning deliberation with: {committee.name}")
+            logger.info(f"Question: {question}")
+            logger.info(f"Strategy: {strategy}")
+            logger.info("=" * 60)
             
             result = await committee.deliberate(question)
             result.display_trace()
@@ -138,25 +144,25 @@ class SymposiaCLI:
     async def run_interactive(self):
         """Run interactive deliberation mode."""
         if not self._config_dict:
-            print("❌ No configuration loaded")
+            logger.error("No configuration loaded")
             return False
         
         pools = list(self._config_dict['intelligence_pools'].keys())
         if not pools:
-            print("❌ No intelligence pools available")
+            logger.error("No intelligence pools available")
             return False
         
-        print("\n🎯 Interactive Deliberation Mode")
-        print("=" * 40)
-        print("Available pools:", ", ".join(pools))
-        print("Type 'quit' to exit, 'help' for commands")
+        logger.info("\nInteractive Deliberation Mode")
+        logger.info("=" * 40)
+        logger.info(f"Available pools: {', '.join(pools)}")
+        logger.info("Type 'quit' to exit, 'help' for commands")
         
         while True:
             try:
-                command = input("\n🤖 symposia> ").strip()
+                command = input("\nsymposia> ").strip()
                 
                 if command.lower() in ['quit', 'exit', 'q']:
-                    print("👋 Goodbye!")
+                    logger.info("Goodbye!")
                     break
                 elif command.lower() in ['help', 'h']:
                     self.show_interactive_help()
@@ -168,40 +174,40 @@ class SymposiaCLI:
                     # Format: ask <pool> <question>
                     parts = command[4:].split(' ', 1)
                     if len(parts) < 2:
-                        print("❌ Usage: ask <pool> <question>")
+                        logger.error("Usage: ask <pool> <question>")
                         continue
                     
                     pool_name, question = parts
                     if pool_name not in pools:
-                        print(f"❌ Pool '{pool_name}' not found")
+                        logger.error(f"Pool '{pool_name}' not found")
                         continue
                     
                     await self.run_deliberation(pool_name, question)
                 else:
-                    print("❌ Unknown command. Type 'help' for available commands.")
+                    logger.warning("Unknown command. Type 'help' for available commands.")
                     
             except KeyboardInterrupt:
-                print("\n👋 Goodbye!")
+                logger.info("\nGoodbye!")
                 break
             except Exception as e:
-                print(f"❌ Error: {e}")
+                logger.error(f"❌ Error: {e}")
 
     def show_interactive_help(self):
         """Show help for interactive mode."""
         help_text = """
-📖 Interactive Commands:
+Interactive Commands:
   ask <pool> <question>  - Run deliberation with specific pool and question
   pools                  - List available intelligence pools
   services               - List available LLM services
   help                   - Show this help message
   quit                   - Exit interactive mode
         """
-        print(help_text)
+        logger.info(help_text)
 
     def check_environment(self):
         """Check if environment is properly configured."""
-        print("🔍 Environment Check:")
-        print("=" * 30)
+        logger.info("Environment Check:")
+        logger.info("=" * 30)
         
         # Check API keys
         required_keys = ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_API_KEY"]
@@ -212,19 +218,20 @@ class SymposiaCLI:
                 api_keys_found.append(key.replace('_API_KEY', ''))
         
         if api_keys_found:
-            print(f"✅ API Keys found: {', '.join(api_keys_found)}")
+            logger.info(f"API Keys found: {', '.join(api_keys_found)}")
         else:
-            print("❌ No API keys found")
-            print("   Please set at least one API key in your .env file")
+            logger.error("No API keys found")
+            logger.error("   Please set at least one API key in .env.local or .env file")
+            logger.error("   Symposia looks for these files in the current directory first")
         
         # Check configuration
         if self._config_dict:
-            print(f"✅ Configuration loaded from: {self.config_source}")
+            logger.info(f"Configuration loaded from: {self.config_source}")
             pool_count = len(self._config_dict.get('intelligence_pools', {}))
             service_count = len(self._config_dict.get('llm_services', {}))
-            print(f"✅ Found {pool_count} intelligence pools and {service_count} LLM services")
+            logger.info(f"Found {pool_count} intelligence pools and {service_count} LLM services")
         else:
-            print("❌ Configuration not loaded")
-            print("   This may be due to missing API keys or configuration errors")
+            logger.error("Configuration not loaded")
+            logger.error("   This may be due to missing API keys or configuration errors")
         
-        return len(api_keys_found) > 0 and self._config_dict is not None 
+        return len(api_keys_found) > 0 and self._config_dict is not None

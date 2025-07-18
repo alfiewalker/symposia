@@ -2,11 +2,7 @@
 Deliberation result representation and tracing.
 """
 
-import logging
 from typing import List, Dict, Any
-
-logger = logging.getLogger(__name__)
-
 
 class DeliberationResult:
     """Represents the result of a committee deliberation with full traceability."""
@@ -47,4 +43,4 @@ class DeliberationResult:
             "=" * 80
         ])
         
-        logger.info("\n".join(report)) 
+        print("\n".join(report)) 
