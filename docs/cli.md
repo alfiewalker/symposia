@@ -24,6 +24,16 @@ pip install symposia
 
 ### Basic Commands
 
+### Global Options
+
+These options can be used with any command:
+
+```bash
+--config, -c PATH    Path to configuration file (overrides default search)
+--env, -e PATH       Path to environment file (overrides default search)
+--verbose, -v        Enable verbose logging
+```
+
 #### List Available Intelligence Pools
 ```bash
 symposia list-pools
@@ -116,11 +126,21 @@ Type 'quit' to exit, 'help' for commands
 ## Configuration
 
 The CLI automatically loads configuration from:
-1. `SYMPOSIA_CONFIG` environment variable
-2. `config/symposia.local.yaml` (for local development)
-3. `config/symposia.yaml`
-4. `examples/symposia.yaml`
-5. Default configuration (fallback)
+1. Custom config specified via `--config` flag
+2. `SYMPOSIA_CONFIG` environment variable
+3. `config/symposia.local.yaml` (for local development)
+4. `config/symposia.yaml`
+5. `examples/symposia.yaml`
+6. Default configuration (fallback)
+
+### Environment File Loading
+
+The CLI looks for environment files in the following order:
+1. Custom env file specified via `--env` flag
+2. `.env.local` in the current directory
+3. `.env` in the current directory
+4. `.env.local` in the project root
+5. `.env` in the project root
 
 ## Environment Variables
 
@@ -215,7 +235,18 @@ symposia list-pools --help
 
 # Check environment
 symposia check
+
+# Enable verbose logging for more detailed output
+symposia --verbose check
 ```
+
+### Logging
+
+Symposia uses a centralized logging system for consistent output across the application. You can:
+
+- Use `--verbose` flag for more detailed logging output
+- Log messages are displayed directly in the console
+- Error messages are clearly marked for easy identification
 
 ## Development
 
@@ -243,8 +274,12 @@ To add new CLI commands, modify `symposia/cli.py`:
 
 ```
 symposia/
-├── cli.py              # Main CLI implementation
-├── main.py             # Backward compatibility
+├── terminal/
+│   ├── cli.py          # Main CLI implementation
+│   └── services.py     # CLI service implementations
+├── utils/
+│   ├── logging.py      # Centralized logging configuration
+│   └── ...             # Other utilities
 └── config/
     ├── loader.py       # Configuration loading
     ├── factory.py      # Committee factory
