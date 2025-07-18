@@ -14,7 +14,12 @@ from symposia.strategies import WeightedMajorityVote, WeightedMeanScore
 from symposia.config.loader import load_config
 
 # Load environment variables
-load_dotenv(dotenv_path=".env.local", override=True)
+# Try both the root and examples directory for .env.local
+for env_path in ["examples/.env.local", ".env.local"]:
+    if os.path.exists(env_path):
+        load_dotenv(dotenv_path=env_path, override=True)
+        print(f"✅ Loaded environment from {env_path}")
+        break
 
 
 async def create_committee_from_config():
@@ -22,7 +27,12 @@ async def create_committee_from_config():
     print("🤖 Creating Committee from Configuration...")
     
     # Load configuration
-    config_dict = load_config("symposia.local.yaml")
+    config_path = "examples/symposia.local.yaml"
+    if not os.path.exists(config_path):
+        config_path = "symposia.local.yaml"  # Try current directory as fallback
+        
+    config_dict = load_config(config_path)
+    print(f"✅ Loaded configuration from {config_path}")
     
     # Create factory
     factory = CommitteeFactory(config_dict)
@@ -66,11 +76,19 @@ async def main():
     print("🚀 Symposia Example - AI Committee Deliberation")
     print("=" * 50)
     
-    # Check for API key
-    if not os.getenv("OPENAI_API_KEY"):
-        print("❌ Error: OPENAI_API_KEY not found in environment variables")
-        print("Please set your OpenAI API key in .env.local")
+    # Check for API keys
+    available_keys = []
+    api_keys = ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_API_KEY"]
+    for key in api_keys:
+        if os.getenv(key):
+            available_keys.append(key.replace("_API_KEY", ""))
+    
+    if not available_keys:
+        print("❌ Error: No API keys found in environment variables")
+        print("Please set at least one API key in .env.local file")
         return
+        
+    print(f"✅ Found API keys for: {', '.join(available_keys)}")
     
     try:
         # Create committee from configuration

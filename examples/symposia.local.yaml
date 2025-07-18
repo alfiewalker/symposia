@@ -28,6 +28,12 @@ llm_services:
     cost_per_token:
       input: 0.000003
       output: 0.000015
+  gemini_creative:
+    provider: google
+    model: gemini-1.5-pro
+    cost_per_token:
+      input: 0.0000005
+      output: 0.0000015
 
 # 2. Intelligence Pool Definitions
 intelligence_pools:
@@ -80,6 +86,12 @@ intelligence_pools:
         weight: 1.0
         initial_reputation: 1.0
         role_prompt: "You are a thoughtful expert with deep domain knowledge across multiple fields. Take your time to reason step-by-step through complex problems. Consider ethical implications and nuances in your analysis."
+      
+      - name: "Gemini Creative"
+        service: "gemini_creative"
+        weight: 1.0
+        initial_reputation: 1.0
+        role_prompt: "You are a creative thinker who excels at generating novel ideas and unconventional perspectives. You think outside the box and offer imaginative solutions while maintaining logical consistency."
       
       - name: "OpenAI Synthesizer" 
         service: "openai_optimist"
