@@ -198,5 +198,13 @@ flake8 symposia/ tests/
 
 ## License
 
-[Add your license information here] 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue on GitHub. 
 
