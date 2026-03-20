@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "${REPO_ROOT}"
+
+echo "[phase05] Running Phase 0.5 gate before push..."
+bash scripts/phase05_gate.sh --quiet
+echo "[phase05] Gate passed."

@@ -1,210 +1,91 @@
 # Symposia
 
-A modular LLM ensemble voting framework for committee-based deliberation.
+Symposia is a deterministic committee-style validation library.
 
-## Overview
+Phase 9 release intent: keep the day-one interface very small.
 
-Symposia enables AI committee deliberation through configurable LLM services, voting strategies, and reputation management. It provides both a Python API and CLI interface for creating intelligent committees that can validate information, make decisions, and provide detailed reasoning.
+## Primary API
 
-## Features
+Most users should start with exactly one call:
 
-- **Multi-LLM Support**: OpenAI, Anthropic, Google, and local models
-- **Configurable Committees**: YAML-based configuration for easy setup
-- **Multiple Voting Strategies**: Majority, mean, median, and custom strategies
-- **Reputation Management**: Track and weight committee member performance
-- **CLI Interface**: Command-line tools for committee management
-- **Comprehensive Documentation**: Architecture diagrams, validation reports, and specifications
+```python
+from symposia import validate
 
-## Project Structure
+result = validate(
+    content="This treatment is guaranteed to work for all patients.",
+    domain="medical",
+)
 
+print(result.completion.should_stop)
+print(result.core_trace.profile_set_selected)
 ```
-symposia/
-├── core/                   # Core domain logic
-│   ├── llm_service.py     # LLM service implementations
-│   ├── member.py          # Committee member representation
-│   ├── reputation.py      # Reputation management
-│   ├── result.py          # Deliberation results
-│   └── committee.py       # Committee orchestration
-├── strategies/            # Voting strategies
-│   ├── base.py           # Abstract base class
-│   ├── majority.py       # Weighted majority voting
-│   ├── mean.py           # Weighted mean scoring
-│   └── median.py         # Median scoring
-├── config/               # Configuration and factory
-│   ├── models.py         # Pydantic configuration models
-│   └── factory.py        # Committee factory
-├── terminal/             # CLI interface
-│   ├── cli.py           # Command-line interface
-│   └── services.py      # CLI service implementations
-├── utils/                # Utilities
-│   ├── cache.py          # Simple caching
-│   └── parsing.py        # JSON parsing utilities
-└── __init__.py           # Package initialization
+
+Optional helper to inspect profile-set resolution before running validation:
+
+```python
+from symposia import load_profile_set
+
+resolved = load_profile_set(domain="finance")
+print(resolved.profile_set_id)
+print(resolved.profiles)
 ```
+
+Primary public surface is intentionally small:
+
+- `validate(...)`
+- `load_profile_set(...)`
+- `InitialReviewResult`
+- `Risk`
+
+Advanced modules remain available by explicit module imports.
 
 ## Installation
 
-### From Source
-
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd Symposia
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Install the package
 pip install -e .
 ```
 
-### Development Setup
+## Locked End-To-End Example
+
+Run the deterministic locked example:
 
 ```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
+python examples/locked_end_to_end.py
 ```
 
-## Configuration
+Reference script: [examples/locked_end_to_end.py](examples/locked_end_to_end.py).
 
-### Environment Variables
+## Profile-Set Guidance
 
-Create a `.env.local` file in your project root:
+Use domain defaults unless you have a strong reason to override.
 
-```bash
-# Copy the example
-cp examples/env.example .env.local
+- general content: `general_default_v1`
+- medical content: `medical_strict_v1`
+- legal content: `legal_strict_v1`
+- finance content: `finance_strict_v1`
 
-# Edit with your API keys
-OPENAI_API_KEY=your_openai_key
-ANTHROPIC_API_KEY=your_anthropic_key
-GOOGLE_API_KEY=your_google_key
-```
+Detailed guide: [docs/profile-set-selection-guide.md](docs/profile-set-selection-guide.md).
 
-### Committee Configuration
+## Benchmark Snapshot
 
-Symposia uses YAML configuration files to define committees. See `examples/symposia.local.yaml` for a complete example:
-
-```yaml
-committee:
-  name: "Validation Committee"
-  members:
-    - name: "Health Expert"
-      service: "openai"
-      model: "gpt-4"
-      prompt: "You are a health expert..."
-    - name: "Financial Analyst"
-      service: "anthropic"
-      model: "claude-3-sonnet"
-      prompt: "You are a financial analyst..."
-```
-
-## Usage
-
-### CLI Interface
-
-The CLI provides commands for managing committees and running deliberations:
-
-```bash
-# List available intelligence pools
-symposia list-pools
-
-# List available LLM services
-symposia list-services
-
-# Check configuration
-symposia check --config examples/symposia.local.yaml
-
-# Ask a question
-symposia ask "Is this investment advice sound?" --config examples/symposia.local.yaml
-
-# Interactive mode
-symposia interactive --config examples/symposia.local.yaml
-```
-
-### Python API
-
-```python
-from symposia.config.factory import CommitteeFactory
-from symposia.config.loader import load_config
-
-# Load configuration
-config = load_config("examples/symposia.local.yaml")
-
-# Create committee
-factory = CommitteeFactory()
-committee = factory.create_committee(config)
-
-# Run deliberation
-result = committee.deliberate(
-  """
-  Is this health advice accurate?
-  If you're experiencing chest pain, shortness of breath, and dizziness, 
-  these could be signs of a heart attack.You should immediately call 911 or 
-  go to the nearest emergency room. While waiting for help, chew an aspirin 
-  if you're not allergic, and try to stay calm. Don't drive yourself to the hospital.
-  """)
-print(result.final_answer)
-print(result.reasoning)
-```
-
-### Example Script
-
-Run the example script to see Symposia in action:
-
-```bash
-python examples/main.py
-```
-
-This will run a validation committee on health, financial, and coding advice questions.
-
-## Documentation
-
-- **[Architecture Diagram](docs/architecture-diagram.md)**: System components and data flow
-- **[Validation Report - OpenAI](docs/openai-validation-report.md)**: Committee performance analysis with OpenAI
-- **[Multi-Provider Validation Report](docs/multi-provider-validation-report.md)**: Comprehensive validation across OpenAI, Anthropic, and Google
-- **[Advanced Validation Report](docs/advanced-validation-report.md)**: Adavnced committee validation using latest stable models from all providers
-- **[CLI Documentation](docs/cli.md)**: Command-line interface guide
-- **[Configuration Guide](docs/configuration.md)**: YAML configuration reference
-- **[Specifications](docs/specifications.md)**: Technical specifications
-- **[Whitepaper](docs/Whitepaper_%20Symposia.pdf)**: Detailed project overview
+Current release snapshot is in [docs/benchmark-summary.md](docs/benchmark-summary.md).
 
 ## Development
 
-### Running Tests
+Run tests:
 
 ```bash
-pytest tests/
+pytest -q
 ```
 
-### Code Quality
+## Documentation
 
-```bash
-# Format code
-black symposia/ tests/
-
-# Lint code
-flake8 symposia/ tests/
-```
-
-## Architecture Principles
-
-- **Modularity**: Each component has a single responsibility
-- **Separation of concerns**: Configuration, strategies, and core logic are decoupled
-- **Composition over inheritance**: Services and strategies are composable
-- **Clean interfaces**: Clear boundaries between modules
-- **Progressive discovery**: Easy to understand and extend
-- **Reactive execution**: Step-by-step deliberation with adaptive tool selection
+- [docs/rebuild/08_build_phases.md](docs/rebuild/08_build_phases.md)
+- [docs/specifications.md](docs/specifications.md)
+- [docs/architecture-diagram.md](docs/architecture-diagram.md)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-## Support
-
-If you encounter any issues or have questions, please open an issue on GitHub. 
+MIT. See [LICENSE](LICENSE).
 

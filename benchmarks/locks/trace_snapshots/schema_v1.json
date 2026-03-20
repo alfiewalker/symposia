@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Symposia Phase 3 Minimal Trace",
+  "type": "object",
+  "required": [
+    "run_id",
+    "profile_set_selected",
+    "subclaims",
+    "juror_votes",
+    "aggregation_outcome"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "profile_set_selected": {"type": "string", "minLength": 1},
+    "subclaims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["subclaim_id", "text"],
+        "properties": {
+          "subclaim_id": {"type": "string"},
+          "text": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "juror_votes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["juror_id", "subclaim_id"],
+        "properties": {
+          "juror_id": {"type": "string"},
+          "subclaim_id": {"type": "string"},
+          "supported": {"type": ["boolean", "null"]},
+          "contradicted": {"type": ["boolean", "null"]},
+          "sufficient": {"type": ["boolean", "null"]},
+          "confidence": {"type": ["number", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "aggregation_outcome": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["subclaim_id"],
+        "properties": {
+          "subclaim_id": {"type": "string"},
+          "support_score": {"type": ["number", "null"]},
+          "contradiction_score": {"type": ["number", "null"]},
+          "sufficiency_score": {"type": ["number", "null"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

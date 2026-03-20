@@ -23,8 +23,8 @@ def read_requirements():
 
 setup(
     name="symposia",
-    version="0.1.0",
-    description="AI Committee Deliberation Framework",
+    version="0.1.1",
+    description="Deterministic committee-style validation library",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     author="Symposia Team",
@@ -52,6 +52,7 @@ setup(
         "dev": [
             "pytest>=7.0.0",
             "pytest-asyncio>=0.21.0",
+            "jsonschema>=4.0.0",
         ],
     },
     entry_points={

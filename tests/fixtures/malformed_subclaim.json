@@ -1,0 +1,5 @@
+{
+  "subclaim_id": "sc_bad_001",
+  "kind": "fact",
+  "depends_on": []
+}

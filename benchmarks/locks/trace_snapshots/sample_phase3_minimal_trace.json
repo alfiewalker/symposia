@@ -1,0 +1,36 @@
+{
+  "run_id": "run_phase3_sample_001",
+  "profile_set_selected": "general_default_v1",
+  "subclaims": [
+    {
+      "subclaim_id": "sc_1",
+      "text": "Water boils at lower temperature at higher altitude."
+    }
+  ],
+  "juror_votes": [
+    {
+      "juror_id": "juror_1",
+      "subclaim_id": "sc_1",
+      "supported": true,
+      "contradicted": false,
+      "sufficient": true,
+      "confidence": 0.82
+    },
+    {
+      "juror_id": "juror_2",
+      "subclaim_id": "sc_1",
+      "supported": true,
+      "contradicted": false,
+      "sufficient": true,
+      "confidence": 0.76
+    }
+  ],
+  "aggregation_outcome": [
+    {
+      "subclaim_id": "sc_1",
+      "support_score": 0.79,
+      "contradiction_score": 0.04,
+      "sufficiency_score": 0.81
+    }
+  ]
+}
