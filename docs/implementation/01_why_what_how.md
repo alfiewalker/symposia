@@ -43,6 +43,22 @@ Symposia is not:
 
 It is a disciplined engine for deciding whether a claim is sufficiently supported under explicit standards.
 
+## Validation as umbrella operation
+
+In Symposia, validation is the umbrella operation: assess whether content is
+sufficiently supported, credible, and safe to rely on under the active review
+setup.
+
+Users may arrive with different framings, for example:
+- is this true?
+- is this credible?
+- is this safe?
+- is this likely sound?
+- should I trust this?
+
+Symposia normalises these to one adjudication action rather than fragmenting
+the surface into many top-level verbs.
+
 ## How
 
 Symposia works in six moves:

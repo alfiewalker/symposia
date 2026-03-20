@@ -47,6 +47,8 @@ print(result.risk)
 print(result.agreement)
 ```
 
+In Symposia, `validate(...)` means: assess whether content is sufficiently supported, credible, and safe to rely on under the chosen review setup.
+
 ---
 
 ## Three ideas. Everything else stays behind the curtain.
