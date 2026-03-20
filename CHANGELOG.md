@@ -33,3 +33,4 @@ All notable changes to this project are documented in this file.
 
 ### Verified
 - Full regression suite passes: `182 passed`.
+- Release commit: `ccb780dcb7e431b158b5cd0f807a3ce649885fdc` (tag `v0.1.1`).

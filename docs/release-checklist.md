@@ -49,6 +49,10 @@ This checklist is for Phase 10 release hardening and governance polish.
 - Date: 2026-03-20
 - Version: 0.1.1
 - Checklist status: complete
+- Release commit: `ccb780dcb7e431b158b5cd0f807a3ce649885fdc`
+- Tag: `v0.1.1` → peels to `ccb780dcb7e431b158b5cd0f807a3ce649885fdc`
+- Author email on all commits: `alphamatrix59@hotmail.com`
+- Scope clarification: 0.1.1 shipped with release-safe cleanup only (obsolete example removal, docs/code parity fixes, and release artifact completion). Deeper historical legacy-code deletion remains post-release work under gated cleanup phases.
 - Verification snapshots:
   - Packaging: `python -m build`, `python -m twine check dist/*`, `pip install -e .`
   - Tests: full suite pass (`182 passed, 1 warning`)

@@ -35,6 +35,8 @@ Symposia 0.1.1 hardens the release around a frozen day-one API, packaging sanity
 
 ## Verification
 
+- Release commit: `ccb780dcb7e431b158b5cd0f807a3ce649885fdc`
+- Tag: `v0.1.1`
 - Full regression suite: `182 passed`.
 - Packaging checks:
   - `python -m build`
