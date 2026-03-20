@@ -316,4 +316,4 @@ Phase 4 may start only after all are true:
 ## Enforcement Reference
 
 For local, CI, and branch protection enforcement of the Phase 0.5 gate, use:
-- `docs/rebuild/17_branch_protection_checklist.md`
+- `docs/implementation/17_branch_protection_checklist.md`
