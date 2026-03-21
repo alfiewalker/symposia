@@ -1,0 +1,10 @@
+version: v1
+defaults:
+  active_registry: stable
+  trace_level: standard
+  issuance_policy: standard
+domain_defaults:
+  general: general_default_v1
+  medical: medical_strict_v1
+  legal: legal_strict_v1
+  finance: finance_strict_v1

@@ -1,0 +1,82 @@
+version: v1
+route_set_id: escalation_high_risk
+stage: escalation
+domain: high_risk
+output_schema: juror_decision_v1
+guardrails:
+  max_premium_jurors_per_run: 2
+  max_estimated_run_cost_usd: 0.08
+  require_provider_diversity: true
+  require_model_family_diversity: true
+  premium_allowed_in_round0: false
+assignments:
+  - slot_id: esc_risk_1
+    profile_id: risk_sentinel_v1
+    provider: anthropic
+    model: claude-3-5-sonnet-20241022
+    model_family: claude-3-5
+    tier: medium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    estimated_cost_usd: 0.010
+    fallback:
+      provider: openai
+      model: gpt-4o-mini
+      model_family: gpt-4o
+
+  - slot_id: esc_evidence_1
+    profile_id: evidence_maximalist_v1
+    provider: openai
+    model: gpt-4o-2024-08-06
+    model_family: gpt-4o
+    tier: premium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    estimated_cost_usd: 0.018
+    fallback:
+      provider: anthropic
+      model: claude-3-5-sonnet-20241022
+      model_family: claude-3-5
+
+  - slot_id: esc_medical_1
+    profile_id: medical_specialist_v1
+    provider: google
+    model: gemini-1.5-pro
+    model_family: gemini-1-5
+    tier: medium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    estimated_cost_usd: 0.012
+    fallback:
+      provider: anthropic
+      model: claude-3-5-sonnet-20241022
+      model_family: claude-3-5
+
+  - slot_id: esc_legal_1
+    profile_id: legal_specialist_v1
+    provider: anthropic
+    model: claude-3-opus-20240229
+    model_family: claude-3
+    tier: premium
+    timeout_seconds: 20
+    max_output_tokens: 900
+    estimated_cost_usd: 0.022
+    fallback:
+      provider: openai
+      model: gpt-4o-2024-08-06
+      model_family: gpt-4o
+
+  - slot_id: esc_finance_1
+    profile_id: finance_specialist_v1
+    provider: openai
+    model: gpt-4o-mini
+    model_family: gpt-4o
+    tier: small_capable
+    timeout_seconds: 15
+    max_output_tokens: 800
+    estimated_cost_usd: 0.008
+    fallback:
+      provider: google
+      model: gemini-1.5-pro
+      model_family: gemini-1-5
+notes: Escalation routing allows selective premium jurors with strict cost and premium caps.

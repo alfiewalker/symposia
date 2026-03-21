@@ -48,7 +48,7 @@ from symposia.models.evaluation import (
     SuiteKind,
 )
 from symposia.profile_sets import get_profile_set
-from symposia.profile_sets.defaults import DOMAIN_DEFAULT_PROFILE_SET
+from symposia.profile_sets import DOMAIN_DEFAULT_PROFILE_SET
 from symposia.round0 import InitialReviewEngine
 
 

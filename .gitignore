@@ -65,6 +65,7 @@ coverage.xml
 # dotenv
 .env
 .env.*
+!/.env.example
 
 # User configuration files
 config/

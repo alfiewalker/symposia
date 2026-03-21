@@ -18,6 +18,15 @@ This board is aligned with:
 - 06_calibration_and_evaluation.md
 - 10_repo_structure.md
 
+## Post-Release Priority Note
+
+First substantial post-release architecture stream:
+- externalise profile sets and defaults to YAML-backed typed config
+
+Scope boundary for this stream:
+- move policy (profile-set ids, included profiles, thresholds, domain defaults, registry mapping)
+- keep behaviour in code (ProfileBehavior semantics, hint activation logic, juror decision mechanics)
+
 ## Global Build Rules
 
 1. One major gate per iteration, with minor internal gates allowed.

@@ -1,0 +1,95 @@
+from __future__ import annotations
+
+import pytest
+
+from symposia.models.routing import JurorRoutingConfig
+from symposia.routing import (
+    ROUTING_OUTPUT_SCHEMA,
+    ROUTING_VERSION,
+    get_route_set,
+    list_route_sets,
+)
+
+
+def test_routing_loader_discovers_expected_route_sets() -> None:
+    assert set(list_route_sets()) == {"default_round0", "escalation_high_risk"}
+    assert ROUTING_VERSION == "v1"
+    assert ROUTING_OUTPUT_SCHEMA == "juror_decision_v1"
+
+
+def test_round0_defaults_use_small_capable_models_only() -> None:
+    route = get_route_set("default_round0")
+    assert route.stage == "round0"
+    assert route.guardrails.premium_allowed_in_round0 is False
+    assert all(a.tier != "premium" for a in route.assignments)
+
+
+def test_each_assignment_has_provider_model_and_fallback() -> None:
+    for route_id in list_route_sets():
+        route = get_route_set(route_id)
+        for a in route.assignments:
+            assert a.provider
+            assert a.model
+            assert a.fallback.provider
+            assert a.fallback.model
+
+
+def test_guardrail_budget_caps_hold_for_all_routes() -> None:
+    for route_id in list_route_sets():
+        route = get_route_set(route_id)
+        total = sum(a.estimated_cost_usd for a in route.assignments)
+        assert total <= route.guardrails.max_estimated_run_cost_usd
+
+
+def test_guardrail_premium_caps_hold_for_all_routes() -> None:
+    for route_id in list_route_sets():
+        route = get_route_set(route_id)
+        premium = sum(1 for a in route.assignments if a.tier == "premium")
+        assert premium <= route.guardrails.max_premium_jurors_per_run
+
+
+def test_guardrail_requires_diversity_when_enabled() -> None:
+    for route_id in list_route_sets():
+        route = get_route_set(route_id)
+        if route.guardrails.require_provider_diversity:
+            assert len({a.provider for a in route.assignments}) >= 2
+        if route.guardrails.require_model_family_diversity:
+            assert len({a.model_family for a in route.assignments}) >= 2
+
+
+def test_schema_rejects_round0_premium_without_override() -> None:
+    bad = {
+        "version": "v1",
+        "route_set_id": "bad_round0",
+        "stage": "round0",
+        "domain": "all",
+        "output_schema": "juror_decision_v1",
+        "guardrails": {
+            "max_premium_jurors_per_run": 1,
+            "max_estimated_run_cost_usd": 0.05,
+            "require_provider_diversity": False,
+            "require_model_family_diversity": False,
+            "premium_allowed_in_round0": False,
+        },
+        "assignments": [
+            {
+                "slot_id": "x",
+                "profile_id": "balanced_reviewer_v1",
+                "provider": "openai",
+                "model": "gpt-4o-2024-08-06",
+                "model_family": "gpt-4o",
+                "tier": "premium",
+                "timeout_seconds": 10,
+                "max_output_tokens": 400,
+                "estimated_cost_usd": 0.01,
+                "fallback": {
+                    "provider": "anthropic",
+                    "model": "claude-3-5-haiku-latest",
+                    "model_family": "claude-3-5",
+                },
+            }
+        ],
+    }
+
+    with pytest.raises(ValueError, match="Round0 routing must not include premium jurors"):
+        JurorRoutingConfig(**bad)

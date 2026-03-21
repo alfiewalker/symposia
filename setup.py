@@ -60,6 +60,14 @@ setup(
             'symposia=symposia.terminal.cli:entrypoint',
         ],
     },
+    package_data={
+        "symposia": [
+            "profile_sets/stable/*.yaml",
+            "profile_sets/registry/*.yaml",
+            "profile_sets/experimental/*.yaml",
+            "routing/*.yaml",
+        ]
+    },
     include_package_data=True,
     zip_safe=False,
     keywords="ai, llm, committee, deliberation, consensus, voting",

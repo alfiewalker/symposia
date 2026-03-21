@@ -40,3 +40,6 @@ class ProfileSet(DeterministicModel):
     max_rounds: int = Field(ge=1)
     issuance_policy: str = Field(min_length=1)
     calibration_snapshot: str | None = None
+    version: str = Field(default="v1", min_length=1)
+    trace_level: str = Field(default="standard", min_length=1)
+    notes: str | None = None

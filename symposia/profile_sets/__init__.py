@@ -3,8 +3,11 @@ from __future__ import annotations
 from copy import deepcopy
 
 from symposia.models.profile import ProfileSet
-from symposia.profile_sets.defaults import BUILTIN_PROFILE_SETS, DOMAIN_DEFAULT_PROFILE_SET
+from symposia.profile_sets.loader import load_profile_set_registry
 
+_LOADED = load_profile_set_registry()
+BUILTIN_PROFILE_SETS = deepcopy(_LOADED.profile_sets)
+DOMAIN_DEFAULT_PROFILE_SET = dict(_LOADED.domain_defaults)
 _PROFILE_SET_REGISTRY = {k: deepcopy(v) for k, v in BUILTIN_PROFILE_SETS.items()}
 
 

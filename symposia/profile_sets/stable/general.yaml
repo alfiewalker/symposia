@@ -1,0 +1,22 @@
+version: v1
+id: general_default_v1
+domain: general
+purpose: General factual validation baseline.
+profiles:
+  - balanced_reviewer_v1
+  - sceptical_verifier_v1
+  - literal_parser_v1
+  - evidence_maximalist_v1
+  - risk_sentinel_v1
+juror_count: 5
+thresholds:
+  support: 0.70
+  confidence: 0.70
+max_rounds: 2
+issuance_policy: standard
+trace_level: standard
+calibration_snapshot: general_2026_q1
+defaults:
+  domain_default: true
+  registry_group: stable
+notes: Stable general baseline for day-one usage.

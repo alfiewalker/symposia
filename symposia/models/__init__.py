@@ -43,6 +43,13 @@ from symposia.models.evaluation import (
     ExpectedVerdict,
     SuiteKind,
 )
+from symposia.models.routing import (
+    JurorRouteAssignment,
+    JurorRouteFallback,
+    JurorRoutingConfig,
+    JurorRoutingGuardrails,
+    JurorRoutingIndex,
+)
 
 __all__ = [
     "ClaimBundle",
@@ -80,6 +87,11 @@ __all__ = [
     "SuiteKind",
     "CommitteeBaselineCase",
     "CommitteeBaselineComparison",
+    "JurorRouteAssignment",
+    "JurorRouteFallback",
+    "JurorRoutingConfig",
+    "JurorRoutingGuardrails",
+    "JurorRoutingIndex",
     "Certainty",
     "CompiledSubclaimVerdict",
     "Issuance",
