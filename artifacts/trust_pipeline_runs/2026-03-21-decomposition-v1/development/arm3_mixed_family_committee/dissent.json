@@ -1,0 +1,132 @@
+{
+  "case_count": 25,
+  "critical_dissent_rate": 0.12,
+  "dissent_rate": 0.56,
+  "per_case": [
+    {
+      "case_id": "trust_v2_dev_lowrisk_01",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_lowrisk_02",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_lowrisk_03",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_lowrisk_04",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_lowrisk_05",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_highstakes_01",
+      "has_critical_dissent": true,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_highstakes_02",
+      "has_critical_dissent": true,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_highstakes_03",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_highstakes_04",
+      "has_critical_dissent": true,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_highstakes_05",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_forecast_01",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_forecast_02",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_forecast_03",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_forecast_04",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_forecast_05",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_policy_01",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_02",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_03",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_04",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_05",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_danger_01",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_danger_02",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_danger_03",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_danger_04",
+      "has_critical_dissent": false,
+      "has_dissent": true
+    },
+    {
+      "case_id": "trust_v2_dev_danger_05",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    }
+  ]
+}

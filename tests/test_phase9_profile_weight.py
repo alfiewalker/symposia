@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import pytest
 
+pytestmark = pytest.mark.legacy
+
 from symposia.aggregation.round0 import _profile_weight, aggregate_round0
 from symposia.models.juror import JurorDecision
 from symposia.profiles import get_profile

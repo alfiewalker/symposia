@@ -1,0 +1,27 @@
+{
+  "case_count": 4,
+  "critical_dissent_rate": 0.25,
+  "dissent_rate": 0.25,
+  "per_case": [
+    {
+      "case_id": "hard_general_fasting_reversal_claim",
+      "has_critical_dissent": true,
+      "has_dissent": true
+    },
+    {
+      "case_id": "hard_general_earthquake_prediction_device",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "hard_general_antibiotic_viral_flu",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "hard_general_hyperventilation_heart_attack",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    }
+  ]
+}

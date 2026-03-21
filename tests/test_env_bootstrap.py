@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.core
+
 from pathlib import Path
 
 from symposia.env import load_env

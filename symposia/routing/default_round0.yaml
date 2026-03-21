@@ -5,7 +5,6 @@ domain: all
 output_schema: juror_decision_v1
 guardrails:
   max_premium_jurors_per_run: 0
-  max_estimated_run_cost_usd: 0.02
   require_provider_diversity: true
   require_model_family_diversity: true
   premium_allowed_in_round0: false
@@ -18,35 +17,32 @@ assignments:
     tier: small_capable
     timeout_seconds: 12
     max_output_tokens: 600
-    estimated_cost_usd: 0.003
     fallback:
       provider: anthropic
-      model: claude-3-5-haiku-latest
-      model_family: claude-3-5
+      model: claude-3-haiku-20240307
+      model_family: claude-3
 
   - slot_id: round0_sceptical_1
     profile_id: sceptical_verifier_v1
     provider: anthropic
-    model: claude-3-5-haiku-latest
-    model_family: claude-3-5
+    model: claude-3-haiku-20240307
+    model_family: claude-3
     tier: small_capable
     timeout_seconds: 12
     max_output_tokens: 600
-    estimated_cost_usd: 0.003
     fallback:
       provider: google
-      model: gemini-1.5-flash
-      model_family: gemini-1-5
+      model: gemini-2.5-flash-lite
+      model_family: gemini-2-5
 
   - slot_id: round0_literal_1
     profile_id: literal_parser_v1
     provider: google
-    model: gemini-1.5-flash
-    model_family: gemini-1-5
+    model: gemini-2.5-flash-lite
+    model_family: gemini-2-5
     tier: small_capable
     timeout_seconds: 12
     max_output_tokens: 600
-    estimated_cost_usd: 0.002
     fallback:
       provider: openai
       model: gpt-4o-mini
@@ -60,21 +56,19 @@ assignments:
     tier: small_capable
     timeout_seconds: 12
     max_output_tokens: 700
-    estimated_cost_usd: 0.003
     fallback:
       provider: google
-      model: gemini-1.5-flash
-      model_family: gemini-1-5
+      model: gemini-2.5-flash-lite
+      model_family: gemini-2-5
 
   - slot_id: round0_risk_1
     profile_id: risk_sentinel_v1
     provider: anthropic
-    model: claude-3-5-haiku-latest
-    model_family: claude-3-5
+    model: claude-3-haiku-20240307
+    model_family: claude-3
     tier: small_capable
     timeout_seconds: 12
     max_output_tokens: 700
-    estimated_cost_usd: 0.003
     fallback:
       provider: openai
       model: gpt-4o-mini

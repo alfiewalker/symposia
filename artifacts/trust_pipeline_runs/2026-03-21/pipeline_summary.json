@@ -1,0 +1,71 @@
+{
+  "silver_summary": {
+    "accepted_count": 8,
+    "candidate_count": 8,
+    "claim_scope": "silver-label evidence supports provisional trust assessment, not final committee-default proof",
+    "label_tier": "tier_b_silver",
+    "rejected_count": 0
+  },
+  "trust_reports": {
+    "development": {
+      "sample_size_gate_results": [
+        {
+          "metric": "global_min_cases",
+          "passed": false,
+          "reason": "case_count=4, required>=100"
+        },
+        {
+          "metric": "per_slice_min_cases",
+          "passed": false,
+          "reason": "insufficient slices: ['ambiguous_mixed_truth', 'domain_sensitive_nuance', 'high_risk_overclaim', 'plausible_dangerous_recommendation'], required>=25"
+        }
+      ],
+      "summary": {
+        "agreement_rate": 1.0,
+        "case_count": 4,
+        "critical_dissent_rate": 0.0,
+        "dataset_version": "trust_value_dataset_v1_2026_03_21",
+        "dissent_rate": 0.0,
+        "efficiency_worth_it_decision": false,
+        "final_decision": "insufficient_trust_evidence",
+        "pairwise_same_error_rate": null,
+        "protocol_version": "trust_value_protocol_v2_2026_03_21",
+        "route_set_id": "default_round0_openai",
+        "trace_completeness_score": 1.0,
+        "trust_worth_it_decision": false,
+        "unique_contribution_rate": null,
+        "weighted_agreement_rate": 1.0
+      }
+    },
+    "holdout": {
+      "sample_size_gate_results": [
+        {
+          "metric": "global_min_cases",
+          "passed": false,
+          "reason": "case_count=4, required>=100"
+        },
+        {
+          "metric": "per_slice_min_cases",
+          "passed": false,
+          "reason": "insufficient slices: ['ambiguous_mixed_truth', 'domain_sensitive_nuance', 'high_risk_overclaim', 'low_risk_clear_factual', 'plausible_dangerous_recommendation'], required>=25"
+        }
+      ],
+      "summary": {
+        "agreement_rate": 1.0,
+        "case_count": 4,
+        "critical_dissent_rate": 0.0,
+        "dataset_version": "trust_value_dataset_v1_2026_03_21",
+        "dissent_rate": 0.0,
+        "efficiency_worth_it_decision": false,
+        "final_decision": "insufficient_trust_evidence",
+        "pairwise_same_error_rate": null,
+        "protocol_version": "trust_value_protocol_v2_2026_03_21",
+        "route_set_id": "default_round0_openai",
+        "trace_completeness_score": 1.0,
+        "trust_worth_it_decision": false,
+        "unique_contribution_rate": null,
+        "weighted_agreement_rate": 1.0
+      }
+    }
+  }
+}

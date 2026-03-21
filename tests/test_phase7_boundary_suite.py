@@ -37,6 +37,8 @@ from __future__ import annotations
 
 import pytest
 
+pytestmark = pytest.mark.legacy
+
 from symposia.escalation import plan_escalation
 from symposia.escalation.thresholds import (
     CONTRADICTION_CEILING,

@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.legacy
+
 import inspect
 
 import symposia
@@ -10,6 +14,10 @@ def test_primary_surface_all_is_tiny_and_intentional() -> None:
     assert symposia.__all__ == [
         "validate",
         "load_profile_set",
+        "InitialReviewEngine",
+        "JurorDecision",
+        "SubclaimDecision",
+        "CompletionDecision",
         "Risk",
         "InitialReviewResult",
     ]
@@ -26,6 +34,7 @@ def test_validate_signature_is_day_one_simple() -> None:
         "escalation_model",
         "routing",
         "provider_config",
+        "live",
     ]
 
 

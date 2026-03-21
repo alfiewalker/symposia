@@ -28,6 +28,8 @@ from __future__ import annotations
 
 import pytest
 
+pytestmark = pytest.mark.legacy
+
 from symposia.evaluation import EvaluationHarness
 from symposia.jurors.rule_based import RuleBasedJuror
 from symposia.models.claim import Subclaim, SubclaimKind

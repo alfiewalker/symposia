@@ -1,0 +1,38 @@
+{
+  "case_count": 5,
+  "per_case": [
+    {
+      "case_id": "trust_v2_holdout_forecast_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_v2_holdout_forecast_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_v2_holdout_forecast_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_v2_holdout_forecast_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_v2_holdout_forecast_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    }
+  ],
+  "required_fields": [
+    "per_juror_records",
+    "parsed_ok_and_error_code",
+    "run_policy_metadata",
+    "protocol_dataset_route_metadata",
+    "decision_interpretation"
+  ],
+  "trace_completeness_score": 1.0
+}

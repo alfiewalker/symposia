@@ -4,6 +4,10 @@ from copy import deepcopy
 
 from symposia.models.routing import JurorRoutingConfig
 from symposia.routing.loader import load_juror_routing
+from symposia.routing.runtime import (
+    build_routed_llm_service_factory,
+    routed_llm_timeout_seconds,
+)
 
 _LOADED = load_juror_routing()
 ROUTING_VERSION = _LOADED.version
@@ -26,4 +30,6 @@ __all__ = [
     "ROUTING_OUTPUT_SCHEMA",
     "list_route_sets",
     "get_route_set",
+    "build_routed_llm_service_factory",
+    "routed_llm_timeout_seconds",
 ]

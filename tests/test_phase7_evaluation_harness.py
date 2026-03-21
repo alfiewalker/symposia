@@ -21,6 +21,10 @@ For threshold boundary cases see test_phase7_boundary_suite.py.
 """
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.core
+
 from symposia.evaluation import EvaluationHarness
 from symposia.models.evaluation import EvaluationCase, EvaluationSuiteResult, ExpectedVerdict
 

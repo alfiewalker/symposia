@@ -1,3 +1,7 @@
+
+import pytest
+
+pytestmark = pytest.mark.core
 import pytest
 from symposia.utils.cache import SimpleCache
 

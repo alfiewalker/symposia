@@ -3,6 +3,8 @@ from pathlib import Path
 
 import pytest
 
+pytestmark = pytest.mark.legacy
+
 from symposia.models import Profile, ProfileBehavior
 from symposia.config import resolve_profile_set
 from symposia.profile_sets import get_default_profile_set, get_profile_set

@@ -1,0 +1,76 @@
+version: v1
+route_set_id: escalation_high_risk_openai_mini
+stage: escalation
+domain: high_risk
+output_schema: juror_decision_v1
+guardrails:
+  max_premium_jurors_per_run: 0
+  require_provider_diversity: false
+  require_model_family_diversity: false
+  premium_allowed_in_round0: false
+assignments:
+  - slot_id: esc_openai_mini_risk_1
+    profile_id: risk_sentinel_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: medium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: esc_openai_mini_evidence_1
+    profile_id: evidence_maximalist_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: medium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: esc_openai_mini_medical_1
+    profile_id: medical_specialist_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: medium
+    timeout_seconds: 18
+    max_output_tokens: 900
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: esc_openai_mini_legal_1
+    profile_id: legal_specialist_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: medium
+    timeout_seconds: 20
+    max_output_tokens: 900
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: esc_openai_mini_finance_1
+    profile_id: finance_specialist_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: medium
+    timeout_seconds: 15
+    max_output_tokens: 800
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+notes: OpenAI-only high-risk escalation route pinned to mini for bounded experiments.

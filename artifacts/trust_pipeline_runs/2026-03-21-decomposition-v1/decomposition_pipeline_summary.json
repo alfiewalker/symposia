@@ -1,0 +1,36 @@
+{
+  "development_comparisons": {
+    "cross_family_diversity_effect_arm3_minus_arm2": {
+      "critical_dissent_rate": 0.0,
+      "rubric_average_weighted_score": -0.0144,
+      "rubric_target_match_rate": 0.0,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.0466
+    },
+    "plurality_effect_arm2_minus_arm1": {
+      "critical_dissent_rate": 0.12,
+      "rubric_average_weighted_score": -0.0032,
+      "rubric_target_match_rate": -0.12,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.1467
+    }
+  },
+  "generated_at_utc": "2026-03-21T15:17:58.263816+00:00",
+  "holdout_comparisons": {
+    "cross_family_diversity_effect_arm3_minus_arm2": {
+      "critical_dissent_rate": 0.08,
+      "rubric_average_weighted_score": 0.0352,
+      "rubric_target_match_rate": 0.08,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.1066
+    },
+    "plurality_effect_arm2_minus_arm1": {
+      "critical_dissent_rate": 0.08,
+      "rubric_average_weighted_score": 0.0096,
+      "rubric_target_match_rate": -0.04,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.0667
+    }
+  },
+  "run_id": "2026-03-21-decomposition-v1"
+}

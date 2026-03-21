@@ -19,6 +19,10 @@ Profile set used throughout: general_default_v1 (5 profiles; includes risk_senti
 """
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.legacy
+
 from symposia.challenge import ChallengeReviewEngine
 from symposia.escalation import plan_escalation
 from symposia.models.claim import ClaimBundle, Subclaim, SubclaimKind

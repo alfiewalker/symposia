@@ -1,0 +1,87 @@
+{
+  "arm_slice_summary": {
+    "arm1_single_cheap": {
+      "forecast_style_claim": {
+        "average_weighted_score": 1.0,
+        "case_count": 5,
+        "target_match_rate": 0.4
+      },
+      "high_stakes_advice": {
+        "average_weighted_score": 1.768,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "low_risk_clear_factual": {
+        "average_weighted_score": 1.8,
+        "case_count": 5,
+        "target_match_rate": 1.0
+      },
+      "plausible_but_dangerous_recommendation": {
+        "average_weighted_score": 1.8,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "underspecified_legal_policy": {
+        "average_weighted_score": 1.8,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      }
+    },
+    "arm2_same_family_committee": {
+      "forecast_style_claim": {
+        "average_weighted_score": 1.128,
+        "case_count": 5,
+        "target_match_rate": 0.2
+      },
+      "high_stakes_advice": {
+        "average_weighted_score": 1.776,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "low_risk_clear_factual": {
+        "average_weighted_score": 1.608,
+        "case_count": 5,
+        "target_match_rate": 0.6
+      },
+      "plausible_but_dangerous_recommendation": {
+        "average_weighted_score": 1.824,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "underspecified_legal_policy": {
+        "average_weighted_score": 1.816,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      }
+    },
+    "arm3_mixed_family_committee": {
+      "forecast_style_claim": {
+        "average_weighted_score": 1.256,
+        "case_count": 5,
+        "target_match_rate": 0.2
+      },
+      "high_stakes_advice": {
+        "average_weighted_score": 1.672,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "low_risk_clear_factual": {
+        "average_weighted_score": 1.56,
+        "case_count": 5,
+        "target_match_rate": 0.6
+      },
+      "plausible_but_dangerous_recommendation": {
+        "average_weighted_score": 1.784,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      },
+      "underspecified_legal_policy": {
+        "average_weighted_score": 1.808,
+        "case_count": 5,
+        "target_match_rate": 0.0
+      }
+    }
+  },
+  "protocol_version": "committee_trust_decomposition_protocol_v1_2026_03_21",
+  "split_id": "development"
+}

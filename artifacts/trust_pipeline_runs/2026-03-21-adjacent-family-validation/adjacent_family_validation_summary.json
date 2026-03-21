@@ -1,0 +1,109 @@
+{
+  "adjacent_family_results": {
+    "low_risk_clear_factual": {
+      "development": {
+        "arm2_same_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.704,
+          "rubric_target_match_rate": 0.8,
+          "weighted_agreement_rate": 0.9333
+        },
+        "arm3_mixed_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.704,
+          "rubric_target_match_rate": 0.8,
+          "weighted_agreement_rate": 0.9333
+        },
+        "case_count": 5,
+        "delta_mixed_minus_same": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 0.0,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.0
+        }
+      },
+      "holdout": {
+        "arm2_same_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.704,
+          "rubric_target_match_rate": 0.8,
+          "weighted_agreement_rate": 0.9333
+        },
+        "arm3_mixed_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.8,
+          "rubric_target_match_rate": 0.8,
+          "weighted_agreement_rate": 1.0
+        },
+        "case_count": 5,
+        "delta_mixed_minus_same": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 0.096,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.0667
+        }
+      }
+    },
+    "underspecified_legal_policy": {
+      "development": {
+        "arm2_same_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.808,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.9333
+        },
+        "arm3_mixed_family": {
+          "critical_dissent_rate": 0.2,
+          "rubric_average_weighted_score": 1.736,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.8667
+        },
+        "case_count": 5,
+        "delta_mixed_minus_same": {
+          "critical_dissent_rate": 0.2,
+          "rubric_average_weighted_score": -0.072,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": -0.0666
+        }
+      },
+      "holdout": {
+        "arm2_same_family": {
+          "critical_dissent_rate": 0.0,
+          "rubric_average_weighted_score": 1.808,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.9333
+        },
+        "arm3_mixed_family": {
+          "critical_dissent_rate": 0.4,
+          "rubric_average_weighted_score": 1.76,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": 0.6667
+        },
+        "case_count": 5,
+        "delta_mixed_minus_same": {
+          "critical_dissent_rate": 0.4,
+          "rubric_average_weighted_score": -0.048,
+          "rubric_target_match_rate": 0.0,
+          "weighted_agreement_rate": -0.2666
+        }
+      }
+    }
+  },
+  "confirmed_driver": {
+    "development": {
+      "critical_dissent_rate": 0.0,
+      "rubric_average_weighted_score": 0.256,
+      "rubric_target_match_rate": 0.2,
+      "weighted_agreement_rate": -0.2666
+    },
+    "family": "forecast_style_claim",
+    "holdout": {
+      "critical_dissent_rate": 0.0,
+      "rubric_average_weighted_score": 0.12,
+      "rubric_target_match_rate": 0.4,
+      "weighted_agreement_rate": -0.2667
+    }
+  },
+  "generated_at_utc": "2026-03-21T15:50:02.619732+00:00",
+  "purpose": "Adjacent family replication check for forecast_style_claim diversity lift finding"
+}

@@ -1,3 +1,7 @@
+import pytest
+
+pytestmark = pytest.mark.core
+
 from symposia.escalation import plan_escalation
 from symposia.models import (
     CompletionDecision,

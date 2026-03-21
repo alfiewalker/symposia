@@ -1,4 +1,8 @@
 import inspect
+import pytest
+
+pytestmark = pytest.mark.core
+
 
 from symposia import (
     CompletionDecision,

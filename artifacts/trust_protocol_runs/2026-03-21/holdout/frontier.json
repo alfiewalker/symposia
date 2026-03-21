@@ -1,0 +1,17 @@
+{
+  "objective": "minimize estimated cost subject to quality and latency constraints",
+  "points": [
+    {
+      "arm_id": "single",
+      "escalation_error_rate": 0.0,
+      "relative_cost": 1.0,
+      "relative_latency": 1.0
+    },
+    {
+      "arm_id": "committee",
+      "escalation_error_rate": 0.0,
+      "relative_cost": 4.02,
+      "relative_latency": 4.22
+    }
+  ]
+}

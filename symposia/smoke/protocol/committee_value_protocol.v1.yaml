@@ -1,0 +1,41 @@
+version: committee_value_protocol_v1_2026_03_21
+status: preregistered
+decision_objective:
+  optimize: estimated_cost_usd
+  subject_to:
+    quality_vector_pass: true
+    p95_latency_ms_lte_tau: true
+required_arms:
+  - single_nano
+  - committee_nano
+  - single_mini
+  - committee_mini
+allowed_route_sets:
+  - default_round0_openai
+  - default_round0_openai_nano
+quality_vector:
+  - false_safe_rate
+  - false_escalation_rate
+  - calibration_gap_ece10
+  - parse_dropout_rate
+calibration:
+  metric_id: ece10
+  probability_source: juror_decision.confidence
+  correctness_source: escalation_match
+  bin_edges: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  aggregation: weighted_mean_absolute_gap
+thresholds:
+  false_safe_relative_reduction_min_pct: 10.0
+  false_escalation_relative_worsening_max_pct: 5.0
+  parse_dropout_rate_max_pct: 2.0
+  latency_ratio_max: 4.0
+  cost_ratio_max: 4.5
+statistics:
+  bootstrap_iterations: 10000
+  confidence_level: 0.95
+dataset_manifest:
+  required: true
+  allowed_dataset_versions:
+    - committee_value_dataset_v1_2026_03_21
+governance:
+  no_live_claims_until_contract_pass: true

@@ -1,0 +1,32 @@
+{
+  "case_count": 5,
+  "critical_dissent_rate": 0.2,
+  "dissent_rate": 0.2,
+  "per_case": [
+    {
+      "case_id": "trust_v2_dev_policy_01",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_02",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_03",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_04",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_dev_policy_05",
+      "has_critical_dissent": true,
+      "has_dissent": true
+    }
+  ]
+}

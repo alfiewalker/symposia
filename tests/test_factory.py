@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from unittest.mock import MagicMock
 from symposia.config.factory import CommitteeFactory
 from symposia.config.models import LLMServiceConfig, MemberConfig, PoolConfig, AppConfig

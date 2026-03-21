@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented in this file.
 
+## [Unreleased]
+
+### Changed
+- Public-facing messaging is now explicitly claim-structure-dependent across:
+  - [README.md](README.md)
+  - [docs/governance_product_note.md](docs/governance_product_note.md)
+  - [docs/benchmark-summary.md](docs/benchmark-summary.md)
+- Added an evidence-at-a-glance table to [README.md](README.md) for quick public interpretation.
+- Clarified canonical messaging authority to [docs/governance_product_note.md](docs/governance_product_note.md).
+- Updated [docs/implementation/15_testing_strategy.md](docs/implementation/15_testing_strategy.md) with a ladder-only execution profile.
+
+### Documentation
+- Narrowed benchmark source tests to the experiment-ladder pack in [docs/benchmark-summary.md](docs/benchmark-summary.md).
+- Added a concrete ladder-pack pytest command in:
+  - [docs/benchmark-summary.md](docs/benchmark-summary.md)
+  - [docs/implementation/15_testing_strategy.md](docs/implementation/15_testing_strategy.md)
+
+### Added
+- Dedicated ladder test runner script: [scripts/run_experiment_ladder_tests.sh](scripts/run_experiment_ladder_tests.sh).
+- Dedicated CI workflow for ladder-only test scope: [.github/workflows/experiment-ladder-tests.yml](.github/workflows/experiment-ladder-tests.yml).
+
+### Changed
+- Ladder test execution guidance now points to `bash scripts/run_experiment_ladder_tests.sh -q` instead of long inline pytest commands.
+
 ## [0.1.1] - 2026-03-20
 
 ### Added

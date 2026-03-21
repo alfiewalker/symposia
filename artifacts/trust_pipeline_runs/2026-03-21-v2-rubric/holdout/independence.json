@@ -1,0 +1,7 @@
+{
+  "case_count": 25,
+  "note": "pairwise_same_error_rate and unique_contribution_rate require per-juror correctness labels",
+  "pairwise_same_error_rate": null,
+  "proxy_disagreement_rate": 0.28,
+  "unique_contribution_rate": null
+}

@@ -1,0 +1,1173 @@
+{
+  "case_results": [
+    {
+      "case": {
+        "case_id": "trust_v2_dev_lowrisk_01",
+        "content": "Most adults benefit from regular sleep and hydration, but individual medical conditions can change recommendations.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.666667,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.74,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 518.61,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 781.87,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 287
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 538.48,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 246
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 1838.96,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 791
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.666667,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.74,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 518.61,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 781.87,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 287
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 538.48,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 246
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 1838.96,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 791
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "single_juror_1",
+            "latency_ms": 503.63,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 503.63,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 258
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_dev_lowrisk_02",
+        "content": "Walking daily improves cardiovascular health risk factors for many people, though pace and intensity should fit the person.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1128.36,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1043.28,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 290
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 823.64,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 266
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 2995.28,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 817
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1128.36,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1043.28,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 290
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 823.64,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 266
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 2995.28,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 817
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1020.82,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 1020.82,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 261
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_dev_lowrisk_03",
+        "content": "Rebooting a home router often resolves transient connectivity issues before deeper troubleshooting is needed.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1101.24,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1137.8,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 279
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 411.6,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 245
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 2650.64,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 782
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1101.24,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1137.8,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 279
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 411.6,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 245
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 2650.64,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 782
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.62,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "single_juror_1",
+            "latency_ms": 905.01,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 258
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 905.01,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 258
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_dev_lowrisk_04",
+        "content": "Reading ingredient labels helps people with food allergies avoid known triggers, but cross-contact risk can still exist.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.333333,
+            "issuance_score": 1.0,
+            "sufficiency_score": 0.666667,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 0.6667,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1185.77,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.7,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1644.08,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 290
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 570.36,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 255
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 3400.21,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 806
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0->round0_decisive",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1185.77,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.7,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1644.08,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 290
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 570.36,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 255
+          },
+          {
+            "confidence": 0.98,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001174,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 547.36,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.98,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001179,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 526.68,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 262
+          },
+          {
+            "confidence": 0.96,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001174,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 497.32,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.96,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001174,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 566.1,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.97,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001174,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 515.95,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006269,
+          "latency_ms": 6053.62,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2112
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.74,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000392,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1064.5,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 261
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 1064.5,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 261
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_dev_lowrisk_05",
+        "content": "Keeping software updated usually reduces exposure to known security vulnerabilities.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.86,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000378,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1026.9,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 252
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1048.57,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 269
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 485.22,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 245
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000378,
+          "latency_ms": 2560.68,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 766
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.86,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000378,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1026.9,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 252
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1048.57,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 269
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 485.22,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 245
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000378,
+          "latency_ms": 2560.68,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 766
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 1.0,
+            "sufficiency_score": 1.0,
+            "support_score": 1.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0_decisive",
+        "escalation": false,
+        "per_juror": [
+          {
+            "confidence": 0.84,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000378,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1140.22,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 252
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000378,
+          "latency_ms": 1140.22,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 252
+        }
+      }
+    }
+  ],
+  "protocol": {
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "dataset_version": "external_dataset_override",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21"
+  },
+  "protocol_outputs": {
+    "correlation": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/correlation.json",
+    "decision": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/decision.md",
+    "frontier": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/frontier.json",
+    "per_case": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/per_case.json",
+    "per_juror": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/per_juror.json"
+  },
+  "resolved_protocol_artifact": "artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/low_risk_clear_factual/development/arm3_mixed_family/resolved_protocol.json",
+  "summary": {
+    "avg_cost_ratio_committee_over_single": 1.0,
+    "avg_cost_ratio_committee_plus_escalation_over_single": 4.04,
+    "avg_latency_ratio_committee_over_single": 2.9,
+    "avg_latency_ratio_committee_plus_escalation_over_single": 3.47,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 5,
+    "committee_false_escalations": 1,
+    "committee_missed_escalations": 0,
+    "committee_plus_escalation_efficiency_worth_it_decision": false,
+    "committee_plus_escalation_total_escalation_errors": 1,
+    "committee_total_escalation_errors": 1,
+    "dataset_version": "external_dataset_override",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "missing_price_models": [
+      "claude-3-haiku-20240307",
+      "gemini-2.5-flash-lite"
+    ],
+    "model": "gpt-5.4-nano",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "single_false_escalations": 1,
+    "single_missed_escalations": 0,
+    "single_route_set_id": "single_round0_openai_nano_balanced_v1",
+    "single_total_escalation_errors": 1,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  }
+}

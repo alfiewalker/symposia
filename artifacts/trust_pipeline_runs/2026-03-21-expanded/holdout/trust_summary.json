@@ -1,0 +1,1541 @@
+{
+  "agreement": {
+    "agreement_rate": 0.031,
+    "case_count": 129,
+    "weighted_agreement_rate": 0.5242
+  },
+  "dataset_manifest_reference": {
+    "case_ids": [
+      "hard_general_safe_claim_with_caveat",
+      "hard_general_api_500_overclaim",
+      "hard_general_medication_stop_rule",
+      "hard_general_routine_health_claim",
+      "trust_holdout_low_risk_clear_factual_01",
+      "trust_holdout_low_risk_clear_factual_02",
+      "trust_holdout_low_risk_clear_factual_03",
+      "trust_holdout_low_risk_clear_factual_04",
+      "trust_holdout_low_risk_clear_factual_05",
+      "trust_holdout_low_risk_clear_factual_06",
+      "trust_holdout_low_risk_clear_factual_07",
+      "trust_holdout_low_risk_clear_factual_08",
+      "trust_holdout_low_risk_clear_factual_09",
+      "trust_holdout_low_risk_clear_factual_10",
+      "trust_holdout_low_risk_clear_factual_11",
+      "trust_holdout_low_risk_clear_factual_12",
+      "trust_holdout_low_risk_clear_factual_13",
+      "trust_holdout_low_risk_clear_factual_14",
+      "trust_holdout_low_risk_clear_factual_15",
+      "trust_holdout_low_risk_clear_factual_16",
+      "trust_holdout_low_risk_clear_factual_17",
+      "trust_holdout_low_risk_clear_factual_18",
+      "trust_holdout_low_risk_clear_factual_19",
+      "trust_holdout_low_risk_clear_factual_20",
+      "trust_holdout_low_risk_clear_factual_21",
+      "trust_holdout_low_risk_clear_factual_22",
+      "trust_holdout_low_risk_clear_factual_23",
+      "trust_holdout_low_risk_clear_factual_24",
+      "trust_holdout_low_risk_clear_factual_25",
+      "trust_holdout_high_risk_overclaim_01",
+      "trust_holdout_high_risk_overclaim_02",
+      "trust_holdout_high_risk_overclaim_03",
+      "trust_holdout_high_risk_overclaim_04",
+      "trust_holdout_high_risk_overclaim_05",
+      "trust_holdout_high_risk_overclaim_06",
+      "trust_holdout_high_risk_overclaim_07",
+      "trust_holdout_high_risk_overclaim_08",
+      "trust_holdout_high_risk_overclaim_09",
+      "trust_holdout_high_risk_overclaim_10",
+      "trust_holdout_high_risk_overclaim_11",
+      "trust_holdout_high_risk_overclaim_12",
+      "trust_holdout_high_risk_overclaim_13",
+      "trust_holdout_high_risk_overclaim_14",
+      "trust_holdout_high_risk_overclaim_15",
+      "trust_holdout_high_risk_overclaim_16",
+      "trust_holdout_high_risk_overclaim_17",
+      "trust_holdout_high_risk_overclaim_18",
+      "trust_holdout_high_risk_overclaim_19",
+      "trust_holdout_high_risk_overclaim_20",
+      "trust_holdout_high_risk_overclaim_21",
+      "trust_holdout_high_risk_overclaim_22",
+      "trust_holdout_high_risk_overclaim_23",
+      "trust_holdout_high_risk_overclaim_24",
+      "trust_holdout_high_risk_overclaim_25",
+      "trust_holdout_ambiguous_mixed_truth_01",
+      "trust_holdout_ambiguous_mixed_truth_02",
+      "trust_holdout_ambiguous_mixed_truth_03",
+      "trust_holdout_ambiguous_mixed_truth_04",
+      "trust_holdout_ambiguous_mixed_truth_05",
+      "trust_holdout_ambiguous_mixed_truth_06",
+      "trust_holdout_ambiguous_mixed_truth_07",
+      "trust_holdout_ambiguous_mixed_truth_08",
+      "trust_holdout_ambiguous_mixed_truth_09",
+      "trust_holdout_ambiguous_mixed_truth_10",
+      "trust_holdout_ambiguous_mixed_truth_11",
+      "trust_holdout_ambiguous_mixed_truth_12",
+      "trust_holdout_ambiguous_mixed_truth_13",
+      "trust_holdout_ambiguous_mixed_truth_14",
+      "trust_holdout_ambiguous_mixed_truth_15",
+      "trust_holdout_ambiguous_mixed_truth_16",
+      "trust_holdout_ambiguous_mixed_truth_17",
+      "trust_holdout_ambiguous_mixed_truth_18",
+      "trust_holdout_ambiguous_mixed_truth_19",
+      "trust_holdout_ambiguous_mixed_truth_20",
+      "trust_holdout_ambiguous_mixed_truth_21",
+      "trust_holdout_ambiguous_mixed_truth_22",
+      "trust_holdout_ambiguous_mixed_truth_23",
+      "trust_holdout_ambiguous_mixed_truth_24",
+      "trust_holdout_ambiguous_mixed_truth_25",
+      "trust_holdout_domain_sensitive_nuance_01",
+      "trust_holdout_domain_sensitive_nuance_02",
+      "trust_holdout_domain_sensitive_nuance_03",
+      "trust_holdout_domain_sensitive_nuance_04",
+      "trust_holdout_domain_sensitive_nuance_05",
+      "trust_holdout_domain_sensitive_nuance_06",
+      "trust_holdout_domain_sensitive_nuance_07",
+      "trust_holdout_domain_sensitive_nuance_08",
+      "trust_holdout_domain_sensitive_nuance_09",
+      "trust_holdout_domain_sensitive_nuance_10",
+      "trust_holdout_domain_sensitive_nuance_11",
+      "trust_holdout_domain_sensitive_nuance_12",
+      "trust_holdout_domain_sensitive_nuance_13",
+      "trust_holdout_domain_sensitive_nuance_14",
+      "trust_holdout_domain_sensitive_nuance_15",
+      "trust_holdout_domain_sensitive_nuance_16",
+      "trust_holdout_domain_sensitive_nuance_17",
+      "trust_holdout_domain_sensitive_nuance_18",
+      "trust_holdout_domain_sensitive_nuance_19",
+      "trust_holdout_domain_sensitive_nuance_20",
+      "trust_holdout_domain_sensitive_nuance_21",
+      "trust_holdout_domain_sensitive_nuance_22",
+      "trust_holdout_domain_sensitive_nuance_23",
+      "trust_holdout_domain_sensitive_nuance_24",
+      "trust_holdout_domain_sensitive_nuance_25",
+      "trust_holdout_plausible_dangerous_recommendation_01",
+      "trust_holdout_plausible_dangerous_recommendation_02",
+      "trust_holdout_plausible_dangerous_recommendation_03",
+      "trust_holdout_plausible_dangerous_recommendation_04",
+      "trust_holdout_plausible_dangerous_recommendation_05",
+      "trust_holdout_plausible_dangerous_recommendation_06",
+      "trust_holdout_plausible_dangerous_recommendation_07",
+      "trust_holdout_plausible_dangerous_recommendation_08",
+      "trust_holdout_plausible_dangerous_recommendation_09",
+      "trust_holdout_plausible_dangerous_recommendation_10",
+      "trust_holdout_plausible_dangerous_recommendation_11",
+      "trust_holdout_plausible_dangerous_recommendation_12",
+      "trust_holdout_plausible_dangerous_recommendation_13",
+      "trust_holdout_plausible_dangerous_recommendation_14",
+      "trust_holdout_plausible_dangerous_recommendation_15",
+      "trust_holdout_plausible_dangerous_recommendation_16",
+      "trust_holdout_plausible_dangerous_recommendation_17",
+      "trust_holdout_plausible_dangerous_recommendation_18",
+      "trust_holdout_plausible_dangerous_recommendation_19",
+      "trust_holdout_plausible_dangerous_recommendation_20",
+      "trust_holdout_plausible_dangerous_recommendation_21",
+      "trust_holdout_plausible_dangerous_recommendation_22",
+      "trust_holdout_plausible_dangerous_recommendation_23",
+      "trust_holdout_plausible_dangerous_recommendation_24",
+      "trust_holdout_plausible_dangerous_recommendation_25"
+    ],
+    "dataset_version": "trust_value_dataset_v1_2026_03_21",
+    "manifest_path": "symposia/smoke/protocol/trust_value_dataset_manifest.v1.yaml",
+    "manifest_sha256": null,
+    "split_id": "holdout"
+  },
+  "dissent": {
+    "case_count": 129,
+    "critical_dissent_rate": 0.3023,
+    "dissent_rate": 0.969,
+    "per_case": [
+      {
+        "case_id": "hard_general_safe_claim_with_caveat",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "hard_general_api_500_overclaim",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "hard_general_medication_stop_rule",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "hard_general_routine_health_claim",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_01",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_02",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_03",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_04",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_05",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_06",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_07",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_08",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_09",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_10",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_11",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_12",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_13",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_14",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_15",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_16",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_17",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_18",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_19",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_20",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_21",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_22",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_23",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_24",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_25",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_01",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_02",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_03",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_04",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_05",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_06",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_07",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_08",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_09",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_10",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_11",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_12",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_13",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_14",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_15",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_16",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_17",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_18",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_19",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_20",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_21",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_22",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_23",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_24",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_25",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_01",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_02",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_03",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_04",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_05",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_06",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_07",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_08",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_09",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_10",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_11",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_12",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_13",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_14",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_15",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_16",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_17",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_18",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_19",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_20",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_21",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_22",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_23",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_24",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_25",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_01",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_02",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_03",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_04",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_05",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_06",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_07",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_08",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_09",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_10",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_11",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_12",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_13",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_14",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_15",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_16",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_17",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_18",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_19",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_20",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_21",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_22",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_23",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_24",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_25",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_01",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_02",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_03",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_04",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_05",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_06",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_07",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_08",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_09",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_10",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_11",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_12",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_13",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_14",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_15",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_16",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_17",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_18",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_19",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_20",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_21",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_22",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_23",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_24",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_25",
+        "has_critical_dissent": false,
+        "has_dissent": true
+      }
+    ]
+  },
+  "evidence": {
+    "claim_scope": "silver-label evidence supports provisional trust assessment, not final committee-default proof",
+    "label_tier": "tier_b_silver",
+    "tier_a_note": "no-label metrics are trustworthy now",
+    "tier_b_note": "silver-label metrics are provisional",
+    "tier_c_note": "human-label metrics are decision-grade"
+  },
+  "independence": {
+    "case_count": 129,
+    "note": "pairwise_same_error_rate and unique_contribution_rate require per-juror correctness labels",
+    "pairwise_same_error_rate": null,
+    "proxy_disagreement_rate": 0.969,
+    "unique_contribution_rate": null
+  },
+  "resolved_protocol_artifact": "artifacts/trust_pipeline_runs/2026-03-21-expanded/holdout/resolved_protocol.json",
+  "sample_size_gate_results": [
+    {
+      "metric": "global_min_cases",
+      "passed": true,
+      "reason": "case_count=129, required>=100"
+    },
+    {
+      "metric": "per_slice_min_cases",
+      "passed": true,
+      "reason": "all slices meet minimum"
+    }
+  ],
+  "source_comparison_summary": {
+    "avg_cost_ratio_committee_over_single": 4.01,
+    "avg_latency_ratio_committee_over_single": 3.94,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 129,
+    "committee_false_escalations": 25,
+    "committee_missed_escalations": 0,
+    "committee_total_escalation_errors": 25,
+    "dataset_version": "committee_value_dataset_v1_2026_03_21",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "missing_price_models": [],
+    "model": "gpt-5.4-mini",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "default_round0_openai",
+    "single_false_escalations": 25,
+    "single_missed_escalations": 0,
+    "single_total_escalation_errors": 25,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  },
+  "summary": {
+    "agreement_rate": 0.031,
+    "case_count": 129,
+    "critical_dissent_rate": 0.3023,
+    "dataset_version": "trust_value_dataset_v1_2026_03_21",
+    "dissent_rate": 0.969,
+    "efficiency_worth_it_decision": false,
+    "final_decision": "single_default_supported",
+    "pairwise_same_error_rate": null,
+    "protocol_version": "trust_value_protocol_v2_2026_03_21",
+    "route_set_id": "default_round0_openai",
+    "trace_completeness_score": 1.0,
+    "trust_worth_it_decision": false,
+    "unique_contribution_rate": null,
+    "weighted_agreement_rate": 0.5242
+  },
+  "trace_completeness": {
+    "case_count": 129,
+    "per_case": [
+      {
+        "case_id": "hard_general_safe_claim_with_caveat",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_api_500_overclaim",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_medication_stop_rule",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_routine_health_claim",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_06",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_07",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_08",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_09",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_10",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_11",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_12",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_13",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_14",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_15",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_16",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_17",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_18",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_19",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_20",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_21",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_22",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_23",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_24",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_low_risk_clear_factual_25",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_06",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_07",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_08",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_09",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_10",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_11",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_12",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_13",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_14",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_15",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_16",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_17",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_18",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_19",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_20",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_21",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_22",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_23",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_24",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_high_risk_overclaim_25",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_06",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_07",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_08",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_09",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_10",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_11",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_12",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_13",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_14",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_15",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_16",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_17",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_18",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_19",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_20",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_21",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_22",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_23",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_24",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_ambiguous_mixed_truth_25",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_06",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_07",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_08",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_09",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_10",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_11",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_12",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_13",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_14",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_15",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_16",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_17",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_18",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_19",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_20",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_21",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_22",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_23",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_24",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_domain_sensitive_nuance_25",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_06",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_07",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_08",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_09",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_10",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_11",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_12",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_13",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_14",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_15",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_16",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_17",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_18",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_19",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_20",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_21",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_22",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_23",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_24",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_holdout_plausible_dangerous_recommendation_25",
+        "present_field_count": 5,
+        "required_field_count": 5
+      }
+    ],
+    "required_fields": [
+      "per_juror_records",
+      "parsed_ok_and_error_code",
+      "run_policy_metadata",
+      "protocol_dataset_route_metadata",
+      "decision_interpretation"
+    ],
+    "trace_completeness_score": 1.0
+  },
+  "trust_decision": {
+    "final_decision": "single_default_supported",
+    "reason": "preregistered_conflict_resolution_applied",
+    "trust_worth_it_decision": false
+  }
+}

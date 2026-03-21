@@ -12,13 +12,13 @@ llm_services:
       output: 0.0000006
   mock_claude:
     provider: anthropic
-    model: claude-3-5-sonnet-20240620
+    model: claude-sonnet-4-5-20250929
     cost_per_token:
       input: 0.000003
       output: 0.000015
   mock_gemini:
     provider: google
-    model: gemini-1.5-flash
+    model: gemini-2.5-flash-lite
     cost_per_token:
       input: 0.000001
       output: 0.0000025

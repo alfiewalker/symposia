@@ -19,6 +19,9 @@ class MinimalTraceVote(DeterministicModel):
     contradicted: bool | None = None
     sufficient: bool | None = None
     confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    provider_model: str | None = None
+    parsed_ok: bool | None = None
+    error_code: str | None = None
 
 
 class MinimalTraceAggregation(DeterministicModel):

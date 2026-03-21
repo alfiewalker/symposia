@@ -1,0 +1,3 @@
+RUN_START holdout
+RUN_DONE holdout final_decision=single_default_supported
+PIPELINE_SUMMARY_WRITTEN artifacts/trust_pipeline_runs/2026-03-21-expanded/pipeline_summary.json

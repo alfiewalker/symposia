@@ -66,6 +66,7 @@ setup(
             "profile_sets/registry/*.yaml",
             "profile_sets/experimental/*.yaml",
             "routing/*.yaml",
+            "pricing/*.yaml",
         ]
     },
     include_package_data=True,

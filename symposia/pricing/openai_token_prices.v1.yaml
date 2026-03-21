@@ -1,0 +1,14 @@
+version: openai_total_token_price_v1_2026_03_21
+token_accounting: total_tokens_only
+unit: usd_per_million_total_tokens_estimate
+assumption: conservative_output_rate
+notes: |
+  Estimated cost uses observed total tokens from runtime and multiplies by the
+  configured per-model total-token rate. This is an estimate, not billed cost.
+models:
+  gpt-5.4-nano:
+    usd_per_million_total_tokens_estimate: 1.5
+  gpt-5.4-mini:
+    usd_per_million_total_tokens_estimate: 4.5
+  gpt-5.4:
+    usd_per_million_total_tokens_estimate: 15.0

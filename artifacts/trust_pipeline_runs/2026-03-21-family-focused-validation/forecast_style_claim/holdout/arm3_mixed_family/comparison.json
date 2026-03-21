@@ -1,0 +1,1513 @@
+{
+  "case_results": [
+    {
+      "case": {
+        "case_id": "trust_v2_holdout_forecast_01",
+        "content": "Because web traffic doubled this week, conversion rate will definitely improve next month.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.650794,
+            "issuance_score": 0.349206,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 0.6667,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.000384,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 616.44,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          },
+          {
+            "confidence": 0.3,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 970.65,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 283
+          },
+          {
+            "confidence": 0.4,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 620.32,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 249
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000384,
+          "latency_ms": 2207.4,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 788
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0->escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.78,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.000384,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 616.44,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          },
+          {
+            "confidence": 0.3,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 970.65,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 283
+          },
+          {
+            "confidence": 0.4,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 620.32,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 249
+          },
+          {
+            "confidence": 0.91,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001152,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 698.73,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          },
+          {
+            "confidence": 0.95,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001156,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 603.61,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 257
+          },
+          {
+            "confidence": 0.18,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001152,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 717.44,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          },
+          {
+            "confidence": 0.93,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001152,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 615.47,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          },
+          {
+            "confidence": 0.86,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001201,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 551.12,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 267
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006198,
+          "latency_ms": 5393.77,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2080
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.25,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000384,
+            "juror_id": "single_juror_1",
+            "latency_ms": 878.93,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 256
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000384,
+          "latency_ms": 878.93,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 256
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_holdout_forecast_02",
+        "content": "Given stable churn reduction and expanding renewal pipeline, revenue is likely to improve next quarter.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.68254,
+            "sufficiency_score": 0.68254,
+            "support_score": 0.68254
+          }
+        },
+        "agreement": 0.6667,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1117.49,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1164.08,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 286
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 820.64,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 263
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 3102.2,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 807
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.6,
+            "sufficiency_score": 0.6,
+            "support_score": 0.6
+          }
+        },
+        "agreement": 0.6,
+        "completion_reason": "round0->escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1117.49,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1164.08,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 286
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 820.64,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 263
+          },
+          {
+            "confidence": 0.86,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001161,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 936.5,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.78,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001166,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 1048.77,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.34,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00121,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 1079.07,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 269
+          },
+          {
+            "confidence": 0.34,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001161,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 976.19,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.86,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001188,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 1123.28,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 264
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006273,
+          "latency_ms": 8266.0,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2115
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000387,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1062.59,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000387,
+          "latency_ms": 1062.59,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 258
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_holdout_forecast_03",
+        "content": "Poll momentum in one region proves the candidate will win nationally.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.68254,
+            "issuance_score": 0.68254,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 0.6667,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00038,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1085.87,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.4,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1362.86,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 280
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 507.95,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.00038,
+          "latency_ms": 2956.67,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 791
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 1.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0->escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00038,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1085.87,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.4,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1362.86,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 280
+          },
+          {
+            "confidence": 0.9,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 507.95,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 258
+          },
+          {
+            "confidence": 0.98,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.001139,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 932.93,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.98,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.001143,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 1025.13,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 254
+          },
+          {
+            "confidence": 0.97,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.001139,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 936.77,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.94,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.001139,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 962.16,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.98,
+            "contradicted": true,
+            "error_code": null,
+            "estimated_cost_usd": 0.001139,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 974.34,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006077,
+          "latency_ms": 7787.99,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2057
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00038,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1165.5,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.00038,
+          "latency_ms": 1165.5,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 253
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_holdout_forecast_04",
+        "content": "Lower cloud costs this month make it probable the company reaches profitability this year, assuming demand holds.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.68254,
+            "sufficiency_score": 0.0,
+            "support_score": 0.333333
+          }
+        },
+        "agreement": 0.6667,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00039,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1110.85,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.7,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1259.1,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 277
+          },
+          {
+            "confidence": 0.3,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 691.04,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.00039,
+          "latency_ms": 3060.99,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 790
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0->escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00039,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1110.85,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.7,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1259.1,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 277
+          },
+          {
+            "confidence": 0.3,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 691.04,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 253
+          },
+          {
+            "confidence": 0.39,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00117,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 1246.74,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.0,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001174,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 1040.19,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 261
+          },
+          {
+            "confidence": 0.12,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00117,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 1088.87,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00117,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 990.66,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.58,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00117,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 1056.57,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006244,
+          "latency_ms": 8484.02,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2091
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.42,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00039,
+            "juror_id": "single_juror_1",
+            "latency_ms": 923.82,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.00039,
+          "latency_ms": 923.82,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 260
+        }
+      }
+    },
+    {
+      "case": {
+        "case_id": "trust_v2_holdout_forecast_05",
+        "content": "If this rainfall trend persists, reservoir refill odds are better than last year but still uncertain.",
+        "domain": "general",
+        "expected_escalation": false
+      },
+      "committee": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.68254,
+            "sufficiency_score": 0.349206,
+            "support_score": 0.68254
+          }
+        },
+        "agreement": 0.3333,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.38,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000389,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1046.71,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.6,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1155.13,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 288
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 617.52,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 247
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000389,
+          "latency_ms": 2819.36,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 794
+        }
+      },
+      "committee_plus_escalation": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "round0->escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.38,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000389,
+            "juror_id": "round0_mixed_small_balanced_openai_1",
+            "latency_ms": 1046.71,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.6,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_sceptical_claude_1",
+            "latency_ms": 1155.13,
+            "parsed_ok": true,
+            "profile_id": "sceptical_verifier_v1",
+            "provider_model": "claude-3-haiku-20240307",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": true,
+            "tokens_used": 288
+          },
+          {
+            "confidence": 0.8,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": null,
+            "juror_id": "round0_mixed_small_evidence_gemini_1",
+            "latency_ms": 617.52,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gemini-2.5-flash-lite",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": true,
+            "supported": true,
+            "tokens_used": 247
+          },
+          {
+            "confidence": 0.0,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001166,
+            "juror_id": "esc_openai_mini_risk_1",
+            "latency_ms": 1120.1,
+            "parsed_ok": true,
+            "profile_id": "risk_sentinel_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.5,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.00117,
+            "juror_id": "esc_openai_mini_evidence_1",
+            "latency_ms": 1037.44,
+            "parsed_ok": true,
+            "profile_id": "evidence_maximalist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 260
+          },
+          {
+            "confidence": 0.1,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001166,
+            "juror_id": "esc_openai_mini_medical_1",
+            "latency_ms": 1082.85,
+            "parsed_ok": true,
+            "profile_id": "medical_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.1,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001166,
+            "juror_id": "esc_openai_mini_legal_1",
+            "latency_ms": 1015.48,
+            "parsed_ok": true,
+            "profile_id": "legal_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          },
+          {
+            "confidence": 0.12,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.001166,
+            "juror_id": "esc_openai_mini_finance_1",
+            "latency_ms": 1149.59,
+            "parsed_ok": true,
+            "profile_id": "finance_specialist_v1",
+            "provider_model": "gpt-5.4-mini",
+            "runtime_cost_usd": 0.0,
+            "stage": "escalation",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.006221,
+          "latency_ms": 8224.82,
+          "missing_price_models": [
+            "claude-3-haiku-20240307",
+            "gemini-2.5-flash-lite"
+          ],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 2090
+        }
+      },
+      "single": {
+        "aggregated": {
+          "sc_001": {
+            "contradiction_score": 0.0,
+            "issuance_score": 0.0,
+            "sufficiency_score": 0.0,
+            "support_score": 0.0
+          }
+        },
+        "agreement": 1.0,
+        "completion_reason": "escalation_candidate",
+        "escalation": true,
+        "per_juror": [
+          {
+            "confidence": 0.35,
+            "contradicted": false,
+            "error_code": null,
+            "estimated_cost_usd": 0.000389,
+            "juror_id": "single_juror_1",
+            "latency_ms": 1068.57,
+            "parsed_ok": true,
+            "profile_id": "balanced_reviewer_v1",
+            "provider_model": "gpt-5.4-nano",
+            "runtime_cost_usd": 0.0,
+            "stage": "round0",
+            "subclaim_id": "sc_001",
+            "sufficient": false,
+            "supported": false,
+            "tokens_used": 259
+          }
+        ],
+        "totals": {
+          "estimated_cost_usd": 0.000389,
+          "latency_ms": 1068.57,
+          "missing_price_models": [],
+          "price_version": "openai_total_token_price_v1_2026_03_21",
+          "runtime_cost_usd": 0.0,
+          "tokens_used": 259
+        }
+      }
+    }
+  ],
+  "protocol": {
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "dataset_version": "external_dataset_override",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21"
+  },
+  "protocol_outputs": {
+    "correlation": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/correlation.json",
+    "decision": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/decision.md",
+    "frontier": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/frontier.json",
+    "per_case": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/per_case.json",
+    "per_juror": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/per_juror.json"
+  },
+  "resolved_protocol_artifact": "artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/forecast_style_claim/holdout/arm3_mixed_family/resolved_protocol.json",
+  "summary": {
+    "avg_cost_ratio_committee_over_single": 1.0,
+    "avg_cost_ratio_committee_plus_escalation_over_single": 16.07,
+    "avg_latency_ratio_committee_over_single": 2.77,
+    "avg_latency_ratio_committee_plus_escalation_over_single": 7.48,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 5,
+    "committee_false_escalations": 5,
+    "committee_missed_escalations": 0,
+    "committee_plus_escalation_efficiency_worth_it_decision": false,
+    "committee_plus_escalation_total_escalation_errors": 5,
+    "committee_total_escalation_errors": 5,
+    "dataset_version": "external_dataset_override",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "missing_price_models": [
+      "claude-3-haiku-20240307",
+      "gemini-2.5-flash-lite"
+    ],
+    "model": "gpt-5.4-nano",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "single_false_escalations": 5,
+    "single_missed_escalations": 0,
+    "single_route_set_id": "single_round0_openai_nano_balanced_v1",
+    "single_total_escalation_errors": 5,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  }
+}

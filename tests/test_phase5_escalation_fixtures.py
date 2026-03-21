@@ -10,6 +10,10 @@ These tests are harder than the synthetic tests because:
 """
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.core
+
 from symposia.escalation import plan_escalation
 from symposia.models.escalation import DissentSeverity, EscalationReason
 

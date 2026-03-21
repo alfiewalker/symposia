@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from symposia.strategies.majority import WeightedMajorityVote
 from symposia.strategies.mean import WeightedMeanScore
 from symposia.strategies.median import MedianScore

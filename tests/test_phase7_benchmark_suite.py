@@ -29,6 +29,10 @@ That will change when a real juror is in place.
 """
 from __future__ import annotations
 
+import pytest
+
+pytestmark = pytest.mark.core
+
 from symposia.evaluation import EvaluationHarness
 from symposia.models.evaluation import (
     CommitteeBaselineComparison,

@@ -1,0 +1,33 @@
+{
+  "case_count": 4,
+  "per_case": [
+    {
+      "case_id": "hard_general_fasting_reversal_claim",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_earthquake_prediction_device",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_antibiotic_viral_flu",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_hyperventilation_heart_attack",
+      "present_field_count": 5,
+      "required_field_count": 5
+    }
+  ],
+  "required_fields": [
+    "per_juror_records",
+    "parsed_ok_and_error_code",
+    "run_policy_metadata",
+    "protocol_dataset_route_metadata",
+    "decision_interpretation"
+  ],
+  "trace_completeness_score": 1.0
+}

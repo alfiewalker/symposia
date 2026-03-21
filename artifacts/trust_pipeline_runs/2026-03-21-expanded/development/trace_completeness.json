@@ -1,0 +1,658 @@
+{
+  "case_count": 129,
+  "per_case": [
+    {
+      "case_id": "hard_general_fasting_reversal_claim",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_earthquake_prediction_device",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_antibiotic_viral_flu",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "hard_general_hyperventilation_heart_attack",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_06",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_07",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_08",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_09",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_10",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_11",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_12",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_13",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_14",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_15",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_16",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_17",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_18",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_19",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_20",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_21",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_22",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_23",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_24",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_low_risk_clear_factual_25",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_06",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_07",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_08",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_09",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_10",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_11",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_12",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_13",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_14",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_15",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_16",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_17",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_18",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_19",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_20",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_21",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_22",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_23",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_24",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_high_risk_overclaim_25",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_06",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_07",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_08",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_09",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_10",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_11",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_12",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_13",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_14",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_15",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_16",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_17",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_18",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_19",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_20",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_21",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_22",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_23",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_24",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_ambiguous_mixed_truth_25",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_06",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_07",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_08",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_09",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_10",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_11",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_12",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_13",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_14",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_15",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_16",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_17",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_18",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_19",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_20",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_21",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_22",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_23",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_24",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_domain_sensitive_nuance_25",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_01",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_02",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_03",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_04",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_05",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_06",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_07",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_08",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_09",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_10",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_11",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_12",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_13",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_14",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_15",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_16",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_17",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_18",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_19",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_20",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_21",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_22",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_23",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_24",
+      "present_field_count": 5,
+      "required_field_count": 5
+    },
+    {
+      "case_id": "trust_development_plausible_dangerous_recommendation_25",
+      "present_field_count": 5,
+      "required_field_count": 5
+    }
+  ],
+  "required_fields": [
+    "per_juror_records",
+    "parsed_ok_and_error_code",
+    "run_policy_metadata",
+    "protocol_dataset_route_metadata",
+    "decision_interpretation"
+  ],
+  "trace_completeness_score": 1.0
+}

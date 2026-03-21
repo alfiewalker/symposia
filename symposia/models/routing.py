@@ -26,13 +26,11 @@ class JurorRouteAssignment(DeterministicModel):
     tier: ModelTier
     timeout_seconds: int = Field(ge=1)
     max_output_tokens: int = Field(ge=1)
-    estimated_cost_usd: float = Field(ge=0.0)
     fallback: JurorRouteFallback
 
 
 class JurorRoutingGuardrails(DeterministicModel):
     max_premium_jurors_per_run: int = Field(ge=0)
-    max_estimated_run_cost_usd: float = Field(gt=0.0)
     require_provider_diversity: bool = True
     require_model_family_diversity: bool = True
     premium_allowed_in_round0: bool = False
@@ -66,10 +64,6 @@ class JurorRoutingConfig(DeterministicModel):
             and premium_count > 0
         ):
             raise ValueError("Round0 routing must not include premium jurors")
-
-        estimated_total = sum(a.estimated_cost_usd for a in self.assignments)
-        if estimated_total > self.guardrails.max_estimated_run_cost_usd:
-            raise ValueError("Routing config exceeds max_estimated_run_cost_usd guardrail")
 
         if self.guardrails.require_provider_diversity:
             providers = {a.provider for a in self.assignments}

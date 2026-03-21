@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from unittest.mock import AsyncMock, MagicMock
 from symposia.core.committee import Committee
 from symposia.core.member import CommitteeMember

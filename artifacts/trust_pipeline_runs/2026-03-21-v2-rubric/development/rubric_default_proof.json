@@ -1,0 +1,13 @@
+{
+  "all_required_passed": false,
+  "blocked_reasons": [
+    "evidence_tier_is_tier_c_human"
+  ],
+  "gate_results": {
+    "evidence_tier_is_tier_c_human": false,
+    "no_hard_fail_triggered": true,
+    "sample_size_gates_passed": true,
+    "trust_signal_score_meets_threshold": true
+  },
+  "required_for": "committee_default_supported"
+}

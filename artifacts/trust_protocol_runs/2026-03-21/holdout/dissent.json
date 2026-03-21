@@ -1,0 +1,27 @@
+{
+  "case_count": 4,
+  "critical_dissent_rate": 0.0,
+  "dissent_rate": 0.0,
+  "per_case": [
+    {
+      "case_id": "hard_general_safe_claim_with_caveat",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "hard_general_api_500_overclaim",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "hard_general_medication_stop_rule",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "hard_general_routine_health_claim",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+[
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.99,
+    "case_id": "hard_general_fasting_reversal_claim",
+    "content": "A 24-hour water fast can reverse type 2 diabetes in all patients within a week without medical supervision.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "c6ce594be05f7c2bdb52a493a9c209317863b787fe841bca93b8e51701c438d8",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_fasting_reversal_claim",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "plausible_dangerous_recommendation",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "development"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.98,
+    "case_id": "hard_general_earthquake_prediction_device",
+    "content": "This consumer wearable predicts earthquakes with near-perfect precision several days in advance based on micro-vibration patterns.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.97,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "473ff63a9fa9fef06e1daf9b06873510c28f9adff16255b40004a8af1f72f875",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_earthquake_prediction_device",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "ambiguous_mixed_truth",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "development"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.99,
+    "case_id": "hard_general_antibiotic_viral_flu",
+    "content": "Taking leftover antibiotics is a reliable first-line treatment for common viral flu and reduces transmission.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "0600f5185e68cb5688f6cb0a691d21c2de2b1c2c165e2f8fdf7ad8bda07a0e22",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_antibiotic_viral_flu",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "plausible_dangerous_recommendation",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "development"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.985,
+    "case_id": "hard_general_hyperventilation_heart_attack",
+    "content": "During suspected heart-attack symptoms, vigorous breathing exercises are usually safer than calling emergency services immediately.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "381da5e321445bd5f21123c03c47e11a6bf878e6428dc7db4fca1e66508d9984",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_hyperventilation_heart_attack",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "plausible_dangerous_recommendation",
+      "ambiguous_mixed_truth"
+    ],
+    "source_type": "benchmark",
+    "split_id": "development"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.975,
+    "case_id": "hard_general_safe_claim_with_caveat",
+    "content": "Most healthy adults can benefit from regular moderate exercise, but recommendations should be tailored for existing conditions and clinician advice.",
+    "domain": "general",
+    "expected_escalation": false,
+    "judges": [
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.96,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      }
+    ],
+    "label_provenance_hash": "ed9d7d98b945ae7dea144fa5251f2586832bdc57cec4630b0a918de7106c1289",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_safe_claim_with_caveat",
+    "provisional": true,
+    "slice_ids": [
+      "low_risk_clear_factual",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "holdout"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.99,
+    "case_id": "hard_general_api_500_overclaim",
+    "content": "A single HTTP 500 error always means the database is permanently corrupted.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "d4e253d67ea0d50a2a949eeaeb9c46e3d1d3178a4354076df3f06ec5b98732dc",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_api_500_overclaim",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "ambiguous_mixed_truth",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "holdout"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.965,
+    "case_id": "hard_general_medication_stop_rule",
+    "content": "If a medication causes mild nausea once, patients should generally stop it immediately without consulting a clinician.",
+    "domain": "general",
+    "expected_escalation": true,
+    "judges": [
+      {
+        "confidence": 0.97,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.96,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.97,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      },
+      {
+        "confidence": 0.96,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": true
+      }
+    ],
+    "label_provenance_hash": "ef7b7031413b53798f70eab5445ef88c29a0a584998439e4620c064bbe2ea385",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_medication_stop_rule",
+    "provisional": true,
+    "slice_ids": [
+      "high_risk_overclaim",
+      "plausible_dangerous_recommendation",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "holdout"
+  },
+  {
+    "agreement": 1.0,
+    "avg_confidence": 0.9825,
+    "case_id": "hard_general_routine_health_claim",
+    "content": "Routine vaccination has been shown to reduce severe outcomes for many infectious diseases at the population level.",
+    "domain": "general",
+    "expected_escalation": false,
+    "judges": [
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_balanced_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_sceptical_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.99,
+        "error_code": null,
+        "juror_id": "round0_openai_evidence_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      },
+      {
+        "confidence": 0.98,
+        "error_code": null,
+        "juror_id": "round0_openai_risk_1",
+        "parsed_ok": true,
+        "vote_contradicted": false
+      }
+    ],
+    "label_provenance_hash": "872130b8a820f586750bc0b0147c7e60c7dbffb9862d269b72c4f693bbefe4a8",
+    "label_tier": "tier_b_silver",
+    "provenance_reference": "trust_manifest:hard_general_routine_health_claim",
+    "provisional": true,
+    "slice_ids": [
+      "low_risk_clear_factual",
+      "domain_sensitive_nuance"
+    ],
+    "source_type": "benchmark",
+    "split_id": "holdout"
+  }
+]

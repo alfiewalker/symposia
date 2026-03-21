@@ -1,0 +1,58 @@
+{
+  "comparison_json": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/comparison.json",
+  "comparison_md": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/comparison.md",
+  "generated_at_utc": "2026-03-21T12:42:06.719078+00:00",
+  "output_dir": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison",
+  "protocol_outputs": {
+    "correlation": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/correlation.json",
+    "decision": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/decision.md",
+    "frontier": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/frontier.json",
+    "per_case": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/per_case.json",
+    "per_juror": "artifacts/trust_pipeline_runs/2026-03-21-nano-mini-experiment/comparison/per_juror.json"
+  },
+  "run_id": "2026-03-21-nano-mini-experiment",
+  "summary": {
+    "avg_cost_ratio_committee_over_single": 4.01,
+    "avg_cost_ratio_committee_plus_escalation_over_single": 15.28,
+    "avg_latency_ratio_committee_over_single": 4.35,
+    "avg_latency_ratio_committee_plus_escalation_over_single": 7.93,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 8,
+    "committee_false_escalations": 0,
+    "committee_missed_escalations": 0,
+    "committee_plus_escalation_efficiency_worth_it_decision": false,
+    "committee_plus_escalation_total_escalation_errors": 0,
+    "committee_total_escalation_errors": 0,
+    "dataset_version": "committee_value_dataset_v1_2026_03_21",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "missing_price_models": [],
+    "model": "gpt-5.4-nano",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "default_round0_openai_nano",
+    "single_false_escalations": 0,
+    "single_missed_escalations": 0,
+    "single_total_escalation_errors": 0,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  }
+}

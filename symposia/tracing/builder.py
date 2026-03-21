@@ -18,10 +18,25 @@ def build_adjudication_trace(initial_review_result: InitialReviewResult) -> Adju
             event_type="run_started",
             entity_id=initial_review_result.run_id,
             message="Round 0 run started.",
-            metadata={"subclaim_count": len(initial_review_result.bundle.subclaims)},
+            metadata={
+                "subclaim_count": len(initial_review_result.bundle.subclaims),
+                "juror_mode": initial_review_result.execution_policy.get("juror_mode", "rule_based"),
+            },
         )
     )
     event_idx += 1
+
+    if initial_review_result.execution_policy:
+        events.append(
+            TraceEvent(
+                event_index=event_idx,
+                event_type="run_policy_applied",
+                entity_id=initial_review_result.run_id,
+                message="Run-level execution policy applied.",
+                metadata=initial_review_result.execution_policy,
+            )
+        )
+        event_idx += 1
 
     for subclaim in initial_review_result.bundle.subclaims:
         events.append(
@@ -35,20 +50,33 @@ def build_adjudication_trace(initial_review_result: InitialReviewResult) -> Adju
         )
         event_idx += 1
 
-    for decision in initial_review_result.decisions:
+    for vote in initial_review_result.core_trace.juror_votes:
+        if vote.parsed_ok is True:
+            event_type = "juror_execution_succeeded"
+            message = "Juror execution succeeded and produced a parsed decision."
+        elif vote.parsed_ok is False:
+            event_type = "juror_execution_failed"
+            message = "Juror execution failed and degraded to safe decision."
+        else:
+            event_type = "juror_decision"
+            message = "Juror decision recorded."
+
         events.append(
             TraceEvent(
                 event_index=event_idx,
-                event_type="juror_decision",
-                entity_id=f"{decision.juror_id}:{decision.subclaim_id}",
-                message="Juror decision recorded.",
+                event_type=event_type,
+                entity_id=f"{vote.juror_id}:{vote.subclaim_id}",
+                message=message,
                 metadata={
-                    "juror_id": decision.juror_id,
-                    "subclaim_id": decision.subclaim_id,
-                    "supported": decision.supported,
-                    "contradicted": decision.contradicted,
-                    "sufficient": decision.sufficient,
-                    "confidence": decision.confidence,
+                    "juror_id": vote.juror_id,
+                    "subclaim_id": vote.subclaim_id,
+                    "supported": vote.supported,
+                    "contradicted": vote.contradicted,
+                    "sufficient": vote.sufficient,
+                    "confidence": vote.confidence,
+                    "provider_model": vote.provider_model,
+                    "parsed_ok": vote.parsed_ok,
+                    "error_code": vote.error_code,
                 },
             )
         )
@@ -106,6 +134,18 @@ def build_adjudication_trace(initial_review_result: InitialReviewResult) -> Adju
             },
         )
     )
+    event_idx += 1
+
+    if initial_review_result.runtime_stats:
+        events.append(
+            TraceEvent(
+                event_index=event_idx,
+                event_type="run_runtime_stats",
+                entity_id=initial_review_result.run_id,
+                message="Runtime statistics recorded.",
+                metadata=initial_review_result.runtime_stats,
+            )
+        )
 
     return AdjudicationTrace(
         run_id=initial_review_result.run_id,

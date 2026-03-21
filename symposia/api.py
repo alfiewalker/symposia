@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import os
 
+from symposia.config.models import LLMServiceConfig
+from symposia.core.providers.base import LLMService
 from symposia.models.routing import JurorRoutingConfig
 
 from symposia.config import resolve_profile_set
@@ -9,7 +11,11 @@ from symposia.models.round0 import InitialReviewResult
 from symposia.models.profile import ProfileSet
 from symposia.providers import ProviderConfig, ProviderRegistry
 from symposia.round0 import InitialReviewEngine
-from symposia.routing import get_route_set
+from symposia.routing import (
+    build_routed_llm_service_factory,
+    get_route_set,
+    routed_llm_timeout_seconds,
+)
 
 
 _PROVIDER_ENV_MAP = {
@@ -17,6 +23,25 @@ _PROVIDER_ENV_MAP = {
     "anthropic": "ANTHROPIC_API_KEY",
     "google": "GOOGLE_API_KEY",
 }
+
+_DEFAULT_LIVE_MODEL = "openai:gpt-5.4-mini"
+_DEFAULT_LIVE_SINGLE_PROFILE_ID = "balanced_reviewer_v1"
+
+
+def _resolve_live_provider_class(provider: str):
+    if provider == "openai":
+        from symposia.core.providers.openai_service import OpenAIService
+
+        return OpenAIService
+    if provider == "anthropic":
+        from symposia.core.providers.claude_service import ClaudeService
+
+        return ClaudeService
+    if provider == "google":
+        from symposia.core.providers.gemini_service import GeminiService
+
+        return GeminiService
+    raise ValueError(f"Unsupported provider in live model path: {provider}")
 
 
 def _parse_provider_model(value: str, field_name: str) -> tuple[str, str]:
@@ -81,6 +106,37 @@ def _require_provider_key(
     )
 
 
+def _build_single_model_llm_service_factory(
+    provider: str,
+    model_name: str,
+    *,
+    provider_registry: ProviderRegistry | None,
+) -> callable:
+    service_class = _resolve_live_provider_class(provider)
+    api_key = _resolve_provider_key(provider, provider_registry)
+    if not api_key:
+        env_name = _PROVIDER_ENV_MAP[provider]
+        raise ValueError(
+            "Missing provider credentials for live model path: expected "
+            f"{env_name} via environment variable or provider_config"
+        )
+
+    service = service_class(
+        LLMServiceConfig(
+            provider=provider,
+            model=model_name,
+            cost_per_token=0.0,
+            api_key=api_key,
+        )
+    )
+
+    def factory(profile_id: str, domain: str) -> LLMService:
+        del profile_id, domain
+        return service
+
+    return factory
+
+
 def validate(
     content: str,
     domain: str,
@@ -90,6 +146,7 @@ def validate(
     escalation_model: str | None = None,
     routing: str | JurorRoutingConfig | None = None,
     provider_config: ProviderConfig | ProviderRegistry | None = None,
+    live: bool = False,
 ) -> InitialReviewResult:
     """Run one deterministic validation pass and return structured results.
 
@@ -119,6 +176,9 @@ def validate(
       a ValueError is raised.
     - model and escalation_model must be provider:model.
     - default mode is OpenAI-first and fails fast when credentials are missing.
+        - live=True is required for real LLM execution and is never the default.
+        - live=True with no explicit model/routing uses a single OpenAI juror by default.
+        - committee live execution requires explicit routing and is experimental.
     """
 
     if routing is not None and (model is not None or escalation_model is not None):
@@ -163,7 +223,60 @@ def validate(
             provider_registry=provider_registry,
         )
 
-    engine = InitialReviewEngine()
+    if not live:
+        engine = InitialReviewEngine()
+        return engine.run(
+            content=content,
+            domain=domain,
+            profile_set=profile_set,
+            profile=profile,
+        )
+
+    effective_live_model = model
+    if routing is None and effective_live_model is None:
+        effective_live_model = _DEFAULT_LIVE_MODEL
+
+    if escalation_model is not None:
+        raise ValueError(
+            "live=True does not yet support escalation_model; only round0 live execution is currently wired"
+        )
+
+    if routing is not None:
+        route_set = get_route_set(routing) if isinstance(routing, str) else routing
+        if route_set.stage != "round0":
+            raise ValueError(
+                "live=True currently supports only round0 routing route sets"
+            )
+
+        engine = InitialReviewEngine(
+            juror_mode="llm",
+            llm_service_factory=build_routed_llm_service_factory(
+                route_set,
+                provider_registry=provider_registry,
+            ),
+            juror_profiles=[assignment.profile_id for assignment in route_set.assignments],
+            route_set_id=route_set.route_set_id,
+            llm_timeout_seconds=routed_llm_timeout_seconds(route_set),
+            llm_retries=1,
+            llm_retry_delay_seconds=0.0,
+            max_juror_dropouts_per_subclaim=1,
+        )
+    else:
+        provider_name, model_name = _parse_provider_model(
+            effective_live_model,
+            "model",
+        )
+        single_profile_id = profile or _DEFAULT_LIVE_SINGLE_PROFILE_ID
+        engine = InitialReviewEngine(
+            juror_mode="llm",
+            llm_service_factory=_build_single_model_llm_service_factory(
+                provider_name,
+                model_name,
+                provider_registry=provider_registry,
+            ),
+            juror_profiles=[single_profile_id],
+        )
+
     return engine.run(
         content=content,
         domain=domain,

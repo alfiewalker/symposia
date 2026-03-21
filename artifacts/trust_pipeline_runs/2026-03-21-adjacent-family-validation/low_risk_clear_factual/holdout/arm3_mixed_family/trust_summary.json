@@ -1,0 +1,229 @@
+{
+  "agreement": {
+    "agreement_rate": 1.0,
+    "case_count": 5,
+    "weighted_agreement_rate": 1.0
+  },
+  "dataset_manifest_reference": {
+    "case_ids": [
+      "trust_v2_holdout_lowrisk_01",
+      "trust_v2_holdout_lowrisk_02",
+      "trust_v2_holdout_lowrisk_03",
+      "trust_v2_holdout_lowrisk_04",
+      "trust_v2_holdout_lowrisk_05"
+    ],
+    "dataset_version": "trust_value_dataset_v2_2026_03_21",
+    "manifest_path": "symposia/smoke/protocol/trust_value_dataset_manifest.v2.yaml",
+    "manifest_sha256": "f40e295fa5f1767794ae9bcec1251157ddf2459356116997eeb04c79508d5c10",
+    "split_id": "holdout"
+  },
+  "dissent": {
+    "case_count": 5,
+    "critical_dissent_rate": 0.0,
+    "dissent_rate": 0.0,
+    "per_case": [
+      {
+        "case_id": "trust_v2_holdout_lowrisk_01",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_02",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_03",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_04",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_05",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      }
+    ]
+  },
+  "evidence": {
+    "claim_scope": "rubric-first trust evidence for v2 dataset",
+    "label_tier": "tier_b_silver",
+    "rubric_contract_version": "trust_rubric_contract_v1_2026_03_21"
+  },
+  "independence": {
+    "case_count": 5,
+    "note": "pairwise_same_error_rate and unique_contribution_rate require per-juror correctness labels",
+    "pairwise_same_error_rate": null,
+    "proxy_disagreement_rate": 0.0,
+    "unique_contribution_rate": null
+  },
+  "rubric": {
+    "contract_version": "trust_rubric_contract_v1_2026_03_21",
+    "summary": {
+      "average_weighted_score": 1.8,
+      "case_count_scored": 5,
+      "case_count_skipped": 0,
+      "predicted_verdict_distribution": {
+        "supported": 5
+      },
+      "skipped_case_ids": [],
+      "target_match_rate": 0.8
+    }
+  },
+  "rubric_default_proof": {
+    "all_required_passed": false,
+    "blocked_reasons": [
+      "evidence_tier_is_tier_c_human",
+      "trust_signal_score_meets_threshold",
+      "sample_size_gates_passed"
+    ],
+    "gate_results": {
+      "evidence_tier_is_tier_c_human": false,
+      "no_hard_fail_triggered": true,
+      "sample_size_gates_passed": false,
+      "trust_signal_score_meets_threshold": false
+    },
+    "required_for": "committee_default_supported"
+  },
+  "run_metadata": {
+    "committee_route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "dataset_version": "trust_value_dataset_v2_2026_03_21",
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+    "route_domain": "general",
+    "route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "single_route_set_id": "single_round0_openai_nano_balanced_v1"
+  },
+  "sample_size_gate_results": [
+    {
+      "metric": "global_min_cases",
+      "passed": false,
+      "reason": "case_count=5, required>=25"
+    },
+    {
+      "metric": "per_slice_min_cases",
+      "passed": true,
+      "reason": "all slices meet minimum"
+    }
+  ],
+  "source_comparison_summary": {
+    "avg_cost_ratio_committee_over_single": 1.0,
+    "avg_cost_ratio_committee_plus_escalation_over_single": 1.0,
+    "avg_latency_ratio_committee_over_single": 3.17,
+    "avg_latency_ratio_committee_plus_escalation_over_single": 3.17,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 5,
+    "committee_false_escalations": 0,
+    "committee_missed_escalations": 0,
+    "committee_plus_escalation_efficiency_worth_it_decision": false,
+    "committee_plus_escalation_total_escalation_errors": 0,
+    "committee_total_escalation_errors": 0,
+    "dataset_version": "external_dataset_override",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "missing_price_models": [
+      "claude-3-haiku-20240307",
+      "gemini-2.5-flash-lite"
+    ],
+    "model": "gpt-5.4-nano",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "single_false_escalations": 0,
+    "single_missed_escalations": 0,
+    "single_route_set_id": "single_round0_openai_nano_balanced_v1",
+    "single_total_escalation_errors": 0,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  },
+  "summary": {
+    "agreement_rate": 1.0,
+    "case_count": 5,
+    "critical_dissent_rate": 0.0,
+    "dataset_version": "trust_value_dataset_v2_2026_03_21",
+    "dissent_rate": 0.0,
+    "efficiency_default_support": false,
+    "efficiency_worth_it_decision": false,
+    "final_decision": "insufficient_trust_evidence",
+    "overall_default_status": "committee_opt_in",
+    "pairwise_same_error_rate": null,
+    "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+    "route_set_id": "committee_round0_mixed_small_triplet_v1",
+    "rubric_average_weighted_score": 1.8,
+    "rubric_case_count_scored": 5,
+    "rubric_target_match_rate": 0.8,
+    "trace_completeness_score": 1.0,
+    "trust_default_support": false,
+    "trust_worth_it_decision": false,
+    "unique_contribution_rate": null,
+    "weighted_agreement_rate": 1.0
+  },
+  "trace_completeness": {
+    "case_count": 5,
+    "per_case": [
+      {
+        "case_id": "trust_v2_holdout_lowrisk_01",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_02",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_03",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_04",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "trust_v2_holdout_lowrisk_05",
+        "present_field_count": 5,
+        "required_field_count": 5
+      }
+    ],
+    "required_fields": [
+      "per_juror_records",
+      "parsed_ok_and_error_code",
+      "run_policy_metadata",
+      "protocol_dataset_route_metadata",
+      "decision_interpretation"
+    ],
+    "trace_completeness_score": 1.0
+  },
+  "trust_decision": {
+    "efficiency_default_support": false,
+    "final_decision": "insufficient_trust_evidence",
+    "overall_default_status": "committee_opt_in",
+    "reason": "sample_size_gates_failed_committee_remains_opt_in",
+    "trust_default_support": false,
+    "trust_worth_it_decision": false
+  }
+}

@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from symposia.utils.parsing import parse_llm_json_response
 
 def test_parse_valid_json():

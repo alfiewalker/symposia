@@ -108,6 +108,23 @@ Symposia should be presented as:
 - incident and regression log
 - open-risk register
 
+## Committee value governance — current evidence boundary
+
+The experimental ladder has produced the first family-scoped evidence on when mixed-family committees add trust-relevant value (as of 2026-03-21).
+
+Governed position:
+
+- **forecast-style claims**: mixed-family committee shows repeatable lift on target match and weighted score. This is the affirmative proof case.
+- **low-risk clear factual claims**: no measurable committee diversity effect. Same-family and mixed-family committees converge to the same output.
+- **underspecified legal/policy claims**: mixed-family committees increase critical dissent without improving verdict quality. This is a harm case and must not be presented as a diversity benefit.
+
+Product and communications constraint:
+- Do not claim that mixed-family committees are generally better than same-family committees.
+- Do not claim that committee disagreement signals greater trust.
+- Diversity benefit claims must be scoped explicitly to forecast-style or structurally similar claim types.
+
+This boundary should be Updated when new ladder rungs are run or the dataset scope is extended.
+
 ## Credibility principle
 
 Institutions trust systems that can say:

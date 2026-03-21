@@ -24,13 +24,13 @@ llm_services:
       output: 0.0000006
   claude_expert:
     provider: anthropic
-    model: claude-3-opus-20240229
+    model: claude-opus-4-5-20251101
     cost_per_token:
       input: 0.000003
       output: 0.000015
   gemini_creative:
     provider: google
-    model: gemini-1.5-pro
+    model: gemini-2.5-pro
     cost_per_token:
       input: 0.0000005
       output: 0.0000015
@@ -42,13 +42,13 @@ llm_services:
       output: 0.00001
   claude_advanced:
     provider: anthropic
-    model: claude-3-5-sonnet-20241022
+    model: claude-sonnet-4-5-20250929
     cost_per_token:
       input: 0.000003
       output: 0.000015
   gemini_advanced:
     provider: google
-    model: gemini-2.0-flash-exp
+    model: gemini-2.5-flash
     cost_per_token:
       input: 0.0000005
       output: 0.0000015

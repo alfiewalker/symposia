@@ -1,0 +1,66 @@
+{
+  "generated_at_utc": "2026-03-21T07:59:08.445352+00:00",
+  "run_id": "2026-03-21-expanded",
+  "trust_reports": {
+    "development": {
+      "sample_size_gate_results": [
+        {
+          "metric": "global_min_cases",
+          "passed": true,
+          "reason": "case_count=129, required>=100"
+        },
+        {
+          "metric": "per_slice_min_cases",
+          "passed": true,
+          "reason": "all slices meet minimum"
+        }
+      ],
+      "summary": {
+        "agreement_rate": 0.031,
+        "case_count": 129,
+        "critical_dissent_rate": 0.2171,
+        "dataset_version": "trust_value_dataset_v1_2026_03_21",
+        "dissent_rate": 0.969,
+        "efficiency_worth_it_decision": false,
+        "final_decision": "single_default_supported",
+        "pairwise_same_error_rate": null,
+        "protocol_version": "trust_value_protocol_v2_2026_03_21",
+        "route_set_id": "default_round0_openai",
+        "trace_completeness_score": 1.0,
+        "trust_worth_it_decision": false,
+        "unique_contribution_rate": null,
+        "weighted_agreement_rate": 0.5155
+      }
+    },
+    "holdout": {
+      "sample_size_gate_results": [
+        {
+          "metric": "global_min_cases",
+          "passed": true,
+          "reason": "case_count=129, required>=100"
+        },
+        {
+          "metric": "per_slice_min_cases",
+          "passed": true,
+          "reason": "all slices meet minimum"
+        }
+      ],
+      "summary": {
+        "agreement_rate": 0.031,
+        "case_count": 129,
+        "critical_dissent_rate": 0.3023,
+        "dataset_version": "trust_value_dataset_v1_2026_03_21",
+        "dissent_rate": 0.969,
+        "efficiency_worth_it_decision": false,
+        "final_decision": "single_default_supported",
+        "pairwise_same_error_rate": null,
+        "protocol_version": "trust_value_protocol_v2_2026_03_21",
+        "route_set_id": "default_round0_openai",
+        "trace_completeness_score": 1.0,
+        "trust_worth_it_decision": false,
+        "unique_contribution_rate": null,
+        "weighted_agreement_rate": 0.5242
+      }
+    }
+  }
+}

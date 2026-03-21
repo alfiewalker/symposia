@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 import asyncio
 from unittest.mock import AsyncMock, MagicMock, patch
 from symposia.core.providers.base import LLMService
@@ -264,26 +266,24 @@ async def test_gemini_service():
         cost_per_token={"input": 0.0005, "output": 0.0005}
     )
     
-    with patch('google.generativeai.configure'), \
-         patch('google.generativeai.GenerativeModel') as mock_model_class:
-        
-        mock_model = AsyncMock()
-        mock_model_class.return_value = mock_model
-        
-        # Mock the response with usage_metadata
-        mock_response = MagicMock()
-        mock_response.text = "Gemini response"
-        mock_response.usage_metadata = MagicMock()
-        mock_response.usage_metadata.prompt_token_count = 15
-        mock_response.usage_metadata.candidates_token_count = 10
-        mock_model.generate_content_async.return_value = mock_response
-        
+    mock_response = MagicMock()
+    mock_response.text = "Gemini response"
+    mock_response.usage_metadata = MagicMock()
+    mock_response.usage_metadata.prompt_token_count = 15
+    mock_response.usage_metadata.candidates_token_count = 10
+    mock_response.usage_metadata.input_token_count = 0
+    mock_response.usage_metadata.output_token_count = 0
+
+    mock_client = MagicMock()
+    mock_client.models.generate_content.return_value = mock_response
+
+    with patch('symposia.core.providers.gemini_service.google_genai.Client', return_value=mock_client):
         service = GeminiService(config)
         result = await service._perform_query("test prompt", "test role")
-        
-        assert result["response"] == "Gemini response"
-        assert result["tokens_used"] == 25  # 15 + 10
-        assert result["cost"] == 0.0125  # (15 * 0.0005) + (10 * 0.0005)
+
+    assert result["response"] == "Gemini response"
+    assert result["tokens_used"] == 25  # 15 + 10
+    assert result["cost"] == 0.0125  # (15 * 0.0005) + (10 * 0.0005)
 
 
 @pytest.mark.asyncio
@@ -295,24 +295,20 @@ async def test_gemini_service_graceful_cost_failure():
         cost_per_token={"input": 0.0005, "output": 0.0005}
     )
     
-    with patch('google.generativeai.configure'), \
-         patch('google.generativeai.GenerativeModel') as mock_model_class:
-        
-        mock_model = AsyncMock()
-        mock_model_class.return_value = mock_model
-        
-        # Mock the response without usage_metadata
-        mock_response = MagicMock()
-        mock_response.text = "Gemini response"
-        mock_response.usage_metadata = None  # No usage metadata available
-        mock_model.generate_content_async.return_value = mock_response
-        
+    mock_response = MagicMock()
+    mock_response.text = "Gemini response"
+    mock_response.usage_metadata = None  # No usage metadata available
+
+    mock_client = MagicMock()
+    mock_client.models.generate_content.return_value = mock_response
+
+    with patch('symposia.core.providers.gemini_service.google_genai.Client', return_value=mock_client):
         service = GeminiService(config)
         result = await service._perform_query("test prompt", "test role")
-        
-        assert result["response"] == "Gemini response"
-        assert result["tokens_used"] == 0
-        assert result["cost"] == 0.0  # Graceful fallback
+
+    assert result["response"] == "Gemini response"
+    assert result["tokens_used"] == 0
+    assert result["cost"] == 0.0  # Graceful fallback
 
 
 @pytest.mark.asyncio

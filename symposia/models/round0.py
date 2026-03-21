@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Any, Dict, List
 
 from pydantic import Field
 
@@ -31,3 +31,5 @@ class InitialReviewResult(DeterministicModel):
     completion: CompletionDecision
     core_trace: CoreTrace
     adjudication_trace: AdjudicationTrace | None = None
+    execution_policy: Dict[str, Any] = Field(default_factory=dict)
+    runtime_stats: Dict[str, Any] = Field(default_factory=dict)

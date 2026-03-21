@@ -1,0 +1,226 @@
+version: trust_value_protocol_v2_2026_03_21
+status: draft
+scope: trust_value_layer_only
+runtime_change_policy:
+  runtime_changes_allowed: false
+  note: trust evaluation protocol must not introduce runtime adjudication changes
+
+evidence_tiers:
+  tier_a:
+    label_dependency: none
+    confidence_level: trustworthy_now
+    examples:
+      - agreement_rate
+      - weighted_agreement_rate
+      - dissent_rate
+      - critical_dissent_rate
+      - trace_completeness_score
+  tier_b:
+    label_dependency: silver_labels
+    confidence_level: provisional
+    examples:
+      - pairwise_same_error_rate
+      - unique_contribution_rate
+      - trust_worth_it_decision
+  tier_c:
+    label_dependency: human_labels
+    confidence_level: decision_grade
+    examples:
+      - committee_default_supported_claim
+
+claim_constraints:
+  silver_label_outputs_must_include: "silver-label evidence supports provisional trust assessment, not final committee-default proof"
+  tier_c_required_for:
+    - universal_committee_default_claim
+    - institutional_superiority_claim
+    - strongest_trust_claim
+  tier_a_b_allowed_for:
+    - committee_opt_in_supported
+    - bounded_low_risk_committee_default_with_explicit_scope
+    - provisional_trust_positioning_with_explicit_caveats
+
+relationship_to_efficiency_protocol:
+  required_efficiency_protocol_version: committee_value_protocol_v1_2026_03_21
+  decision_fields:
+    - efficiency_worth_it_decision
+    - trust_worth_it_decision
+
+allowed_route_sets:
+  - default_round0_openai
+  - default_round0_openai_nano
+
+comparison_arms:
+  required:
+    - single_live
+    - committee_live
+  optional:
+    - weighted_committee
+    - heterogeneous_committee
+    - deterministic_baseline
+
+preregistration_locks:
+  freeze_before_development_run: true
+  frozen_items:
+    - metric_formulas
+    - metric_denominators
+    - slice_membership
+    - trust_metric_weights
+    - trust_thresholds
+    - conflict_resolution_rule
+  change_control:
+    requires_new_protocol_version: true
+    requires_changelog: true
+
+metrics:
+  agreement_rate:
+    numerator: cases_with_committee_majority_fraction_gte_0_75
+    denominator: total_evaluated_cases
+    formula: numerator / denominator
+  weighted_agreement_rate:
+    numerator: sum_case_majority_fraction
+    denominator: total_evaluated_cases
+    formula: numerator / denominator
+  dissent_rate:
+    numerator: cases_with_at_least_one_dissenting_juror
+    denominator: total_evaluated_cases
+    formula: numerator / denominator
+  critical_dissent_rate:
+    numerator: cases_with_dissenting_juror_confidence_gte_0_80_against_majority
+    denominator: total_evaluated_cases
+    formula: numerator / denominator
+  pairwise_same_error_rate:
+    per_pair:
+      numerator: cases_where_both_jurors_wrong_vs_label
+      denominator: cases_with_parsed_decisions_for_both_jurors
+      formula: numerator / denominator
+    aggregate: arithmetic_mean_over_all_juror_pairs
+  unique_contribution_rate:
+    numerator: cases_where_removing_correct_juror_flips_committee_to_wrong
+    denominator: total_evaluated_cases
+    formula: numerator / denominator
+  trace_completeness_score:
+    required_fields:
+      - per_juror_execution_records
+      - parsed_ok_and_error_code
+      - run_policy_metadata
+      - protocol_version_dataset_version_route_set_id
+      - decision_interpretation_section
+    numerator: required_fields_present_across_all_case_records
+    denominator: total_required_fields_across_all_case_records
+    formula: numerator / denominator
+  trust_signal_score:
+    optional: true
+    allowed_only_if_preregistered: true
+    composite_formula: sum(weight_k * normalized_metric_k)
+    constraint: sum_of_weights_must_equal_1_0
+
+slice_classes_required:
+  - low_risk_clear_factual
+  - high_risk_overclaim
+  - ambiguous_mixed_truth
+  - domain_sensitive_nuance
+  - plausible_dangerous_recommendation
+
+sample_size_gates:
+  apply_per_split_independently: true
+  global_min_cases: 100
+  per_slice_min_cases: 25
+  per_pair_min_coevaluated_cases: 50
+  gate_failure_behavior:
+    metric_status: insufficient_sample
+    threshold_claim_allowed: false
+    downgrade_final_decision_to: insufficient_trust_evidence
+    block_committee_default_on_pairwise_insufficient_sample: true
+
+evidence_collection_targets:
+  required_minimum_by_split:
+    development:
+      low_risk_clear_factual: 25
+      high_risk_overclaim: 25
+      ambiguous_mixed_truth: 25
+      domain_sensitive_nuance: 25
+      plausible_dangerous_recommendation: 25
+      total_min_cases: 125
+    holdout:
+      low_risk_clear_factual: 25
+      high_risk_overclaim: 25
+      ambiguous_mixed_truth: 25
+      domain_sensitive_nuance: 25
+      plausible_dangerous_recommendation: 25
+      total_min_cases: 125
+
+dataset_expansion_workflow:
+  runtime_changes_allowed_during_collection: false
+  steps:
+    - draft_candidate_cases
+    - assign_provisional_slice
+    - dual_label_expected_outcome_with_provenance
+    - adjudicate_label_disagreements
+    - compute_update_manifest_hashes
+    - lock_manifest_batch
+    - run_development_protocol
+    - run_holdout_protocol_unchanged
+
+case_intake_required_fields:
+  - case_id
+  - content
+  - expected_escalation
+  - split_id
+  - slice_ids
+  - source_type
+  - provenance_reference
+  - labeler_a
+  - labeler_b
+  - adjudicator
+  - label_confidence
+  - label_provenance_hash
+
+thresholds:
+  trace_completeness_score_min: null
+  agreement_rate_low_risk_min: null
+  dissent_visibility_ambiguous_min: null
+  pairwise_same_error_high_risk_max: null
+  note: set concrete values before status changes from draft to preregistered
+
+decision_outputs:
+  allowed_values:
+    - committee_default_supported
+    - committee_opt_in_supported
+    - single_default_supported
+    - insufficient_trust_evidence
+  conflict_resolution:
+    - when: efficiency_worth_it_decision_false_and_trust_worth_it_decision_true
+      required_output: committee_opt_in_supported
+      unless: stricter_preregistered_rule_upgrades_to_committee_default_supported
+    - when: efficiency_worth_it_decision_true_and_trust_worth_it_decision_false
+      prohibited_output: committee_default_supported
+    - when: trust_worth_it_decision_true_and_no_safety_regression_flags
+      committee_default_supported_allowed: true
+    - when: any_sample_size_gate_fails
+      required_output: insufficient_trust_evidence
+
+statistics:
+  bootstrap_iterations: 10000
+  confidence_level: 0.95
+
+dataset_manifest:
+  required: true
+  allowed_dataset_versions:
+    - trust_value_dataset_v1_2026_03_21
+
+artifacts_required:
+  - trust_summary.json
+  - trust_summary.md
+  - agreement.json
+  - dissent.json
+  - independence.json
+  - trace_completeness.json
+  - trust_decision.md
+  - resolved_protocol.json
+
+manifest_reference_required_fields:
+  - dataset_version
+  - manifest_path
+  - manifest_sha256
+  - split_id
+  - case_ids

@@ -1,0 +1,32 @@
+{
+  "development": {
+    "case_count": 129,
+    "gates": [
+      {
+        "metric": "global_min_cases",
+        "passed": true,
+        "reason": "case_count=129, required>=100"
+      },
+      {
+        "metric": "per_slice_min_cases",
+        "passed": true,
+        "reason": "all slices meet minimum"
+      }
+    ]
+  },
+  "holdout": {
+    "case_count": 129,
+    "gates": [
+      {
+        "metric": "global_min_cases",
+        "passed": true,
+        "reason": "case_count=129, required>=100"
+      },
+      {
+        "metric": "per_slice_min_cases",
+        "passed": true,
+        "reason": "all slices meet minimum"
+      }
+    ]
+  }
+}

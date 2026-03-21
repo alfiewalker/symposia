@@ -1,4 +1,8 @@
 import json
+import pytest
+
+pytestmark = pytest.mark.legacy
+
 from pathlib import Path
 
 import jsonschema

@@ -335,6 +335,37 @@ Until this phase is complete, Symposia should be described as architecturally re
 
 ### Sprint A
 
+## Progress Update (2026-03-21)
+
+Implemented now:
+- `LLMJuror` contract primitive with safe degradation on provider and parser failures
+- `JurorPromptBuilder` with bounded fixed-schema instruction contract
+- `JurorResponseParser` with strict schema checks and near-valid JSON recovery
+- phase contract tests for valid parse, near-valid parse, refusal, malformed output, and provider error handling
+- Round 0 `juror_mode="llm"` execution path (with deterministic default still `rule_based`)
+- per-juror execution metadata in trace votes (`provider_model`, `parsed_ok`, `error_code`)
+- deterministic adjudication trace event enrichment for runtime truthfulness:
+	- `run_policy_applied`
+	- `juror_execution_succeeded`
+	- `juror_execution_failed`
+	- `run_runtime_stats`
+- run-level failure orchestration controls:
+	- timeout
+	- retries / retry delay
+	- max dropout threshold per subclaim
+
+Still pending for full phase completion:
+- run live benchmark slice and publish phase report
+- widen provider-backed routing beyond the narrow slice
+- run and review one real narrow live smoke trace artifact in this environment once credentials are present
+
+Implemented for the next narrow slice:
+- routed live-provider service factory for YAML route assignments
+- explicit routed juror lineup support in `InitialReviewEngine`
+- OpenAI-only `default_round0_openai` route for a four-juror small-capable Round0 slice
+- dedicated smoke runner at `examples/openai_round0_live_smoke.py` that exports trace artifacts
+- explicit `validate(..., live=True)` path for round0-only live routing or a single explicit live model
+
 - `LLMJuror`
 - prompt builder
 - parser

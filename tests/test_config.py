@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from symposia.config.models import LLMServiceConfig, MemberConfig, PoolConfig, AppConfig
 
 

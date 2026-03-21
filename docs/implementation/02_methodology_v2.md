@@ -13,22 +13,39 @@ This is the methodology that gives both elegance and clout.
 
 ## Theoretical posture
 
-### Condorcet spirit
-The first pass should retain the spirit of the jury theorem:
+Sympoia's validation layer draws on four framework families. Each one provides a distinct piece of the adjudication design.
+
+### 1. Condorcet / jury theorems → plurality logic
+
+The Condorcet jury theorem shows that a majority of independent judges, each more likely than not to be correct, tends toward the right answer as the committee grows. The first-pass review retains the spirit of this:
 - many jurors
 - independent review
-- binary judgments
+- binary judgements per subclaim
 - aggregation into a committee result
 
-### Where pure Condorcet stops
-Pure Condorcet does not tell us:
-- how to decompose compound content
-- how to handle caveats and safety
-- how to weight jurors credibly
-- how to escalate uncertainty
-- how to produce institution-grade outputs
+**Where pure Condorcet stops.** The theorem does not tell us how to decompose compound content, weight jurors credibly, handle uncertainty escalation, or produce institution-grade outputs. Symposia keeps Condorcet in the kernel and layers practical adjudication above it.
 
-So Symposia keeps the theorem in the kernel, then layers a practical adjudication system above it.
+### 2. Cooke's Classical Model → expert weighting / calibration logic
+
+Cooke's Classical Model (Structured Expert Elicitation) establishes that expert weights should be derived from calibration performance on seed variables with known answers — not from seniority, prestige, or agreement with the majority. This grounds Symposia's juror weighting design:
+- jurors are weighted by calibration against known-answer sets
+- consensus alignment is stored as metadata but not used as the primary truth proxy
+- a consistently well-calibrated juror earns more influence over time
+
+### 3. GRADE / RAND-UCLA evidence judgement → evidence and judgement logic
+
+GRADE (Grading of Recommendations, Assessment, Development, and Evaluation) and the RAND-UCLA Appropriateness Method both formalise the idea that evidence quality and recommendation strength must be treated as distinct dimensions. Symposia applies this by:
+- distinguishing verdict (what the evidence supports) from certainty (how strongly)
+- distinguishing certainty from issuance safety (whether it is appropriate to act on)
+- flagging when evidence is insufficient rather than forcing a binary verdict
+
+### 4. NIST-style governance → governance and trustworthiness logic
+
+NIST AI Risk Management and related frameworks establish that trustworthy AI systems need auditability, boundary clarity, and risk-aware operation. Symposia applies this by:
+- making dissent a first-class output, not a side effect to suppress
+- producing traceable adjudication: subclaims, juror votes, rationale, caveats, dissent
+- drawing explicit capability boundaries (what the system can and cannot claim)
+- separating governance policy from runtime behaviour
 
 ## Core methodological move
 

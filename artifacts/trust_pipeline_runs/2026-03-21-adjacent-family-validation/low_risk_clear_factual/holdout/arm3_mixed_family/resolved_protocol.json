@@ -1,0 +1,40 @@
+{
+  "calibration": {
+    "aggregation": "weighted_mean_absolute_gap",
+    "bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "correctness_source": "escalation_match",
+    "metric_id": "ece10",
+    "probability_source": "juror_decision.confidence"
+  },
+  "dataset_manifest_version": "external_dataset_override",
+  "git_commit": "99c7dbc85c10bc7b99d8a9ae3bf93e48414147e0",
+  "governance": {
+    "no_live_claims_until_contract_pass": true
+  },
+  "protocol_version": "committee_value_protocol_v1_2026_03_21",
+  "route_set_id": "committee_round0_mixed_small_triplet_v1",
+  "statistics": {
+    "bootstrap_iterations": 10000,
+    "confidence_level": 0.95
+  },
+  "thresholds": {
+    "cost_ratio_max": 4.5,
+    "false_escalation_relative_worsening_max_pct": 5.0,
+    "false_safe_relative_reduction_min_pct": 10.0,
+    "latency_ratio_max": 4.0,
+    "parse_dropout_rate_max_pct": 2.0
+  },
+  "timestamp_utc": "2026-03-21T15:46:56.325166+00:00"
+}

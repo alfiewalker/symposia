@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import pytest
 
+pytestmark = pytest.mark.ladder
+
 from symposia import validate
 from symposia.models.routing import JurorRoutingConfig
 from symposia.providers import ProviderConfig, ProviderRegistry
@@ -53,7 +55,6 @@ def test_custom_routing_object_supported(monkeypatch) -> None:
         output_schema="juror_decision_v1",
         guardrails={
             "max_premium_jurors_per_run": 1,
-            "max_estimated_run_cost_usd": 0.05,
             "require_provider_diversity": True,
             "require_model_family_diversity": True,
             "premium_allowed_in_round0": False,
@@ -68,7 +69,6 @@ def test_custom_routing_object_supported(monkeypatch) -> None:
                 "tier": "small_capable",
                 "timeout_seconds": 10,
                 "max_output_tokens": 300,
-                "estimated_cost_usd": 0.01,
                 "fallback": {
                     "provider": "anthropic",
                     "model": "claude-3-5-haiku-latest",
@@ -84,7 +84,6 @@ def test_custom_routing_object_supported(monkeypatch) -> None:
                 "tier": "small_capable",
                 "timeout_seconds": 10,
                 "max_output_tokens": 300,
-                "estimated_cost_usd": 0.01,
                 "fallback": {
                     "provider": "openai",
                     "model": "gpt-4o-mini",

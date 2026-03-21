@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "anthropic": {
+      "api_key_present": true,
+      "ping_error": null,
+      "ping_ok": true,
+      "target_model_available": true
+    },
+    "google": {
+      "api_key_present": true,
+      "ping_error": null,
+      "ping_ok": true,
+      "target_model_available": true
+    }
+  },
+  "generated_at_utc": "2026-03-21T14:47:16.606886+00:00",
+  "ready": true,
+  "targets": {
+    "anthropic": "claude-haiku-4-5-20251001",
+    "google": "gemini-2.5-flash-lite"
+  }
+}

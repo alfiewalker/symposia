@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.core
 from symposia.core.reputation import ReputationManager
 
 class MockMember:

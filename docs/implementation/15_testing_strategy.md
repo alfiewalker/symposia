@@ -16,6 +16,28 @@ In short:
 
 ---
 
+## Current execution profile (experiment ladder)
+
+Current evidence work is intentionally scoped to the experiment ladder. Day-to-day validation should run the ladder pack first, then expand only when changing non-ladder runtime surfaces.
+
+Ladder pack:
+
+- `tests/test_api_customization_ladder.py`
+- `tests/test_juror_routing_yaml.py`
+- `tests/test_openai_round0_comparison_runner.py`
+- `tests/test_openai_round0_trust_evaluation_runner.py`
+- `tests/test_openai_round0_silver_labeling.py`
+- `tests/test_protocol_validation.py`
+- `tests/test_trust_protocol_validation.py`
+
+Suggested command:
+
+`bash scripts/run_experiment_ladder_tests.sh -q`
+
+Use the full regression suite for release gates and for any changes outside ladder/runtime evaluation paths.
+
+---
+
 ## Best-in-class stance
 
 For Symposia, best in class is a layered strategy:

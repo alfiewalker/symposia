@@ -1,0 +1,14 @@
+{
+  "contract_version": "trust_rubric_contract_v1_2026_03_21",
+  "summary": {
+    "average_weighted_score": 1.064,
+    "case_count_scored": 5,
+    "case_count_skipped": 0,
+    "predicted_verdict_distribution": {
+      "contestable": 4,
+      "likely_but_uncertain": 1
+    },
+    "skipped_case_ids": [],
+    "target_match_rate": 0.2
+  }
+}

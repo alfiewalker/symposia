@@ -1,0 +1,32 @@
+{
+  "case_count": 5,
+  "critical_dissent_rate": 0.0,
+  "dissent_rate": 0.0,
+  "per_case": [
+    {
+      "case_id": "trust_v2_holdout_lowrisk_01",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_holdout_lowrisk_02",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_holdout_lowrisk_03",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_holdout_lowrisk_04",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    },
+    {
+      "case_id": "trust_v2_holdout_lowrisk_05",
+      "has_critical_dissent": false,
+      "has_dissent": false
+    }
+  ]
+}

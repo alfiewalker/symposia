@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-03-21T14:51:00.402810+00:00",
+  "iterations": 8,
+  "models": {
+    "anthropic": "claude-haiku-4-5-20251001",
+    "google": "gemini-2.5-flash-lite"
+  },
+  "ready_for_run": true,
+  "results": {
+    "anthropic": {
+      "fail": 0,
+      "failures": [],
+      "ok": 8
+    },
+    "google": {
+      "fail": 0,
+      "failures": [],
+      "ok": 8
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "comparison_note": "same-family baseline is from 2026-03-21-decomposition-v1 arm2",
+  "diversity_effect_mixed_minus_same_family": {
+    "development": {
+      "critical_dissent_rate": 0.04,
+      "rubric_average_weighted_score": 0.0336,
+      "rubric_target_match_rate": 0.08,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.02
+    },
+    "holdout": {
+      "critical_dissent_rate": 0.12,
+      "rubric_average_weighted_score": 0.016,
+      "rubric_target_match_rate": 0.08,
+      "trace_completeness_score": 0.0,
+      "weighted_agreement_rate": -0.12
+    }
+  },
+  "gemini_rerun_audit": {
+    "development": {
+      "gemini_bad_case_ids": [],
+      "gemini_bad_rows": 0,
+      "gemini_committee_rows": 28
+    },
+    "holdout": {
+      "gemini_bad_case_ids": [],
+      "gemini_bad_rows": 0,
+      "gemini_committee_rows": 25
+    }
+  },
+  "generated_at_utc": "2026-03-21T15:32:13.603201+00:00",
+  "mixed_arm_summary": {
+    "development": {
+      "agreement_rate": 0.52,
+      "case_count": 25,
+      "critical_dissent_rate": 0.16,
+      "dataset_version": "trust_value_dataset_v2_2026_03_21",
+      "dissent_rate": 0.48,
+      "efficiency_default_support": false,
+      "efficiency_worth_it_decision": false,
+      "final_decision": "committee_opt_in_supported",
+      "overall_default_status": "committee_opt_in",
+      "pairwise_same_error_rate": null,
+      "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+      "route_set_id": "committee_round0_mixed_small_triplet_v1",
+      "rubric_average_weighted_score": 1.664,
+      "rubric_case_count_scored": 25,
+      "rubric_target_match_rate": 0.24,
+      "trace_completeness_score": 1.0,
+      "trust_default_support": false,
+      "trust_worth_it_decision": false,
+      "unique_contribution_rate": null,
+      "weighted_agreement_rate": 0.8133
+    },
+    "holdout": {
+      "agreement_rate": 0.52,
+      "case_count": 25,
+      "critical_dissent_rate": 0.2,
+      "dataset_version": "trust_value_dataset_v2_2026_03_21",
+      "dissent_rate": 0.48,
+      "efficiency_default_support": false,
+      "efficiency_worth_it_decision": false,
+      "final_decision": "committee_opt_in_supported",
+      "overall_default_status": "committee_opt_in",
+      "pairwise_same_error_rate": null,
+      "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+      "route_set_id": "committee_round0_mixed_small_triplet_v1",
+      "rubric_average_weighted_score": 1.6656,
+      "rubric_case_count_scored": 25,
+      "rubric_target_match_rate": 0.24,
+      "trace_completeness_score": 1.0,
+      "trust_default_support": false,
+      "trust_worth_it_decision": false,
+      "unique_contribution_rate": null,
+      "weighted_agreement_rate": 0.8133
+    }
+  },
+  "run_id": "2026-03-21-decomposition-v1-arm3-clean-rerun"
+}

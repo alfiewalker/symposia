@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 
 import pytest
+
+pytestmark = pytest.mark.core
 from pydantic import ValidationError
 
 from symposia.kernel import RuleBasedSubclaimDecomposer

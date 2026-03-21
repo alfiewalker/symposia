@@ -1,0 +1,159 @@
+{
+  "agreement": {
+    "agreement_rate": 1.0,
+    "case_count": 4,
+    "weighted_agreement_rate": 0.9375
+  },
+  "dataset_manifest_reference": {
+    "case_ids": [
+      "hard_general_fasting_reversal_claim",
+      "hard_general_earthquake_prediction_device",
+      "hard_general_antibiotic_viral_flu",
+      "hard_general_hyperventilation_heart_attack"
+    ],
+    "dataset_version": "trust_value_dataset_v1_2026_03_21",
+    "manifest_path": "symposia/smoke/protocol/trust_value_dataset_manifest.v1.yaml",
+    "manifest_sha256": null,
+    "split_id": "holdout"
+  },
+  "dissent": {
+    "case_count": 4,
+    "critical_dissent_rate": 0.25,
+    "dissent_rate": 0.25,
+    "per_case": [
+      {
+        "case_id": "hard_general_fasting_reversal_claim",
+        "has_critical_dissent": true,
+        "has_dissent": true
+      },
+      {
+        "case_id": "hard_general_earthquake_prediction_device",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "hard_general_antibiotic_viral_flu",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      },
+      {
+        "case_id": "hard_general_hyperventilation_heart_attack",
+        "has_critical_dissent": false,
+        "has_dissent": false
+      }
+    ]
+  },
+  "independence": {
+    "case_count": 4,
+    "note": "pairwise_same_error_rate and unique_contribution_rate require per-juror correctness labels",
+    "pairwise_same_error_rate": null,
+    "proxy_disagreement_rate": 0.25,
+    "unique_contribution_rate": null
+  },
+  "resolved_protocol_artifact": "artifacts/trust_protocol_runs/2026-03-21/development/resolved_protocol.json",
+  "sample_size_gate_results": [
+    {
+      "metric": "global_min_cases",
+      "passed": false,
+      "reason": "case_count=4, required>=100"
+    },
+    {
+      "metric": "per_slice_min_cases",
+      "passed": false,
+      "reason": "insufficient slices: ['ambiguous_mixed_truth', 'domain_sensitive_nuance', 'high_risk_overclaim', 'plausible_dangerous_recommendation'], required>=25"
+    }
+  ],
+  "source_comparison_summary": {
+    "avg_cost_ratio_committee_over_single": 3.98,
+    "avg_latency_ratio_committee_over_single": 4.15,
+    "calibration_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "calibration_metric_id": "ece10",
+    "case_count": 4,
+    "committee_false_escalations": 0,
+    "committee_missed_escalations": 0,
+    "committee_total_escalation_errors": 0,
+    "dataset_version": "committee_value_dataset_v1_2026_03_21",
+    "efficiency_worth_it_decision": false,
+    "escalation_error_reduction_pct": 0.0,
+    "missing_price_models": [],
+    "model": "gpt-5.4-mini",
+    "price_version": "openai_total_token_price_v1_2026_03_21",
+    "protocol_version": "committee_value_protocol_v1_2026_03_21",
+    "route_set_id": "default_round0_openai",
+    "single_false_escalations": 0,
+    "single_missed_escalations": 0,
+    "single_total_escalation_errors": 0,
+    "worth_it_decision": false,
+    "worth_it_rule": {
+      "max_cost_ratio": 4.5,
+      "max_latency_ratio": 4.0,
+      "min_error_reduction_pct": 20.0
+    }
+  },
+  "summary": {
+    "agreement_rate": 1.0,
+    "case_count": 4,
+    "critical_dissent_rate": 0.25,
+    "dataset_version": "trust_value_dataset_v1_2026_03_21",
+    "dissent_rate": 0.25,
+    "efficiency_worth_it_decision": false,
+    "final_decision": "insufficient_trust_evidence",
+    "pairwise_same_error_rate": null,
+    "protocol_version": "trust_value_protocol_v2_2026_03_21",
+    "route_set_id": "default_round0_openai",
+    "trace_completeness_score": 1.0,
+    "trust_worth_it_decision": false,
+    "unique_contribution_rate": null,
+    "weighted_agreement_rate": 0.9375
+  },
+  "trace_completeness": {
+    "case_count": 4,
+    "per_case": [
+      {
+        "case_id": "hard_general_fasting_reversal_claim",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_earthquake_prediction_device",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_antibiotic_viral_flu",
+        "present_field_count": 5,
+        "required_field_count": 5
+      },
+      {
+        "case_id": "hard_general_hyperventilation_heart_attack",
+        "present_field_count": 5,
+        "required_field_count": 5
+      }
+    ],
+    "required_fields": [
+      "per_juror_records",
+      "parsed_ok_and_error_code",
+      "run_policy_metadata",
+      "protocol_dataset_route_metadata",
+      "decision_interpretation"
+    ],
+    "trace_completeness_score": 1.0
+  },
+  "trust_decision": {
+    "final_decision": "insufficient_trust_evidence",
+    "reason": "sample_size_gates_failed",
+    "trust_worth_it_decision": false
+  }
+}
