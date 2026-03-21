@@ -24,8 +24,8 @@ What Symposia is not:
 - universally better than a single strong judge on all question types
 
 > **Current status**
-> - Repository is currently private.
-> - PyPI publishing is planned once the first stable public release is ready.
+> - This is an early public release. The library is real and usable, but evolving.
+> - PyPI publishing is planned. Install from source for now.
 > - The primary surface is intentionally small and may grow slowly.
 
 ## Evidence at a glance
@@ -131,7 +131,7 @@ pip install -e .
 - Python 3.11+
 - See `setup.py` for the current package metadata and dependencies.
 
-> PyPI installation instructions will be added once Symposia is published publicly.
+> PyPI publication is planned. Until then, install from source with `pip install -e .`.
 
 ---
 
@@ -438,16 +438,16 @@ Detailed evidence sources:
 
 ## Repository status
 
-This repository is currently private while the first stable public release shape is being finalised.
+This is an early public release of a real, usable library.
 
-The immediate priorities are:
+The design is stable at the surface. Internals will continue to evolve.
 
-- stabilise the release surface
-- complete GitHub release hygiene
-- prepare profile-set externalisation
-- continue tightening documentation-to-code parity
+Current focus:
 
-When the package is ready for broader release, the repository will be made public and PyPI installation instructions will be promoted to the main installation path.
+- expanding the trust evaluation dataset
+- running Step 1 vs Step 2 on the experimental ladder (plurality effect)
+- preparing profile-set externalisation
+- PyPI publication
 
 ---
 
@@ -495,4 +495,4 @@ Current release line: **0.1.1**
 
 ## License
 
-Add your chosen license here once the repository is public.
+MIT License. See [LICENSE](LICENSE).

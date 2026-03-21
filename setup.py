@@ -24,7 +24,7 @@ def read_requirements():
 setup(
     name="symposia",
     version="0.1.1",
-    description="Deterministic committee-style validation library",
+    description="Committee-based judgement system for trust-sensitive questions",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     author="Symposia Team",
