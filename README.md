@@ -99,6 +99,19 @@ print(result.verdict)
 print(result.risk)
 ```
 
+Library env-loading is explicit by design. Importing Symposia does not auto-load `.env`.
+
+If you want development convenience from code, opt in explicitly:
+
+```python
+from symposia.env import load_env
+from symposia import validate
+
+load_env()
+
+result = validate(content="...", domain="medical")
+```
+
 ### Resolve a profile set first
 
 ```python

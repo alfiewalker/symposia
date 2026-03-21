@@ -9,25 +9,11 @@ import sys
 import argparse
 import os
 from .services import SymposiaCLI
-from dotenv import load_dotenv
+from symposia.env import load_env
 from symposia.utils.logging import setup_logging
-
-# Look for env files in the current directory first, then in the project root
-env_paths = [
-    '.env.local',  # Current directory .env.local
-    '.env',        # Current directory .env
-    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env.local'),  # Project root .env.local
-    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env')  # Project root .env
-]
 
 # Configure logger (will be initialized in main)
 logger = None
-
-for env_path in env_paths:
-    if os.path.exists(env_path):
-        load_dotenv(dotenv_path=env_path, override=True)
-        # Continue checking other files to allow overriding
-        logger.info(f"Loaded environment from {env_path}")
 
 
 def create_parser():
@@ -132,11 +118,14 @@ async def main():
     # Setup logging
     global logger
     logger = setup_logging(args.verbose, name=__name__)
+
+    for loaded_path in load_env():
+        logger.info(f"Loaded environment from {loaded_path}")
     
     # If user specified a custom env file, load it
     if args.env and os.path.exists(args.env):
-        load_dotenv(dotenv_path=args.env, override=True)
-        logger.info(f"Loaded custom environment from {args.env}")
+        for loaded_path in load_env(args.env, override=True):
+            logger.info(f"Loaded custom environment from {loaded_path}")
     
     if not args.command:
         parser.print_help()

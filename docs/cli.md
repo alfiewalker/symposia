@@ -142,6 +142,8 @@ The CLI looks for environment files in the following order:
 4. `.env.local` in the project root
 5. `.env` in the project root
 
+This auto-loading is a CLI convenience. Normal library import does not auto-load env files.
+
 ## Environment Variables
 
 Required API keys (at least one):

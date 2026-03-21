@@ -80,6 +80,11 @@ intelligence_pools:
 - Use environment variables: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_API_KEY`
 - The `config/` directory is gitignored by default
 
+### Library env loading
+- CLI auto-loads `.env.local` and `.env` for convenience.
+- Library import does not auto-load env files.
+- If you want opt-in env loading from code, use `from symposia.env import load_env` and call `load_env()` explicitly.
+
 ## Usage Examples
 
 ### Basic Usage
