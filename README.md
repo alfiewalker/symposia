@@ -134,12 +134,63 @@ Symposia’s root surface is intentionally small.
 ### `validate(...)`
 
 ```python
-validate(content, domain, profile_set=None, profile=None)
+validate(
+    content,
+    domain,
+    profile_set=None,
+    profile=None,
+    model=None,
+    escalation_model=None,
+    routing=None,
+    provider_config=None,
+)
 ```
 
 Validate content for a given domain and return an `InitialReviewResult`.
 
 Use this for almost all first-day library usage.
+
+Customization ladder:
+
+1. Default
+
+```python
+validate(content, domain="medical")
+```
+
+2. Simple BYOM
+
+```python
+validate(content, domain="medical", model="openai:gpt-4.1-mini")
+```
+
+Optional escalation override:
+
+```python
+validate(
+    content,
+    domain="medical",
+    model="openai:gpt-4.1-mini",
+    escalation_model="openai:gpt-4.1",
+)
+```
+
+3. Advanced routing
+
+```python
+validate(content, domain="medical", routing="default_round0")
+```
+
+Precedence and conflict contract:
+
+- `routing` > `model` / `escalation_model` > built-in defaults
+- passing `routing` together with `model` or `escalation_model` raises an error
+- `model` and `escalation_model` must be in `provider:model` format
+
+Execution boundary note:
+
+- The API ladder and validation contract are wired.
+- Live LLM juror execution remains a separate integration phase.
 
 ### `load_profile_set(...)`
 

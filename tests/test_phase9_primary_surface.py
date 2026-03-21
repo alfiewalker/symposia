@@ -22,6 +22,10 @@ def test_validate_signature_is_day_one_simple() -> None:
         "domain",
         "profile_set",
         "profile",
+        "model",
+        "escalation_model",
+        "routing",
+        "provider_config",
     ]
 
 
@@ -32,7 +36,8 @@ def test_load_profile_set_resolves_domain_default() -> None:
     assert len(resolved.profiles) >= 1
 
 
-def test_validate_returns_primary_result_type() -> None:
+def test_validate_returns_primary_result_type(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
     result = validate(
         content="The speed of light in vacuum is approximately 299,792 kilometers per second.",
         domain="general",
