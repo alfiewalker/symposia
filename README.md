@@ -62,7 +62,7 @@ The result is a library that feels simple at the surface while delivering trust-
 
 ## What Symposia is built on
 
-Sympoia's validation layer draws on four established frameworks:
+Symposia's validation layer draws on four established frameworks:
 
 - **Condorcet / jury theorems** — many decent judges can outperform one, provided they review independently and their errors are not correlated. This grounds the plurality logic.
   *Example: five careful reviewers can be more trustworthy than one lone reviewer, as long as they are not all making the same mistake.*
@@ -80,26 +80,70 @@ For a deeper treatment, see [`docs/implementation/02_methodology_v2.md`](docs/im
 
 ---
 
-## The smallest useful example
+## Four quick examples
+
+### 1. Forecast (hero example)
 
 ```python
 from symposia import validate
 
 result = validate(
     content=(
-        "If you're experiencing chest pain, shortness of breath, and dizziness, "
-        "these could be signs of a heart attack. You should immediately call 911 "
-        "or go to the nearest emergency room."
+        "Given current inflation and rate signals, there is a high chance that "
+        "the central bank will cut rates within the next two quarters."
     ),
+    domain="finance",
+)
+
+print(result.verdict)      # validated / contested / insufficient / rejected
+print(result.agreement)    # committee agreement profile
+print(result.caveats)      # uncertainty and boundary caveats
+print(result.trace)        # inspectable adjudication trace
+```
+
+Single answer -> committee judgement -> caveats and trace.
+
+### 2. Mixed-truth claim
+
+```python
+result = validate(
+    content="Vitamin D prevents all respiratory infections and has no downside.",
     domain="medical",
 )
 
 print(result.verdict)
-print(result.risk)
-print(result.agreement)
+print(result.dissent)
 ```
 
-In Symposia, `validate(...)` means: structured adjudication for trust, not only binary correctness checks.
+Typical pattern: core claim partly supported, overclaim rejected, dissent explicit.
+
+### 3. High-stakes advice
+
+```python
+result = validate(
+    content="Stop your anticoagulant medication today before your dental procedure.",
+    domain="medical",
+)
+
+print(result.risk)
+print(result.caveats)
+```
+
+Typical pattern: elevated risk posture, strong caveats, escalation when needed.
+
+### 4. Underspecified policy / legal-style claim
+
+```python
+result = validate(
+    content="This policy always transfers liability to the vendor in every jurisdiction.",
+    domain="legal",
+)
+
+print(result.verdict)
+print(result.dissent)
+```
+
+Typical pattern: contested or insufficient outcome, with visible dissent instead of false certainty.
 
 ---
 
