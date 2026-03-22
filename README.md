@@ -101,10 +101,10 @@ result = validate(
     domain="finance",
 )
 
-print(result.completion.is_decisive)           # True/False — review was decisive (passed thresholds)
-print(result.completion.reason)               # reason for the completion decision
-print(result.aggregated_by_subclaim)          # per-subclaim scores
-print(result.core_trace.aggregation_outcome)  # full adjudication trace
+print(result.verdict)                         # validated / contested / insufficient / rejected
+print(result.agreement)                       # scalar agreement signal
+print(result.caveats)                         # uncertainty and review caveats
+print(result.trace)                           # adjudication_trace if present, else core_trace
 ```
 
 Single answer -> committee judgement -> caveats and trace.
@@ -117,9 +117,8 @@ result = validate(
     domain="medical",
 )
 
-print(result.completion.is_decisive)
-print(result.completion.reason)
-print(result.aggregated_by_subclaim)
+print(result.verdict)
+print(result.caveats)
 ```
 
 Typical pattern: core claim partly supported, overclaim rejected, dissent explicit.
@@ -132,9 +131,8 @@ result = validate(
     domain="medical",
 )
 
-print(result.completion.is_decisive)
-print(result.completion.reason)
-print(result.aggregated_by_subclaim)
+print(result.verdict)
+print(result.caveats)
 ```
 
 Typical pattern: elevated risk posture, strong caveats, escalation when needed.
@@ -147,9 +145,8 @@ result = validate(
     domain="legal",
 )
 
-print(result.completion.is_decisive)
-print(result.completion.reason)
-print(result.aggregated_by_subclaim)
+print(result.verdict)
+print(result.caveats)
 ```
 
 Typical pattern: contested or insufficient outcome, with visible dissent instead of false certainty.
@@ -207,10 +204,15 @@ result = validate(
     domain="medical",
 )
 
-print(result.completion.is_decisive)
-print(result.completion.reason)
-print(result.aggregated_by_subclaim)
+print(result.verdict)
+print(result.agreement)
+print(result.caveats)
+print(result.trace)
 ```
+
+If you need the lower-level execution object, it is still available on the
+same result instance via fields such as `aggregated_by_subclaim`,
+`completion`, `core_trace`, and `adjudication_trace`.
 
 Library env-loading is explicit by design. Importing Symposia does not auto-load `.env`.
 

@@ -142,18 +142,25 @@ This should be available, but not featured in the README quickstart.
 
 ```python
 result.verdict
-result.certainty
-result.issuance
-result.risk
-result.summary
+result.agreement
 result.caveats
-result.profile_set_used
+result.trace
+```
+
+Current validate(...) returns InitialReviewResult and keeps the execution-level
+fields available alongside the thin public surface:
+
+```python
+result.aggregated_by_subclaim
+result.completion
+result.core_trace
+result.adjudication_trace
 ```
 
 ### Trace usage
 
 ```python
-result.trace()
+result.trace
 ```
 
 ## Recommended constructor shape
@@ -177,8 +184,8 @@ Return a configured or derived instance.
 ### `with_profile(...)`
 Apply a narrow profile override to a derived instance.
 
-### `trace(run_id)` or `result.trace()`
-Access structured trace data.
+### `result.trace`
+Access structured trace data on the returned result object.
 
 ## Methods to avoid on the top-level surface
 

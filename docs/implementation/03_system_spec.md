@@ -284,6 +284,11 @@ Examples:
 
 ### ValidationResult
 
+Note: this is a synthesized verdict shape retained in the model layer. The
+current validate(...) implementation returns InitialReviewResult and exposes a
+thin public surface directly on that object via result.verdict,
+result.agreement, result.caveats, and result.trace.
+
 ```json
 {
   "run_id": "spm_...",
