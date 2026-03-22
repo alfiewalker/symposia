@@ -33,7 +33,7 @@ What Symposia is not:
 
 | Claim structure | Current evidence signal | Current reading |
 |---|---|---|
-| Forecast-style claims | Promising | Better target-match and weighted-score performance in this bounded evaluation slice, but not grounds for a default recommendation |
+| Forecast-style claims | Promising | Better target-match and weighted-score performance in this bounded evaluation slice |
 | Clear factual claims | Limited | No consistent quality lift over the same-family committee in current evidence |
 | Underspecified policy claims | Caution | Higher critical dissent without a compensating quality gain in current evidence |
 
