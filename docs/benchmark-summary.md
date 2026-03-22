@@ -12,9 +12,15 @@ Current evidence says committee value is claim-structure-dependent:
 
 This is a bounded claim, not a universal committee-superiority claim.
 
+Current default runtime mode: `decomposition_mode=holistic` (holistic single-claim review at all layers).
+Experimental ladder evidence in this document is decomposition-path evidence (`decomposition_mode=rule_based`).
+
+Juror personality injection is active: each LLM juror receives a system prompt derived from its `Profile` (stance, evidence demand, safety bias, purpose).
+
 ## Deterministic Test Snapshot
 
-- Full test suite: `228 passed` (33 files, marker-partitioned: 16 core / 6 ladder / 11 legacy)
+- Full test suite: `245 collected` (34 files, marker-partitioned: 125 core / 33 ladder / 87 legacy)
+- Core + ladder gate: `158 passed, 87 deselected`
 - Benchmark suite: `8/8 cases correct`
 - Boundary suite: threshold boundary behavior locked by regression tests
 - Committee vs single baseline on benchmark cases:
@@ -22,7 +28,7 @@ This is a bounded claim, not a universal committee-superiority claim.
   - single advantage: `0`
   - both correct: all cases
 
-Test marker partition (2026-03-21):
+Test marker partition (2026-03-22):
 
 | Marker | Role | CI default |
 |---|---|---|
@@ -32,7 +38,9 @@ Test marker partition (2026-03-21):
 
 ## Evidence boundary details (2026-03-21)
 
-Controlled ladder decomposition runs (Step 2: same-family committee vs Step 3: cross-family committee) on the trust value dataset v2 produced the following family-scoped findings:
+Controlled ladder decomposition runs (Step 2: same-family committee vs Step 3: cross-family committee) on the trust value dataset v2 produced the following family-scoped findings.
+
+Mode tag for this section: `review_mode=decomposed` (legacy/experimental evidence track).
 
 | Case family | Mixed-family delta (TM) | Mixed-family delta (WS) | Interpretation |
 |---|---|---|---|
@@ -80,6 +88,7 @@ Current deterministic results are expected for the rule-based juror implementati
 - Accuracy is high on deterministic suites because cases map to explicit hint rules.
 - Zero committee advantage on these suites is informative, not a failure — these are not the discriminative case families where diversity adds value.
 - Committee advantage is claim-family dependent. It is confirmed on forecast-style claims and not confirmed or negative on other current families.
+- Do not merge decomposed and holistic evidence in a single aggregate claim unless results are explicitly split by `review_mode`.
 
 ## Current Limits
 

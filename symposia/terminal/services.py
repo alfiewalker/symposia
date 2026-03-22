@@ -112,7 +112,7 @@ class SymposiaCLI:
         
         return True
 
-    async def run_deliberation(self, pool_name: str, question: str, strategy: str = 'WeightedMajorityVote'):
+    async def run_deliberation(self, pool_name: str, question: str, strategy: str = 'WeightedMajorityVote', decomposition_mode: Optional[str] = None):
         """Run a single deliberation."""
         if not self._config_dict:
             logger.error("No configuration loaded")

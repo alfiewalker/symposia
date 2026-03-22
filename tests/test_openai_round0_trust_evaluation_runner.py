@@ -72,6 +72,8 @@ def test_trust_runner_emits_required_artifacts_and_downgrades_on_sample_gate_fai
         output_dir=str(tmp_path),
     )
 
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
+    assert report["summary"]["decomposition_mode"] == "no_decomposition"
     assert report["summary"]["final_decision"] == "insufficient_trust_evidence"
     assert report["summary"]["overall_default_status"] == "committee_opt_in"
     assert report["summary"]["trust_default_support"] is False
@@ -131,6 +133,7 @@ def test_trust_runner_tier_b_blocks_strongest_committee_default_claim(monkeypatc
     )
 
     report = run_openai_round0_trust_evaluation(output_dir=str(tmp_path), evidence_label_tier="tier_b_silver")
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
     assert report["summary"]["final_decision"] == "committee_opt_in_supported"
     assert report["summary"]["overall_default_status"] == "committee_opt_in"
     assert report["summary"]["trust_default_support"] is False
@@ -177,6 +180,7 @@ def test_trust_runner_tier_c_allows_committee_default_when_conditions_hold(monke
     )
 
     report = run_openai_round0_trust_evaluation(output_dir=str(tmp_path), evidence_label_tier="tier_c_human")
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
     assert report["summary"]["final_decision"] == "committee_default_supported"
     assert report["summary"]["overall_default_status"] == "committee_default_supported"
     assert report["summary"]["trust_default_support"] is True
@@ -251,6 +255,8 @@ def test_trust_runner_v2_emits_rubric_artifacts(monkeypatch, tmp_path) -> None:
     assert report["run_metadata"]["route_set_id"] == "default_round0_openai_nano"
     assert report["run_metadata"]["committee_route_set_id"] == "default_round0_openai_nano"
     assert report["run_metadata"]["single_route_set_id"] == "default_round0_openai_nano"
+    assert report["run_metadata"]["review_mode"] == "holistic_single_claim"
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
     assert report["summary"]["rubric_case_count_scored"] == 1
     assert (Path(tmp_path) / "rubric_per_case.json").exists()
     assert (Path(tmp_path) / "rubric_summary.json").exists()

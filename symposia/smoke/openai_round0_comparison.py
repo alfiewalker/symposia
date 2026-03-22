@@ -9,7 +9,7 @@ from pathlib import Path
 from symposia.aggregation.round0 import aggregate_round0, decide_early_stop
 from symposia.config import resolve_profile_set
 from symposia.jurors import LLMJuror
-from symposia.kernel import RuleBasedSubclaimDecomposer
+from symposia.kernel import RuleBasedSubclaimDecomposer, SubclaimDecomposer, resolve_decomposer
 from symposia.models.juror import JurorDecision
 from symposia.pricing import estimate_openai_total_token_cost
 from symposia.providers import ProviderRegistry
@@ -25,6 +25,17 @@ from symposia.smoke.protocol_validation import (
 ERROR_REDUCTION_THRESHOLD_PCT = 20.0
 MAX_LATENCY_RATIO = 4.0
 MAX_COST_RATIO = 4.5
+REVIEW_MODE = "decomposed_experimental"
+DECOMPOSITION_MODE = "rule_based_sentence_split"
+
+_REVIEW_MODE_LABELS: dict[str, str] = {
+    "holistic": "holistic_single_claim",
+    "rule_based": "decomposed_experimental",
+}
+_DECOMPOSITION_MODE_LABELS: dict[str, str] = {
+    "holistic": "no_decomposition",
+    "rule_based": "rule_based_sentence_split",
+}
 
 
 @dataclass(frozen=True)
@@ -136,6 +147,8 @@ def _build_markdown_summary(report: dict[str, object]) -> str:
         f"- model: {summary['model']}",
         f"- route_set_id: {summary['route_set_id']}",
         f"- escalation_route_set_id: {summary.get('escalation_route_set_id', 'none')}",
+        f"- review_mode: {summary.get('review_mode', 'unknown')}",
+        f"- decomposition_mode: {summary.get('decomposition_mode', 'unknown')}",
         f"- case_count: {summary['case_count']}",
         f"- price_version: {summary['price_version']}",
         f"- missing_price_models: {', '.join(missing_models) if missing_models else 'none'}",
@@ -200,18 +213,21 @@ def _build_per_case_artifact(report: dict[str, object]) -> list[dict[str, object
                 "case_id": row["case"]["case_id"],
                 "expected_escalation": bool(row["case"]["expected_escalation"]),
                 "single": {
+                    "review_mode": str(report["summary"].get("review_mode", "unknown")),
                     "escalation": bool(row["single"]["escalation"]),
                     "agreement": float(row["single"]["agreement"]),
                     "completion_reason": row["single"]["completion_reason"],
                     "totals": row["single"]["totals"],
                 },
                 "committee": {
+                    "review_mode": str(report["summary"].get("review_mode", "unknown")),
                     "escalation": bool(row["committee"]["escalation"]),
                     "agreement": float(row["committee"]["agreement"]),
                     "completion_reason": row["committee"]["completion_reason"],
                     "totals": row["committee"]["totals"],
                 },
                 "committee_plus_escalation": {
+                    "review_mode": str(report["summary"].get("review_mode", "unknown")),
                     "escalation": bool(
                         row.get("committee_plus_escalation", row["committee"])["escalation"]
                     ),
@@ -230,6 +246,7 @@ def _build_per_case_artifact(report: dict[str, object]) -> list[dict[str, object
 
 def _build_per_juror_artifact(report: dict[str, object]) -> list[dict[str, object]]:
     rows = report["case_results"]
+    review_mode = str(report["summary"].get("review_mode", "unknown"))
     per_juror: list[dict[str, object]] = []
     for row in rows:
         case_id = row["case"]["case_id"]
@@ -238,6 +255,7 @@ def _build_per_juror_artifact(report: dict[str, object]) -> list[dict[str, objec
                 {
                     "case_id": case_id,
                     "arm_id": "single",
+                    "review_mode": review_mode,
                     **record,
                 }
             )
@@ -246,6 +264,7 @@ def _build_per_juror_artifact(report: dict[str, object]) -> list[dict[str, objec
                 {
                     "case_id": case_id,
                     "arm_id": "committee",
+                    "review_mode": review_mode,
                     **record,
                 }
             )
@@ -256,6 +275,7 @@ def _build_per_juror_artifact(report: dict[str, object]) -> list[dict[str, objec
                     {
                         "case_id": case_id,
                         "arm_id": "committee_plus_escalation",
+                        "review_mode": review_mode,
                         **record,
                     }
                 )
@@ -408,12 +428,13 @@ async def _run_variant(
     juror_specs: list[dict[str, str]],
     case: OpenAIRound0ComparisonCase,
     llm_service_factory,
+    decomposer: SubclaimDecomposer,
     timeout_seconds: float = 12.0,
     stage_label: str = "round0",
     service_domain: str | None = None,
 ) -> dict[str, object]:
     resolved = resolve_profile_set(domain=case.domain)
-    bundle = RuleBasedSubclaimDecomposer().decompose(content=case.content, domain=case.domain)
+    bundle = decomposer.decompose(content=case.content, domain=case.domain)
 
     decisions: list[JurorDecision] = []
     per_juror_records: list[dict[str, object]] = []
@@ -521,6 +542,7 @@ def run_openai_round0_comparison(
     cases: list[OpenAIRound0ComparisonCase] | None = None,
     provider_registry: ProviderRegistry | None = None,
     protocol_validation_enabled: bool = True,
+    decomposition_mode: str = "holistic",
 ) -> dict[str, object]:
     route_set = get_route_set(route_set_id)
     single_route_set = get_route_set(single_route_set_id) if single_route_set_id is not None else route_set
@@ -586,6 +608,10 @@ def run_openai_round0_comparison(
     output_root = Path(output_dir)
     output_root.mkdir(parents=True, exist_ok=True)
 
+    decomposer = resolve_decomposer(decomposition_mode)
+    effective_review_mode = _REVIEW_MODE_LABELS.get(decomposition_mode, decomposition_mode)
+    effective_decomposition_mode = _DECOMPOSITION_MODE_LABELS.get(decomposition_mode, decomposition_mode)
+
     resolved_protocol = build_resolved_protocol_artifact(
         route_set_id=route_set.route_set_id,
         validation=protocol_meta,
@@ -623,6 +649,7 @@ def run_openai_round0_comparison(
                 juror_specs=single_specs,
                 case=case,
                 llm_service_factory=single_llm_factory,
+                decomposer=decomposer,
                 timeout_seconds=12.0,
                 stage_label="round0",
                 service_domain=single_route_set.domain,
@@ -633,6 +660,7 @@ def run_openai_round0_comparison(
                 juror_specs=committee_specs,
                 case=case,
                 llm_service_factory=llm_factory,
+                decomposer=decomposer,
                 timeout_seconds=12.0,
                 stage_label="round0",
             )
@@ -654,6 +682,7 @@ def run_openai_round0_comparison(
                     juror_specs=escalation_specs,
                     case=case,
                     llm_service_factory=escalation_llm_factory,
+                    decomposer=decomposer,
                     timeout_seconds=18.0,
                     stage_label="escalation",
                     service_domain=escalation_route_set.domain,
@@ -752,6 +781,8 @@ def run_openai_round0_comparison(
         "calibration_bin_edges": protocol_meta.calibration_bin_edges,
         "route_set_id": route_set.route_set_id,
         "single_route_set_id": single_route_set.route_set_id,
+        "review_mode": effective_review_mode,
+        "decomposition_mode": effective_decomposition_mode,
         "model": model_name,
         "case_count": len(case_results),
         "price_version": price_version or "unknown",
@@ -860,6 +891,8 @@ def run_openai_round0_comparison(
             "dataset_version": protocol_meta.dataset_version,
             "calibration_metric_id": protocol_meta.calibration_metric_id,
             "calibration_bin_edges": protocol_meta.calibration_bin_edges,
+            "review_mode": effective_review_mode,
+            "decomposition_mode": effective_decomposition_mode,
         },
         "resolved_protocol_artifact": str(resolved_protocol_path),
         "summary": summary,

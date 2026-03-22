@@ -146,6 +146,7 @@ def validate(
     escalation_model: str | None = None,
     routing: str | JurorRoutingConfig | None = None,
     provider_config: ProviderConfig | ProviderRegistry | None = None,
+    decomposition_mode: str = "holistic",
     live: bool = False,
 ) -> InitialReviewResult:
     """Run one deterministic validation pass and return structured results.
@@ -163,8 +164,13 @@ def validate(
     sound?", and "should I trust this?" all normalize to this API call.
 
     This is the primary day-one API: a single call that performs
-    decomposition, profile-set resolution, juror voting, aggregation,
+    holistic claim review by default, profile-set resolution, juror voting, aggregation,
     early-stop decisioning, and trace construction.
+
+    Decomposition policy:
+    - default = holistic single-claim review (decomposition_mode="holistic")
+    - decomposition_mode="rule_based" enables the current rule-based sentence
+      decomposition path, which remains experimental
 
     Routing precedence:
     - routing
@@ -224,7 +230,9 @@ def validate(
         )
 
     if not live:
-        engine = InitialReviewEngine()
+        engine = InitialReviewEngine(
+            decomposition_mode=decomposition_mode,
+        )
         return engine.run(
             content=content,
             domain=domain,
@@ -260,6 +268,7 @@ def validate(
             llm_retries=1,
             llm_retry_delay_seconds=0.0,
             max_juror_dropouts_per_subclaim=1,
+            decomposition_mode=decomposition_mode,
         )
     else:
         provider_name, model_name = _parse_provider_model(
@@ -275,6 +284,7 @@ def validate(
                 provider_registry=provider_registry,
             ),
             juror_profiles=[single_profile_id],
+            decomposition_mode=decomposition_mode,
         )
 
     return engine.run(

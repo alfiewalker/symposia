@@ -128,3 +128,11 @@ For a serious open-source or institution-facing build, keep all of them and trea
 - release gates
 
 It also defines phase-level validation gates so each build phase can be considered complete in a disciplined way.
+
+## 24. Decomposition boundary note
+
+`24_decomposition_boundary_note.md` captures:
+- why decomposition was demoted from default
+- current holistic-default policy
+- evidence hygiene requirements for mode tagging
+- conditions for future dependency-aware decomposition work

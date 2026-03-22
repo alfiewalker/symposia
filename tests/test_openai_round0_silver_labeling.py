@@ -12,7 +12,10 @@ from symposia.smoke.openai_round0_silver_labeling import (
 
 def test_silver_labeling_marks_outputs_provisional_and_emits_artifacts(monkeypatch, tmp_path) -> None:
     fake_comparison = {
-        "summary": {"efficiency_worth_it_decision": False},
+        "summary": {
+            "efficiency_worth_it_decision": False,
+            "review_mode": "holistic_single_claim",
+        },
         "case_results": [
             {
                 "case": {"case_id": "c1"},
@@ -49,9 +52,11 @@ def test_silver_labeling_marks_outputs_provisional_and_emits_artifacts(monkeypat
     )
 
     assert report["summary"]["label_tier"] == "tier_b_silver"
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
     assert "provisional trust assessment" in report["summary"]["claim_scope"]
     assert len(report["labels"]) == 1
     assert report["labels"][0]["provisional"] is True
+    assert report["labels"][0]["review_mode"] == "holistic_single_claim"
 
     assert (tmp_path / "silver_summary.json").exists()
     assert (tmp_path / "silver_labels.json").exists()

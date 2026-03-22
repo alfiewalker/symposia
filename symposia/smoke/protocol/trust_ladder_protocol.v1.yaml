@@ -1,0 +1,57 @@
+version: trust_ladder_protocol_v1_2026_03_22
+status: active
+purpose: canonical_trust_governance_ladder
+dataset_version: trust_value_dataset_v2_2026_03_21
+default_publication_scope: synthesis
+default_decomposition_mode: holistic
+default_splits:
+  - development
+  - holdout
+default_evidence_label_tier: tier_b_silver
+default_escalation_route_set_id: escalation_high_risk_openai_mini
+
+canonical_rungs:
+  - rung_id: rung_1_single_weak
+    step_index: 1
+    label: single weak baseline
+    committee_route_set_id: default_round0_openai_nano
+    single_route_set_id: default_round0_openai_nano
+    interpretation: baseline_floor
+
+  - rung_id: rung_2_same_family_weak_committee
+    step_index: 2
+    label: same-family weak committee
+    committee_route_set_id: default_round0_openai_nano
+    single_route_set_id: default_round0_openai_nano
+    interpretation: plurality_effect
+
+  - rung_id: rung_3_mixed_family_weak_committee
+    step_index: 3
+    label: mixed-family weak committee
+    committee_route_set_id: committee_round0_mixed_small_triplet_v1
+    single_route_set_id: default_round0_openai_nano
+    interpretation: cross_family_diversity_effect
+
+  - rung_id: rung_4_single_strong
+    step_index: 4
+    label: single strong baseline
+    committee_route_set_id: default_round0_openai_mini
+    single_route_set_id: default_round0_openai_mini
+    interpretation: strong_single_challenge
+
+  - rung_id: rung_5_smaller_stronger_committee
+    step_index: 5
+    label: smaller stronger committee
+    committee_route_set_id: committee_round0_openai_mini_triplet_v1
+    single_route_set_id: default_round0_openai_mini
+    interpretation: quality_count_frontier
+
+minimal_rungs_now:
+  - rung_1_single_weak
+  - rung_2_same_family_weak_committee
+  - rung_3_mixed_family_weak_committee
+  - rung_4_single_strong
+
+experimental_extensions:
+  - decomposition_mode_comparison
+  - family_focused_validation

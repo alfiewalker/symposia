@@ -74,6 +74,7 @@ def run_openai_round0_silver_labeling(
     candidates: list[SilverLabelCandidate] | None = None,
     min_agreement: float = 1.0,
     min_avg_confidence: float = 0.80,
+    decomposition_mode: str = "holistic",
 ) -> dict[str, object]:
     selected = candidates or default_trust_silver_candidates()
     output_root = Path(output_dir)
@@ -85,6 +86,7 @@ def run_openai_round0_silver_labeling(
 
     labels: list[dict[str, object]] = []
     rejections: list[dict[str, object]] = []
+    review_modes_seen: set[str] = set()
 
     for split_id, split_candidates in grouped.items():
         if not split_candidates:
@@ -104,7 +106,9 @@ def run_openai_round0_silver_labeling(
             route_set_id=route_set_id,
             single_profile_id=judge_profile_id,
             cases=comparison_cases,
+            decomposition_mode=decomposition_mode,
         )
+        review_modes_seen.add(str(comparison.get("summary", {}).get("review_mode", "unknown")))
 
         by_case = {r["case"]["case_id"]: r for r in comparison["case_results"]}
 
@@ -145,6 +149,7 @@ def run_openai_round0_silver_labeling(
                 labels.append(
                     {
                         **asdict(c),
+                        "review_mode": str(comparison.get("summary", {}).get("review_mode", "unknown")),
                         "expected_escalation": bool(majority),
                         "label_tier": "tier_b_silver",
                         "provisional": True,
@@ -159,6 +164,7 @@ def run_openai_round0_silver_labeling(
                     {
                         "case_id": c.case_id,
                         "split_id": c.split_id,
+                        "review_mode": str(comparison.get("summary", {}).get("review_mode", "unknown")),
                         "reason": "insufficient_judge_agreement_or_confidence",
                         "agreement": round(agreement, 4),
                         "avg_confidence": round(avg_conf, 4),
@@ -170,6 +176,7 @@ def run_openai_round0_silver_labeling(
         "candidate_count": len(selected),
         "accepted_count": len(labels),
         "rejected_count": len(rejections),
+        "review_mode": (sorted(review_modes_seen)[0] if len(review_modes_seen) == 1 else "mixed"),
         "label_tier": "tier_b_silver",
         "claim_scope": "silver-label evidence supports provisional trust assessment, not final committee-default proof",
     }

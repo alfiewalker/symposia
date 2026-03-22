@@ -46,7 +46,8 @@ For Symposia, best in class is a layered strategy:
 Used for the parts that must always behave the same way.
 
 Examples:
-- claim decomposition invariants
+- holistic default-path invariants
+- experimental claim decomposition invariants
 - verdict compilation rules
 - threshold and stopping logic
 - profile-set resolution fallbacks
@@ -153,7 +154,8 @@ Pass condition:
 Pass condition:
 - core types exist
 - verdict compilation is deterministic
-- compound inputs decompose into stable structures
+- holistic default path preserves full-claim context
+- experimental decomposition path remains deterministic when explicitly enabled
 
 ### Phase 2 — Profile gate
 Pass condition:
@@ -200,6 +202,19 @@ Pass condition:
 - examples work
 - docs match behaviour
 - benchmark summary attached
+
+## Current decomposition policy
+
+Testing should treat these as separate obligations:
+
+- default path: the full claim stays intact as one adjudication unit
+- experimental path: decomposition is explicitly enabled and tested as an experiment, not assumed as the product default
+
+Minimum regression expectations:
+
+- prove context-dependent claims remain intact under the default path
+- keep deterministic coverage for the experimental rule-based decomposer
+- compare holistic vs decomposed behavior on a small diagnostic set whenever the decomposer changes
 
 ### Phase 10 — Institutional gate
 Pass condition:

@@ -36,6 +36,14 @@ def test_app_config():
     assert 'pool' in app_cfg.intelligence_pools
 
 
+def test_app_config_decomposition_mode_defaults_to_holistic():
+    llm_services = {'svc': LLMServiceConfig(provider='openai', model='gpt-4', cost_per_token=0.001)}
+    member = MemberConfig(name='Alice', service='svc', role_prompt='role')
+    pools = {'pool': PoolConfig(name='pool', members=[member])}
+    app_cfg = AppConfig(llm_services=llm_services, intelligence_pools=pools)
+    assert app_cfg.decomposition_mode == "holistic"
+
+
 def test_invalid_llm_service_config():
     with pytest.raises(Exception):
         LLMServiceConfig(provider='openai', model='gpt-4')  # missing cost_per_token 

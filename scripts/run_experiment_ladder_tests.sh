@@ -12,5 +12,4 @@ if [[ -f ".venv/bin/activate" ]]; then
   source .venv/bin/activate
 fi
 
-PYTHONPATH=. pytest \
 PYTHONPATH=. pytest -m "core or ladder" "$@"

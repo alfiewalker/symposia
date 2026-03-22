@@ -4,6 +4,8 @@
 
 Establish whether Symposia’s committee path creates enough additional trust value to justify its overhead, even when raw correctness lift is small or absent.
 
+Default runtime behavior during this phase is holistic single-claim review. Any decomposition run is experimental and must be explicitly tagged in artifacts.
+
 This phase exists because Symposia is not only an efficiency or error-minimisation system. Its core product thesis includes trust through plural, auditable judgement.
 
 ---
@@ -22,6 +24,7 @@ This phase does **not** replace efficiency evaluation. It adds the missing trust
 - This phase defines the trust-oriented layer that sits alongside it.
 - No runtime changes should be introduced while this phase is being specified and executed.
 - Trust evaluation must be added as a protocol layer first, not as post-hoc narrative.
+- Every trust artifact must include `review_mode` so holistic and decomposed evidence are never mixed silently.
 
 ---
 

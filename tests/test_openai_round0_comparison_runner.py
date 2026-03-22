@@ -78,6 +78,8 @@ def test_build_markdown_summary_includes_requested_headline_metrics() -> None:
             "calibration_bin_edges": [0.0, 0.1, 0.2],
             "model": "gpt-5.4-mini",
             "route_set_id": "default_round0_openai",
+            "review_mode": "holistic_single_claim",
+            "decomposition_mode": "no_decomposition",
             "case_count": 2,
             "price_version": "openai_total_token_price_v1_2026_03_21",
             "missing_price_models": [],
@@ -116,6 +118,8 @@ def test_build_markdown_summary_includes_requested_headline_metrics() -> None:
     assert "OpenAI Round0 Jury Theory Comparison" in markdown
     assert "protocol_version: committee_value_protocol_v1_2026_03_21" in markdown
     assert "dataset_version: committee_value_dataset_v1_2026_03_21" in markdown
+    assert "review_mode: holistic_single_claim" in markdown
+    assert "decomposition_mode: no_decomposition" in markdown
     assert "price_version: openai_total_token_price_v1_2026_03_21" in markdown
     assert "missing_price_models: none" in markdown
     assert "single_false_escalations: 1" in markdown
@@ -177,6 +181,8 @@ def test_write_protocol_output_artifacts_creates_required_files_and_trust_aware_
             "calibration_bin_edges": [0.0, 0.1, 0.2],
             "model": "gpt-5.4-mini",
             "route_set_id": "default_round0_openai",
+            "review_mode": "holistic_single_claim",
+            "decomposition_mode": "no_decomposition",
             "case_count": 1,
             "price_version": "openai_total_token_price_v1_2026_03_21",
             "missing_price_models": [],
@@ -270,6 +276,11 @@ def test_write_protocol_output_artifacts_creates_required_files_and_trust_aware_
     assert (tmp_path / "correlation.json").exists()
     assert (tmp_path / "frontier.json").exists()
     assert (tmp_path / "decision.md").exists()
+
+    per_case = (tmp_path / "per_case.json").read_text(encoding="utf-8")
+    per_juror = (tmp_path / "per_juror.json").read_text(encoding="utf-8")
+    assert '"review_mode": "holistic_single_claim"' in per_case
+    assert '"review_mode": "holistic_single_claim"' in per_juror
 
     decision = (tmp_path / "decision.md").read_text(encoding="utf-8")
     assert "## Accuracy Value" in decision
@@ -429,4 +440,6 @@ def test_comparison_runner_supports_distinct_single_route_set(monkeypatch, tmp_p
 
     assert report["summary"]["route_set_id"] == "committee_route"
     assert report["summary"]["single_route_set_id"] == "single_route"
+    assert report["summary"]["review_mode"] == "holistic_single_claim"
+    assert report["summary"]["decomposition_mode"] == "no_decomposition"
     assert report["case_results"][0]["single"]["per_juror"][0]["provider_model"].startswith("single_route:")

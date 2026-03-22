@@ -27,6 +27,7 @@ What Symposia is not:
 > - This is an early public release. The library is real and usable, but evolving.
 > - PyPI publishing is planned. Install from source for now.
 > - The primary surface is intentionally small and may grow slowly.
+> - Default review is holistic single-claim review. Rule-based decomposition remains available only as an experimental opt-in.
 
 ## Evidence at a glance
 
@@ -37,6 +38,9 @@ What Symposia is not:
 | Underspecified policy claims | Harmful | More critical dissent without quality gain |
 
 This is a bounded evidence statement, not a universal committee-superiority claim. For permitted external messaging, use `docs/governance_product_note.md`.
+
+Evidence and messaging updates follow the formal SOP in `docs/governance-update-process.md`.
+Canonical trust-eval runner script: `scripts/run_trust_pipeline.py`.
 
 ---
 
@@ -57,6 +61,8 @@ The result is a library that feels simple at the surface while delivering trust-
 
 > **When does mixed-family committee judgement help?**  
 > Current evidence shows committee diversity is most valuable on **forecast-style claims** (inferential, structured uncertainty), neutral on clear factual claims, and harmful on underspecified policy claims. This is the evidence-backed boundary. See [Benchmarking and limits](#benchmarking-and-limits).
+
+Governance and README evidence language must be artifact-derived and run-specific per `docs/governance-update-process.md`.
 
 ---
 
@@ -254,6 +260,7 @@ validate(
     escalation_model=None,
     routing=None,
     provider_config=None,
+    decomposition_mode="holistic",
     live=False,
 )
 ```
@@ -370,11 +377,13 @@ Everything else should generally be treated as advanced usage and imported from 
 
 At a high level, Symposia follows this path:
 
-1. **Decompose** the input into adjudicable subclaims
+1. **Review the full claim by default** as one adjudication unit
 2. **Run an initial review** using a fixed profile set
 3. **Aggregate judgments** into a result
 4. **Escalate only when needed**
 5. **Emit traceable outputs** for inspection and governance
+
+`decomposition_mode="rule_based"` enables the current sentence-splitting path, but that path is not the default because dependency-heavy claims can be distorted by naive decomposition.
 
 The internal machinery is more detailed than the public API suggests by design.
 
@@ -456,7 +465,7 @@ Current version notes:
 
 ### Current experimental evidence boundary (2026-03-21)
 
-Controlled decomposition experiments (Steps 2 vs 3 on the experimental ladder) show a clear boundary:
+Controlled decomposition experiments (Steps 2 vs 3 on the experimental ladder) show a clear boundary, but they should be read as decomposition-path experiments rather than the default product path:
 
 | Case family | Mixed-family committee vs same-family | Notes |
 |---|---|---|

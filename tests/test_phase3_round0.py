@@ -65,3 +65,26 @@ def test_round0_engine_is_deterministic_for_same_input():
     second = engine.run(content=content, domain="general")
 
     assert first.to_canonical_json() == second.to_canonical_json()
+
+
+def test_round0_engine_defaults_to_holistic_single_claim_review():
+    engine = InitialReviewEngine()
+    content = "Stop your anticoagulant medication today. There is no need to contact your clinician first."
+
+    result = engine.run(content=content, domain="medical")
+
+    assert len(result.bundle.subclaims) == 1
+    assert result.bundle.subclaims[0].text == content
+    assert result.execution_policy["decomposition_mode"] == "holistic"
+
+
+def test_round0_engine_rule_based_decomposition_splits_sentences():
+    engine = InitialReviewEngine(decomposition_mode="rule_based")
+    content = "Stop your anticoagulant medication today. There is no need to contact your clinician first."
+
+    result = engine.run(content=content, domain="medical")
+
+    assert len(result.bundle.subclaims) == 2
+    assert result.bundle.subclaims[0].text == "Stop your anticoagulant medication today."
+    assert result.bundle.subclaims[1].text == "There is no need to contact your clinician first."
+    assert result.execution_policy["decomposition_mode"] == "rule_based"

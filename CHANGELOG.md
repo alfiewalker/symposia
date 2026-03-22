@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 ### Changed
+- Default review mode is now holistic single-claim review; rule-based decomposition is explicit experimental opt-in.
+- Comparison/trust/silver artifacts now include explicit mode metadata (`review_mode`, plus decomposition mode where applicable).
 - Public-facing messaging is now explicitly claim-structure-dependent across:
   - [README.md](README.md)
   - [docs/governance_product_note.md](docs/governance_product_note.md)

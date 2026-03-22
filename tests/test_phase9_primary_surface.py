@@ -34,6 +34,7 @@ def test_validate_signature_is_day_one_simple() -> None:
         "escalation_model",
         "routing",
         "provider_config",
+        "decomposition_mode",
         "live",
     ]
 
@@ -55,3 +56,17 @@ def test_validate_returns_primary_result_type(monkeypatch) -> None:
     assert result.run_id.startswith("run_")
     assert result.bundle.raw_content
     assert result.bundle.subclaims
+    assert len(result.bundle.subclaims) == 1
+    assert result.execution_policy["decomposition_mode"] == "holistic"
+
+
+def test_validate_rule_based_decomposition_is_explicit(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    result = validate(
+        content="Call emergency services immediately. Chest pain can indicate a heart attack.",
+        domain="medical",
+        decomposition_mode="rule_based",
+    )
+
+    assert len(result.bundle.subclaims) == 2
+    assert result.execution_policy["decomposition_mode"] == "rule_based"

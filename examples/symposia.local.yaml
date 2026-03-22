@@ -1,6 +1,9 @@
 # Symposia Local Development Configuration File
 # This file is for local development and testing purposes.
 
+# Decomposition mode: holistic (default) | rule_based
+# decomposition_mode: holistic
+
 # 1. LLM Service Definitions
 # Using OpenAI GPT-4o-mini with different roles/personalities
 llm_services:

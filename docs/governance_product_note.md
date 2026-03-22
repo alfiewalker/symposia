@@ -1,144 +1,97 @@
-# Governance and Product Note
+# governance product note
 
-Status: current  
-Last updated: 2026-03-21  
-Scope: permitted messaging, evidence boundary, and product positioning
+Status: current
+Last updated: 2026-03-22
+Scope: permitted messaging for synthesis run `2026-03-22-trust-v2`
+Process authority: `docs/governance-update-process.md`
 
----
+## objective
 
-## Public summary
+Bound product and governance messaging to the current synthesis artifact set for run `2026-03-22-trust-v2` only.
 
-Symposia is a committee-based judgement system for trust-sensitive questions.
+This note is derived from the current run artifacts for:
 
-Current evidence supports a bounded claim:
+- publication scope `synthesis`
+- review mode `holistic_single_claim`
+- requested decomposition mode `holistic`
+- artifact decomposition mode `no_decomposition`
+- route set `default_round0_openai_nano`
+- escalation route set `escalation_high_risk_openai_mini`
+- dataset `trust_value_dataset_v2_2026_03_21`
+- evidence tier `tier_b_silver`
 
-- mixed-family committees help on forecast-style claims
-- are neutral on clear factual claims
-- and can be harmful on underspecified policy claims
+## what this run established
 
-This means committee value is claim-structure-dependent, not universal.
+- Both development and holdout ended with `final_decision: committee_opt_in_supported` and `overall_default_status: committee_opt_in`.
+- Both development and holdout recorded `trust_worth_it_decision: true` while also recording `efficiency_worth_it_decision: false`.
+- The run produced complete trace coverage in both splits: `trace_completeness_score: 1.0`.
+- Sample-size gates passed in both splits at the current protocol threshold: `case_count=25`.
+- The current run captured non-trivial committee-process signals in both splits:
+	- development: weighted agreement `0.76`, dissent rate `0.64`, critical dissent rate `0.24`
+	- holdout: weighted agreement `0.78`, dissent rate `0.72`, critical dissent rate `0.28`
+- The run showed worse measured efficiency than the single baseline in both splits:
+	- development: committee false escalations `8` vs single false escalations `5`; escalation-error reduction `-60.0%`; latency ratio `x3.87`; cost ratio `x4.1`
+	- holdout: committee false escalations `7` vs single false escalations `5`; escalation-error reduction `-40.0%`; latency ratio `x4.15`; cost ratio `x4.1`
+- The protocol therefore supports an opt-in trust position for committee in this run, not a default recommendation.
 
-Use this document as the canonical source for what can and cannot be claimed publicly.
+## what this run did not establish
 
----
+- Committee default support was not established. `trust_default_support` is `false` in both splits.
+- Committee efficiency superiority was not established. The measured escalation-error reduction is negative in both splits and runtime overhead is materially higher.
+- Final committee-default proof was not established. `rubric_default_proof.all_required_passed` is `false` in both splits because the current evidence tier is not human-grade.
+- Pairwise same-error and unique-contribution claims are unavailable in the current run outputs because those fields are `null`.
+- Claim not supported by current run artifacts.
+	- Mixed-family lift claims.
+	- Family-specific forecast, policy, or danger-family superiority claims.
+	- Stronger-single comparator claims.
+	- Decomposition findings.
 
-## What Symposia is
+## claim boundary
 
-Symposia brings plural judgement, visible dissent, and traceable adjudication to trust-sensitive questions.
+- This note applies only to the synthesis of development and holdout for run `2026-03-22-trust-v2`.
+- It applies only to the current dataset, route setup, protocol versions, and evidence tier recorded in the provenance section below.
+- It is a holistic same-family OpenAI nano committee run with OpenAI mini escalation, not a mixed-family run, not a decomposition experiment, and not a full ladder result.
+- It supports bounded statements about this run's trust-protocol outcome and efficiency boundary.
+- It does not support cross-family, cross-mode, or cross-run generalization.
 
-It is a structured committee judgement engine — not a universal validation oracle, not a single-model wrapper, and not a truth machine.
+## permitted messaging
 
-The product value is in the *structure* of judgement: plurality, independence, auditability, and escalation discipline.
+- "In the current holistic synthesis run, committee is supported as an opt-in path, not as the default."
+- "Under the preregistered trust protocol, committee was trust-worth-it in both development and holdout, while failing the efficiency-worth-it test in both splits."
+- "Current silver-label evidence supports provisional trust assessment, not final committee-default proof."
+- "This run showed strong auditability and complete traces, but it did not show a reduction in escalation errors relative to the single baseline."
 
----
+## next evidence condition
 
-## What the evidence currently supports
+- Reach the evidence condition required for committee-default proof: `tier_c_human` rather than `tier_b_silver`.
+- Add per-juror correctness labels so pairwise same-error rate and unique-contribution rate can be measured rather than left `null`.
+- Run the canonical ladder to test whether committee value survives stronger-single and different committee-composition comparisons.
+- Run separately labeled mixed-family and decomposition experiments before making any family-specific or decomposition-specific product claims.
 
-### Confirmed positive case
+## provenance
 
-**Mixed-family committee diversity improves judgement quality on forecast-style claims.**
-
-From controlled decomposition experiments (Step 2 vs Step 3 on the experimental ladder, trust value dataset v2, 2026-03-21):
-
-| Metric | Development | Holdout |
-|---|---|---|
-| Target match rate (ΔTM) | +0.20 | +0.40 |
-| Weighted score (ΔWS) | +0.256 | +0.12 |
-| Weighted agreement | -0.267 | -0.267 |
-
-Agreement falls in this slice, but the quality lift is consistent across both splits. In this case, disagreement appears productive rather than noisy.
-
-### Confirmed null case
-
-**Mixed-family committees add no measurable value on clear factual claims.**
-
-`low_risk_clear_factual`: ΔTM = 0.0, ΔWS = 0.0 in development; ΔWS = +0.096 holdout only (no target-match lift). Committees converge to the same output regardless of model family. Diversity adds overhead without adding judgement quality.
-
-### Confirmed harmful case
-
-**Mixed-family committees increase critical dissent without improving judgement on underspecified policy claims.**
-
-`underspecified_legal_policy`: ΔWS = -0.072 (dev), -0.048 (holdout). Critical dissent spikes: +0.200 development, +0.400 holdout. Diversity fragments the committee verdict on questions that lack enough structure for models to disagree productively.
-
----
-
-## Permitted messaging
-
-### Preferred core claim (accurate and defensible)
-
-> Symposia's mixed-family committee value is claim-structure-dependent. It appears strongest on forecast-style questions, neutral on clear factual questions, and harmful on underspecified policy questions.
-
-### Top-level positioning (always permitted)
-
-> Symposia brings plural judgement, visible dissent, and traceable adjudication to trust-sensitive questions.
-
-### Evidence-backed supporting line (permitted with family scope)
-
-> Current evidence suggests committee diversity is most valuable on forecast-style claims — questions with inferential structure and bounded uncertainty. On those questions, mixed-family committees show consistent target-match and weighted-score lift across development and holdout splits.
-
----
-
-## Prohibited messaging
-
-The following are not supported by current evidence and must not appear in any external or internal framing:
-
-- "Mixed committees are better than same-family committees in general."
-- "More committee disagreement means more reliable output."
-- "Committee has been universally proven to outperform single-juror paths."
-- "Symposia's committee is always more trustworthy than a single strong model."
-- "Diversity improves committee judgement across all claim types."
-
----
-
-## Boundary conditions
-
-The committee diversity lift is **claim-structure-dependent**:
-
-| Claim type | Committee diversity effect |
-|---|---|
-| Forecast-style (inferential, bounded uncertainty) | **Positive** — consistent lift, confirmed positive case |
-| Clear factual (low ambiguity, well-defined answer) | **Neutral** — no measurable lift, overhead not justified |
-| Underspecified policy/legal | **Harmful** — increases dissent without improving quality |
-| High-stakes advice | Not yet confirmed either direction |
-| Plausible but dangerous recommendations | Not yet confirmed either direction |
-
-Unconfirmed families should not be asserted in either direction.
-
----
-
-## Evidence tier
-
-Current evidence is **Tier B (silver)**: controlled decomposition run, holdout confirmed, family-scoped, dataset limited (5 cases per family per split). This supports:
-
-- committee opt-in positioning for forecast-style claim domains
-- family-scoped diversity claims
-- provisional trust thesis positioning
-
-This does not yet support:
-
-- universal committee-default recommendation
-- broad institutional superiority claims
-- cross-domain generalisation beyond tested families
-
----
-
-## Next evidence steps
-
-To strengthen claims, the following are the logical next moves (in order):
-
-1. Expand `forecast_style_claim` dataset to ≥25 cases per split (current: 5)
-2. Run adjacent inferential families (e.g. ambiguous/mixed-truth) to check if lift pattern extends
-3. Complete Step 4 of the ladder (stronger single baseline) to test whether diversity lift survives a stronger single comparator
-4. Reach Tier A evidence thresholds (≥100 global, ≥25 per slice) required for stronger product claims
-
----
-
-## Artifact references
-
-- Focused validation: `artifacts/trust_pipeline_runs/2026-03-21-family-focused-validation/family_lift_and_focused_validation_summary.json`
-- Adjacent family replication: `artifacts/trust_pipeline_runs/2026-03-21-adjacent-family-validation/adjacent_family_validation_summary.json`
-- Full decomposition: `artifacts/trust_pipeline_runs/2026-03-21-decomposition-v1/`
-- Experimental ladder spec: `docs/implementation/22_experimental_ladder_and_testing_revamp.md`
-- Safety governance: `docs/implementation/07_safety_governance.md`
-
-For a concise public snapshot, see `docs/benchmark-summary.md`.
+- run_id: `2026-03-22-trust-v2`
+- generated_at_utc: `2026-03-22T02:06:40.005721+00:00`
+- publication_scope: `synthesis`
+- review_mode: `holistic_single_claim`
+- requested_decomposition_mode: `holistic`
+- artifact_decomposition_mode: `no_decomposition`
+- route_set_id: `default_round0_openai_nano`
+- committee_route_set_id: `default_round0_openai_nano`
+- single_route_set_id: `default_round0_openai_nano`
+- escalation_route_set_id: `escalation_high_risk_openai_mini`
+- dataset_version: `trust_value_dataset_v2_2026_03_21`
+- trust_protocol_version: `trust_rubric_contract_v1_2026_03_21`
+- comparison_protocol_version: `committee_value_protocol_v1_2026_03_21`
+- evidence_tier: `tier_b_silver`
+- git_commit: `6caa468b4078df484b4989ca78cd95073b740eba`
+- source_artifacts:
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/v2_pipeline_summary.json`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/trust_summary.json`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/trust_summary.json`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/decision.md`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/decision.md`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/trust_decision.md`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/trust_decision.md`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/resolved_protocol.json`
+	- `artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/resolved_protocol.json`

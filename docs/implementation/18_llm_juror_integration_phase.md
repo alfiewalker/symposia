@@ -17,6 +17,11 @@ Keep the kernel. Replace the juror implementation.
 
 Do not redesign the system. Make the existing review flow accept live LLM jurors as first-class participants.
 
+Runtime review posture for this phase:
+
+- default path: holistic single-claim review
+- experimental path: rule-based decomposition only when explicitly enabled
+
 ## Done means
 
 At the end of this phase, Symposia can:
@@ -65,7 +70,7 @@ A real `LLMJuror` implementation that fits the current juror slot and produces e
 
 #### Input
 
-- subclaim text
+- adjudication-unit text (full claim by default; subclaim only in experimental mode)
 - domain
 - profile
 - selected profile set

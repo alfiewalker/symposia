@@ -408,6 +408,8 @@ def _resolve_required_run_metadata(
         "route_domain": route_domain,
         "protocol_version": protocol_version,
         "dataset_version": dataset_version,
+        "review_mode": "holistic_single_claim",
+        "decomposition_mode": "no_decomposition",
     }
 
     required = rubric_contract.get("required_run_metadata", {}).get("fields", [])
@@ -637,6 +639,7 @@ def run_openai_round0_trust_evaluation_v2(
     cases: list[OpenAIRound0ComparisonCase] | None = None,
     provider_registry: ProviderRegistry | None = None,
     evidence_label_tier: str = "tier_b_silver",
+    decomposition_mode: str = "holistic",
 ) -> dict[str, object]:
     manifest_v2 = _load_yaml_resource("trust_value_dataset_manifest.v2.yaml")
     rubric_contract = _load_yaml_resource("trust_rubric_contract.v1.yaml")
@@ -678,6 +681,7 @@ def run_openai_round0_trust_evaluation_v2(
         cases=runtime_cases,
         provider_registry=provider_registry,
         protocol_validation_enabled=False,
+        decomposition_mode=decomposition_mode,
     )
 
     rows = list(comparison["case_results"])
@@ -744,6 +748,10 @@ def run_openai_round0_trust_evaluation_v2(
         "protocol_version": str(rubric_contract.get("rubric_contract_version", "unknown")),
         "dataset_version": str(manifest_v2.get("dataset_version", "unknown")),
         "route_set_id": committee_route_set_id,
+        "review_mode": str(comparison["summary"].get("review_mode", "holistic_single_claim")),
+        "decomposition_mode": str(
+            comparison["summary"].get("decomposition_mode", "no_decomposition")
+        ),
         "case_count": len(rows),
         "agreement_rate": agreement["agreement_rate"],
         "weighted_agreement_rate": agreement["weighted_agreement_rate"],
@@ -768,6 +776,9 @@ def run_openai_round0_trust_evaluation_v2(
         "evidence": {
             "label_tier": evidence_label_tier,
             "rubric_contract_version": rubric_contract.get("rubric_contract_version"),
+            "review_mode": str(
+                comparison["summary"].get("review_mode", "holistic_single_claim")
+            ),
             "claim_scope": "rubric-first trust evidence for v2 dataset",
         },
         "dataset_manifest_reference": {
@@ -933,6 +944,7 @@ def run_committee_trust_decomposition_experiment(
             single_profile_id=str(arm.get("single_profile_id", "balanced_reviewer_v1")),
             provider_registry=provider_registry,
             evidence_label_tier=evidence_label_tier,
+            decomposition_mode="rule_based",
         )
         arm_reports[arm_id] = report
         arm_summaries[arm_id] = {
@@ -1012,6 +1024,7 @@ def run_openai_round0_trust_evaluation(
     cases: list[OpenAIRound0ComparisonCase] | None = None,
     provider_registry: ProviderRegistry | None = None,
     evidence_label_tier: str = "tier_b_silver",
+    decomposition_mode: str = "holistic",
 ) -> dict[str, object]:
     selected_cases = cases or default_openai_round0_comparison_cases()
     validation = validate_trust_protocol_contract(route_set_id=route_set_id, cases=selected_cases)
@@ -1033,6 +1046,7 @@ def run_openai_round0_trust_evaluation(
         single_profile_id=single_profile_id,
         cases=selected_cases,
         provider_registry=provider_registry,
+        decomposition_mode=decomposition_mode,
     )
 
     rows = list(comparison["case_results"])
@@ -1062,6 +1076,10 @@ def run_openai_round0_trust_evaluation(
         "protocol_version": validation.protocol_version,
         "dataset_version": validation.dataset_version,
         "route_set_id": route_set_id,
+        "review_mode": str(comparison["summary"].get("review_mode", "holistic_single_claim")),
+        "decomposition_mode": str(
+            comparison["summary"].get("decomposition_mode", "no_decomposition")
+        ),
         "case_count": len(rows),
         "agreement_rate": agreement["agreement_rate"],
         "weighted_agreement_rate": agreement["weighted_agreement_rate"],
@@ -1085,6 +1103,9 @@ def run_openai_round0_trust_evaluation(
             "tier_a_note": "no-label metrics are trustworthy now",
             "tier_b_note": "silver-label metrics are provisional",
             "tier_c_note": "human-label metrics are decision-grade",
+            "review_mode": str(
+                comparison["summary"].get("review_mode", "holistic_single_claim")
+            ),
             "claim_scope": "silver-label evidence supports provisional trust assessment, not final committee-default proof",
         },
         "dataset_manifest_reference": {

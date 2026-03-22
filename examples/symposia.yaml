@@ -1,6 +1,9 @@
 # Symposia Configuration File
 # This file defines the LLM services and the composition of intelligence pools.
 
+# Decomposition mode: holistic (default) | rule_based
+# decomposition_mode: holistic
+
 # 1. LLM Service Definitions
 # Define each LLM service you want to make available to the committees.
 # The key for each service (e.g., 'openai_gpt4o_mini') is a unique identifier.

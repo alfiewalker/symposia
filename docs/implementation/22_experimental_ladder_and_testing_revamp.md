@@ -8,6 +8,13 @@ This document formalises the experimental ladder for Symposia and explains how t
 
 The goal is to stop treating every experiment as a generic “committee vs single” comparison and instead test the thesis in the correct order.
 
+Important runtime boundary:
+
+- product default = holistic single-claim review
+- decomposition = experimental evaluation path only
+
+This separation is deliberate. A distorted decomposition layer can reduce truthfulness and blur experimental interpretation.
+
 ---
 
 ## Core thesis
@@ -96,6 +103,8 @@ Results: diversity effect is **claim-structure-dependent**, not universal.
 - `underspecified_legal_policy`: harmful — mixed committee increases critical dissent without quality gain
 
 Adjacent family replication confirmed the boundary. The positive signal does not generalise beyond forecast-style and structurally similar inferential claim families.
+
+These ladder results should therefore be read as evidence about committee behavior under the experimental decomposition path, not as justification for making decomposition the default runtime policy.
 
 ---
 

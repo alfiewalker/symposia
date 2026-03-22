@@ -1,0 +1,50 @@
+version: v1
+route_set_id: committee_round0_openai_mini_triplet_v1
+stage: round0
+domain: all
+output_schema: juror_decision_v1
+guardrails:
+  max_premium_jurors_per_run: 0
+  require_provider_diversity: false
+  require_model_family_diversity: false
+  premium_allowed_in_round0: false
+assignments:
+  - slot_id: round0_openai_mini_triplet_balanced_1
+    profile_id: balanced_reviewer_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: small_capable
+    timeout_seconds: 12
+    max_output_tokens: 600
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: round0_openai_mini_triplet_sceptical_1
+    profile_id: sceptical_verifier_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: small_capable
+    timeout_seconds: 12
+    max_output_tokens: 600
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+
+  - slot_id: round0_openai_mini_triplet_evidence_1
+    profile_id: evidence_maximalist_v1
+    provider: openai
+    model: gpt-5.4-mini
+    model_family: gpt-5.4
+    tier: small_capable
+    timeout_seconds: 12
+    max_output_tokens: 700
+    fallback:
+      provider: openai
+      model: gpt-5.4-mini
+      model_family: gpt-5.4
+notes: Same-family OpenAI mini triplet route for testing the quality-count frontier in the canonical trust ladder.

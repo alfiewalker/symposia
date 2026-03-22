@@ -9,7 +9,7 @@ from symposia.config import resolve_profile_set
 from symposia.core.providers.base import LLMService
 from symposia.jurors import JurorExecutionRecord, LLMJuror
 from symposia.jurors.rule_based import RuleBasedJuror
-from symposia.kernel import RuleBasedSubclaimDecomposer
+from symposia.kernel import HolisticSubclaimDecomposer, RuleBasedSubclaimDecomposer, resolve_decomposer
 from symposia.models.juror import JurorDecision
 from symposia.models.round0 import InitialReviewResult
 from symposia.models.trace import (
@@ -33,8 +33,10 @@ class InitialReviewEngine:
         llm_retries: int = 2,
         llm_retry_delay_seconds: float = 0.5,
         max_juror_dropouts_per_subclaim: int = 2,
+        decomposition_mode: str = "holistic",
     ):
-        self._decomposer = RuleBasedSubclaimDecomposer()
+        self._decomposition_mode = decomposition_mode
+        self._decomposer = resolve_decomposer(self._decomposition_mode)
         self._juror_mode = juror_mode
         self._llm_service_factory = llm_service_factory
         self._juror_profiles = list(juror_profiles) if juror_profiles is not None else None
@@ -170,6 +172,7 @@ class InitialReviewEngine:
                 "llm_retries": self._llm_retries,
                 "llm_retry_delay_seconds": self._llm_retry_delay_seconds,
                 "max_juror_dropouts_per_subclaim": self._max_juror_dropouts_per_subclaim,
+                "decomposition_mode": self._decomposition_mode,
             },
             runtime_stats={
                 "juror_count": len(jurors),

@@ -53,6 +53,13 @@ Examples:
         help='Enable verbose logging'
     )
     
+    parser.add_argument(
+        '--decomposition-mode',
+        choices=['holistic', 'rule_based'],
+        default=None,
+        help='Decomposition mode override (default: holistic from config)'
+    )
+    
     subparsers = parser.add_subparsers(dest='command', help='Available commands')
     
     # List pools command
@@ -148,7 +155,10 @@ async def main():
         cli.load_configuration(config_path=args.config)  # Load for check, but don't exit on failure
         cli.check_environment()
     elif args.command == 'ask':
-        success = await cli.run_deliberation(args.pool, args.question, args.strategy)
+        success = await cli.run_deliberation(
+            args.pool, args.question, args.strategy,
+            decomposition_mode=args.decomposition_mode,
+        )
         if not success:
             sys.exit(1)
     elif args.command in ['interactive', 'i']:

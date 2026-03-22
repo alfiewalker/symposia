@@ -11,6 +11,21 @@ Symposia v2 is built on four pillars:
 
 This is the methodology that gives both elegance and clout.
 
+## Default review posture
+
+Current default:
+
+$$
+\\text{default} = \\text{holistic single-claim review}
+$$
+
+Symposia now treats the full caller-provided claim as the primary adjudication unit unless the caller explicitly opts into experimental decomposition.
+
+Reason:
+- naive sentence-level decomposition can distort dependency-heavy claims
+- distorted subclaims contaminate committee evidence rather than clarifying it
+- a bad decomposition layer is worse than no decomposition layer
+
 ## Theoretical posture
 
 Sympoia's validation layer draws on four framework families. Each one provides a distinct piece of the adjudication design.
@@ -23,7 +38,7 @@ The Condorcet jury theorem shows that a majority of independent judges, each mor
 - binary judgements per subclaim
 - aggregation into a committee result
 
-**Where pure Condorcet stops.** The theorem does not tell us how to decompose compound content, weight jurors credibly, handle uncertainty escalation, or produce institution-grade outputs. Symposia keeps Condorcet in the kernel and layers practical adjudication above it.
+**Where pure Condorcet stops.** The theorem does not tell us how to preserve claim meaning under decomposition, weight jurors credibly, handle uncertainty escalation, or produce institution-grade outputs. Symposia keeps Condorcet in the kernel and layers practical adjudication above it.
 
 ### 2. Cooke's Classical Model → expert weighting / calibration logic
 
@@ -55,7 +70,7 @@ Do not ask jurors to vote directly on:
 - insufficient
 - contested
 
-Instead, for each subclaim, ask hidden binary tests.
+Instead, ask hidden binary tests over the current adjudication unit. By default that unit is the full claim. In experimental decomposition mode, that unit becomes a subclaim.
 
 ## Internal binary tests
 
