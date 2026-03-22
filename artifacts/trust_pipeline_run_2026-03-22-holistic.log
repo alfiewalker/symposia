@@ -1,0 +1,6 @@
+ENV_LOADED ['/workspaces/Symposia/.env']
+RUN_START development
+RUN_DONE development committee_opt_in_supported
+RUN_START holdout
+RUN_DONE holdout committee_opt_in_supported
+PIPELINE_SUMMARY_WRITTEN artifacts/trust_pipeline_runs/2026-03-22-v2-rubric-holistic/pipeline_summary.json
