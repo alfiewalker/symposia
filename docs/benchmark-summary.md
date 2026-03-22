@@ -4,13 +4,13 @@ This artifact summarizes the deterministic benchmark and acceptance suites that 
 
 ## Public snapshot
 
-Current evidence says committee value is claim-structure-dependent:
+Current evidence gives a bounded, claim-structure-dependent signal for opt-in committee use:
 
-- Forecast-style claims: mixed-family committees help.
-- Clear factual claims: mixed-family committees are neutral.
-- Underspecified policy claims: mixed-family committees can be harmful.
+- Forecast-style claims: promising in the current evaluation slice.
+- Clear factual claims: limited evidence of quality lift in the current evaluation slice.
+- Underspecified policy claims: caution, with higher critical dissent and no compensating quality gain in the current evaluation slice.
 
-This is a bounded claim, not a universal committee-superiority claim.
+This is a bounded opt-in evidence statement, not a default or universal committee-superiority claim.
 
 Current default runtime mode: `decomposition_mode=holistic` (holistic single-claim review at all layers).
 Experimental ladder evidence in this document is decomposition-path evidence (`decomposition_mode=rule_based`).
@@ -50,9 +50,9 @@ Mode tag for this section: `review_mode=decomposed` (legacy/experimental evidenc
 | high_stakes_advice | 0.0 / 0.0 | -0.096 / +0.024 | Not confirmed either direction |
 | plausible_but_dangerous_recommendation | 0.0 / 0.0 | -0.016 / +0.008 | Not confirmed either direction |
 
-**Bounded claim from this evidence:**
+**Bounded reading from this evidence:**
 
-> Committee diversity is claim-structure-dependent. It produces measurable quality lift on forecast-style claims, no lift on clear factual claims, and harmful dissent increase on underspecified policy claims.
+> Committee diversity shows a bounded, claim-structure-dependent signal in this evaluation slice. Forecast-style claims are promising, clear factual claims show limited evidence of quality lift, and underspecified policy claims warrant caution.
 
 **What this does not say:**
 

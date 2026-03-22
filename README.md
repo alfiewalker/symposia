@@ -31,13 +31,13 @@ What Symposia is not:
 
 ## Evidence at a glance
 
-| Claim structure | Mixed-family committee effect | Current reading |
+| Claim structure | Current evidence signal | Current reading |
 |---|---|---|
-| Forecast-style claims | Positive | Better target-match and weighted-score performance in development and holdout |
-| Clear factual claims | Neutral | No meaningful quality lift versus same-family committee |
-| Underspecified policy claims | Harmful | More critical dissent without quality gain |
+| Forecast-style claims | Promising | Better target-match and weighted-score performance in this bounded evaluation slice, but not grounds for a default recommendation |
+| Clear factual claims | Limited | No consistent quality lift over the same-family committee in current evidence |
+| Underspecified policy claims | Caution | Higher critical dissent without a compensating quality gain in current evidence |
 
-This is a bounded evidence statement, not a universal committee-superiority claim. For permitted external messaging, use `docs/governance_product_note.md`.
+This is a bounded opt-in evidence statement derived from current evaluation artifacts, not a default or universal committee-superiority claim. For permitted external messaging, use `docs/governance_product_note.md`.
 
 Evidence and messaging updates follow the formal SOP in `docs/governance-update-process.md`.
 Canonical trust-eval runner script: `scripts/run_trust_pipeline.py`.
