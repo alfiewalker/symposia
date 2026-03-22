@@ -1,7 +1,7 @@
 {
   "source_run": {
-    "run_id": "2026-03-22-trust-v2",
-    "generated_at_utc": "2026-03-22T02:06:40.005721+00:00",
+    "run_id": "2026-03-22-v2-rubric-holistic",
+    "generated_at_utc": "2026-03-22T03:52:03.077243+00:00",
     "publication_scope": "synthesis",
     "review_mode": "holistic_single_claim",
     "requested_decomposition_mode": "holistic",
@@ -11,86 +11,41 @@
     "single_route_set_id": "default_initial_openai_nano",
     "escalation_route_set_id": "escalation_high_risk_openai_mini",
     "dataset_version": "trust_value_dataset_v2_2026_03_21",
-    "trust_protocol_version": "trust_rubric_contract_v1_2026_03_21",
-    "comparison_protocol_version": "committee_value_protocol_v1_2026_03_21",
-    "evidence_tier": "tier_b_silver",
-    "git_commit": "6caa468b4078df484b4989ca78cd95073b740eba"
+    "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+    "evidence_tier": "tier_b_silver"
   },
   "summary": {
     "development": {
       "final_decision": "committee_opt_in_supported",
-      "overall_default_status": "committee_opt_in",
-      "trust_worth_it_decision": true,
-      "trust_default_support": false,
-      "efficiency_worth_it_decision": false,
-      "efficiency_default_support": false,
-      "agreement_rate": 0.68,
-      "weighted_agreement_rate": 0.76,
-      "dissent_rate": 0.64,
-      "critical_dissent_rate": 0.24,
+      "case_count": 25,
+      "agreement_rate": 0.88,
+      "weighted_agreement_rate": 0.91,
+      "dissent_rate": 0.24,
+      "critical_dissent_rate": 0.08,
       "trace_completeness_score": 1.0,
-      "rubric_average_weighted_score": 1.5792,
-      "rubric_target_match_rate": 0.16,
-      "committee_false_escalations": 8,
-      "single_false_escalations": 5,
-      "escalation_error_reduction_pct": -60.0,
-      "avg_latency_ratio_committee_over_single": 3.87,
-      "avg_cost_ratio_committee_over_single": 4.1,
-      "sample_size_gates_passed": true,
-      "trust_signal_score_meets_threshold": true,
-      "default_proof_blocked_reasons": [
-        "evidence_tier_is_tier_c_human"
-      ],
-      "pairwise_same_error_rate": null,
-      "unique_contribution_rate": null
+      "rubric_average_weighted_score": 1.5184,
+      "rubric_target_match_rate": 0.08
     },
     "holdout": {
       "final_decision": "committee_opt_in_supported",
-      "overall_default_status": "committee_opt_in",
-      "trust_worth_it_decision": true,
-      "trust_default_support": false,
-      "efficiency_worth_it_decision": false,
-      "efficiency_default_support": false,
+      "case_count": 25,
       "agreement_rate": 0.84,
-      "weighted_agreement_rate": 0.78,
-      "dissent_rate": 0.72,
-      "critical_dissent_rate": 0.28,
+      "weighted_agreement_rate": 0.88,
+      "dissent_rate": 0.32,
+      "critical_dissent_rate": 0.16,
       "trace_completeness_score": 1.0,
-      "rubric_average_weighted_score": 1.6848,
-      "rubric_target_match_rate": 0.12,
-      "committee_false_escalations": 7,
-      "single_false_escalations": 5,
-      "escalation_error_reduction_pct": -40.0,
-      "avg_latency_ratio_committee_over_single": 4.15,
-      "avg_cost_ratio_committee_over_single": 4.1,
-      "sample_size_gates_passed": true,
-      "trust_signal_score_meets_threshold": true,
-      "default_proof_blocked_reasons": [
-        "evidence_tier_is_tier_c_human"
-      ],
-      "pairwise_same_error_rate": null,
-      "unique_contribution_rate": null
+      "rubric_average_weighted_score": 1.5632,
+      "rubric_target_match_rate": 0.12
     }
   },
   "claim_checks": {
     "committee_opt_in_supported_in_current_synthesis_run": "supported_by_current_run_artifacts",
-    "committee_default_supported": "Claim not supported by current run artifacts.",
-    "efficiency_superiority_of_committee": "Claim not supported by current run artifacts.",
-    "pairwise_independence_claims": "Claim not supported by current run artifacts.",
-    "unique_contribution_claims": "Claim not supported by current run artifacts.",
-    "mixed_family_lift_claims": "Claim not supported by current run artifacts.",
+    "broader_multi_juror_claims": "Claim not supported by current run artifacts.",
+    "cross_run_superiority_claims": "Claim not supported by current run artifacts.",
     "decomposition_findings": "Claim not supported by current run artifacts.",
-    "stronger_single_comparator_claims": "Claim not supported by current run artifacts."
+    "mixed_family_lift_claims": "Claim not supported by current run artifacts."
   },
   "source_artifacts": [
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/v2_pipeline_summary.json",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/trust_summary.json",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/trust_summary.json",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/decision.md",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/decision.md",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/trust_decision.md",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/trust_decision.md",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/development/resolved_protocol.json",
-    "artifacts/trust_pipeline_runs/2026-03-22-trust-v2/holdout/resolved_protocol.json"
+    "artifacts/trust_pipeline_runs/2026-03-22-v2-rubric-holistic/pipeline_summary.json"
   ]
 }

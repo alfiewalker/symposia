@@ -24,7 +24,7 @@ from symposia.models.trace import CoreTrace, MinimalTraceAggregation, MinimalTra
 # sc_002: borderline  (support=0.68, contradiction=0.30, sufficiency=0.65)  → LOW_SUPPORT + LOW_SUFFICIENCY
 # sc_003: failing     (support=0.40, contradiction=0.50, sufficiency=0.45)  → all three reasons
 #
-# completion.should_stop = True  →  REVIEW_NOT_COMPLETE must NOT appear
+# completion.is_decisive = True  →  REVIEW_NOT_COMPLETE must NOT appear
 # dissents: sc_002 has 1 support / 1 contradicting (ratio 0.50 → CRITICAL)
 #           sc_003 has 0 support  → no dissent record (pure rejection, no split)
 # ---------------------------------------------------------------------------
@@ -80,7 +80,7 @@ def fixture_multi_subclaim_partial() -> tuple[InitialReviewResult, dict]:
         bundle=bundle,
         decisions=decisions,
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=True, reason="threshold_met"),
+        completion=CompletionDecision(is_decisive=True, reason="threshold_met"),
         core_trace=core_trace,
     )
 
@@ -88,7 +88,7 @@ def fixture_multi_subclaim_partial() -> tuple[InitialReviewResult, dict]:
         "should_escalate": True,
         "escalated_subclaim_ids": {"sc_002", "sc_003"},
         "no_escalation_subclaim_ids": {"sc_001"},
-        "review_not_complete_trigger": False,   # completion.should_stop=True
+        "review_not_complete_trigger": False,   # completion.is_decisive=True
         "critical_dissent_trigger": True,       # sc_002: ratio=0.50 ≥ 0.40
         "dissent_count_min": 1,
     }
@@ -102,7 +102,7 @@ def fixture_multi_subclaim_partial() -> tuple[InitialReviewResult, dict]:
 # sc_at:    contradiction=0.350  →  at ceiling exactly    → MATERIAL_CONTRADICTION
 #
 # support and sufficiency are both 0.75 (pass) for both subclaims.
-# completion.should_stop = True
+# completion.is_decisive = True
 # ---------------------------------------------------------------------------
 
 def fixture_contradiction_threshold_boundary() -> tuple[InitialReviewResult, dict]:
@@ -137,7 +137,7 @@ def fixture_contradiction_threshold_boundary() -> tuple[InitialReviewResult, dic
         bundle=bundle,
         decisions=[],
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=True, reason="threshold_met"),
+        completion=CompletionDecision(is_decisive=True, reason="threshold_met"),
         core_trace=core_trace,
     )
 
@@ -161,7 +161,7 @@ def fixture_contradiction_threshold_boundary() -> tuple[InitialReviewResult, dic
 #   sc_001: support=0.50, contradiction=0.50, sufficiency=0.55
 #   sc_002: support=0.30, contradiction=0.67, sufficiency=0.40
 #
-# completion.should_stop = False  →  REVIEW_NOT_COMPLETE must appear
+# completion.is_decisive = False  →  REVIEW_NOT_COMPLETE must appear
 # ---------------------------------------------------------------------------
 
 def fixture_maximum_dissent() -> tuple[InitialReviewResult, dict]:
@@ -211,13 +211,13 @@ def fixture_maximum_dissent() -> tuple[InitialReviewResult, dict]:
         bundle=bundle,
         decisions=decisions,
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=False, reason="escalation_candidate"),
+        completion=CompletionDecision(is_decisive=False, reason="escalation_candidate"),
         core_trace=core_trace,
     )
 
     expected = {
         "should_escalate": True,
-        "review_not_complete_trigger": True,   # should_stop=False
+        "review_not_complete_trigger": True,   # is_decisive=False
         "critical_dissent_trigger": True,
         "dissent_severity_sc_001": "critical",  # ratio 0.50 ≥ 0.40
         "dissent_severity_sc_002": "critical",  # ratio 0.67 ≥ 0.40
@@ -237,7 +237,7 @@ def fixture_maximum_dissent() -> tuple[InitialReviewResult, dict]:
 # sc_001: support=0.88, contradiction=0.40, sufficiency=0.85
 #         → MATERIAL_CONTRADICTION only (support and sufficiency pass)
 #
-# completion.should_stop = True
+# completion.is_decisive = True
 # Jurors: 4 supporting, 2 contradicting → ratio = 0.33 → MATERIAL dissent
 # ---------------------------------------------------------------------------
 
@@ -286,7 +286,7 @@ def fixture_high_support_safety_caveat() -> tuple[InitialReviewResult, dict]:
         bundle=bundle,
         decisions=decisions,
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=True, reason="threshold_met"),
+        completion=CompletionDecision(is_decisive=True, reason="threshold_met"),
         core_trace=core_trace,
     )
 
@@ -312,7 +312,7 @@ def fixture_high_support_safety_caveat() -> tuple[InitialReviewResult, dict]:
 #         → LOW_SUPPORT + LOW_SUFFICIENCY (no MATERIAL_CONTRADICTION)
 #
 # No juror contradicted → no dissent record should be produced.
-# completion.should_stop = True
+# completion.is_decisive = True
 # ---------------------------------------------------------------------------
 
 def fixture_low_support_no_contradiction() -> tuple[InitialReviewResult, dict]:
@@ -356,7 +356,7 @@ def fixture_low_support_no_contradiction() -> tuple[InitialReviewResult, dict]:
         bundle=bundle,
         decisions=decisions,
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=True, reason="threshold_met"),
+        completion=CompletionDecision(is_decisive=True, reason="threshold_met"),
         core_trace=core_trace,
     )
 
@@ -385,7 +385,7 @@ def fixture_low_support_no_contradiction() -> tuple[InitialReviewResult, dict]:
 # Jurors on sc_002: 3 support (general), 2 contradict (risk_sentinel)
 #   ratio = 2/5 = 0.40 → exactly at CRITICAL boundary → CRITICAL dissent
 #
-# completion.should_stop = True
+# completion.is_decisive = True
 # ---------------------------------------------------------------------------
 
 def fixture_mixed_domain_ambiguity() -> tuple[InitialReviewResult, dict]:
@@ -442,7 +442,7 @@ def fixture_mixed_domain_ambiguity() -> tuple[InitialReviewResult, dict]:
         bundle=bundle,
         decisions=decisions,
         aggregated_by_subclaim=aggregated,
-        completion=CompletionDecision(should_stop=True, reason="threshold_met"),
+        completion=CompletionDecision(is_decisive=True, reason="threshold_met"),
         core_trace=core_trace,
     )
 

@@ -94,7 +94,7 @@ def test_escalation_contract_builds_dissent_and_critical_trigger():
                 issuance_score=0.2,
             )
         },
-        completion=CompletionDecision(should_stop=False, reason="escalation_candidate"),
+        completion=CompletionDecision(is_decisive=False, reason="escalation_candidate"),
         core_trace=CoreTrace(
             run_id="run_synthetic",
             profile_set_selected="general_default_v1",

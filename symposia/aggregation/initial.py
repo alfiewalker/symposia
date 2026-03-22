@@ -63,7 +63,7 @@ def decide_early_stop(
     profile_set: ProfileSet,
 ) -> CompletionDecision:
     if not aggregated:
-        return CompletionDecision(should_stop=False, reason="no_subclaims")
+        return CompletionDecision(is_decisive=False, reason="no_subclaims")
 
     support_threshold = profile_set.thresholds.support
     confidence_threshold = profile_set.thresholds.confidence
@@ -75,5 +75,5 @@ def decide_early_stop(
         for row in aggregated.values()
     )
     if passes:
-        return CompletionDecision(should_stop=True, reason="initial_decisive")
-    return CompletionDecision(should_stop=False, reason="escalation_candidate")
+        return CompletionDecision(is_decisive=True, reason="initial_decisive")
+    return CompletionDecision(is_decisive=False, reason="escalation_candidate")

@@ -103,7 +103,7 @@ def plan_escalation(initial_review_result: InitialReviewResult) -> EscalationDec
     dissents = _build_dissent_records(initial_review_result)
 
     triggers: list[EscalationReason] = []
-    if not initial_review_result.completion.should_stop:
+    if not initial_review_result.completion.is_decisive:
         triggers.append(EscalationReason.REVIEW_NOT_COMPLETE)
 
     issue_reasons = {reason for issue in issues for reason in issue.reason_codes}

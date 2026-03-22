@@ -27,10 +27,10 @@ Key boundaries tested:
     support=0.699, contradiction=0.350, sufficiency=0.699 → ESCALATE (all three reasons)
 
   REVIEW_NOT_COMPLETE interaction:
-    any score + should_stop=False → REVIEW_NOT_COMPLETE fires regardless
-    all scores pass + should_stop=True → no triggers at all
+    any score + is_decisive=False → REVIEW_NOT_COMPLETE fires regardless
+    all scores pass + is_decisive=True → no triggers at all
 
-Note: all fixtures set should_stop=True (where noted otherwise) to isolate
+Note: all fixtures set is_decisive=True (where noted otherwise) to isolate
 score-based triggers from the completion trigger.
 """
 from __future__ import annotations
@@ -55,7 +55,7 @@ from symposia.models.trace import CoreTrace, MinimalTraceAggregation, MinimalTra
 def _make_result(
     run_id: str,
     scores: dict[str, tuple[float, float, float]],  # {subclaim_id: (support, contradiction, sufficiency)}
-    should_stop: bool = True,
+    is_decisive: bool = True,
     profile_set: str = "general_default_v1",
 ) -> InitialReviewResult:
     """Build a minimal InitialReviewResult from pre-computed scores.
@@ -103,7 +103,7 @@ def _make_result(
         decisions=[],
         aggregated_by_subclaim=aggregated,
         completion=CompletionDecision(
-            should_stop=should_stop,
+            is_decisive=is_decisive,
             reason="boundary_test",
         ),
         core_trace=core_trace,
@@ -197,15 +197,15 @@ def test_all_scores_fail_escalates_all_three_reasons():
 
 
 # ---------------------------------------------------------------------------
-# REVIEW_NOT_COMPLETE interaction: fires only when should_stop=False
+# REVIEW_NOT_COMPLETE interaction: fires only when is_decisive=False
 # ---------------------------------------------------------------------------
 
-def test_review_not_complete_fires_when_should_stop_false():
-    # Even if all scores pass, should_stop=False fires REVIEW_NOT_COMPLETE.
+def test_review_not_complete_fires_when_is_decisive_false():
+    # Even if all scores pass, is_decisive=False fires REVIEW_NOT_COMPLETE.
     result = _make_result(
         "bd_rnc_fires",
         {"sc": (0.90, 0.10, 0.90)},
-        should_stop=False,
+        is_decisive=False,
     )
     decision = plan_escalation(result)
     assert decision.should_escalate is True
@@ -216,7 +216,7 @@ def test_review_not_complete_absent_when_should_stop_true_and_scores_pass():
     result = _make_result(
         "bd_rnc_absent",
         {"sc": (0.90, 0.10, 0.90)},
-        should_stop=True,
+        is_decisive=True,
     )
     decision = plan_escalation(result)
     assert decision.should_escalate is False

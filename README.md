@@ -101,10 +101,10 @@ result = validate(
     domain="finance",
 )
 
-print(result.verdict)      # validated / contested / insufficient / rejected
-print(result.agreement)    # committee agreement profile
-print(result.caveats)      # uncertainty and boundary caveats
-print(result.trace)        # inspectable adjudication trace
+print(result.completion.is_decisive)           # True/False — review was decisive (passed thresholds)
+print(result.completion.reason)               # reason for the completion decision
+print(result.aggregated_by_subclaim)          # per-subclaim scores
+print(result.core_trace.aggregation_outcome)  # full adjudication trace
 ```
 
 Single answer -> committee judgement -> caveats and trace.
@@ -117,8 +117,9 @@ result = validate(
     domain="medical",
 )
 
-print(result.verdict)
-print(result.dissent)
+print(result.completion.is_decisive)
+print(result.completion.reason)
+print(result.aggregated_by_subclaim)
 ```
 
 Typical pattern: core claim partly supported, overclaim rejected, dissent explicit.
@@ -131,8 +132,9 @@ result = validate(
     domain="medical",
 )
 
-print(result.risk)
-print(result.caveats)
+print(result.completion.is_decisive)
+print(result.completion.reason)
+print(result.aggregated_by_subclaim)
 ```
 
 Typical pattern: elevated risk posture, strong caveats, escalation when needed.
@@ -145,8 +147,9 @@ result = validate(
     domain="legal",
 )
 
-print(result.verdict)
-print(result.dissent)
+print(result.completion.is_decisive)
+print(result.completion.reason)
+print(result.aggregated_by_subclaim)
 ```
 
 Typical pattern: contested or insufficient outcome, with visible dissent instead of false certainty.
@@ -204,8 +207,9 @@ result = validate(
     domain="medical",
 )
 
-print(result.verdict)
-print(result.risk)
+print(result.completion.is_decisive)
+print(result.completion.reason)
+print(result.aggregated_by_subclaim)
 ```
 
 Library env-loading is explicit by design. Importing Symposia does not auto-load `.env`.

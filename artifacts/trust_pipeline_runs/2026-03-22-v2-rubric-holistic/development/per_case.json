@@ -1,0 +1,1152 @@
+[
+  {
+    "case_id": "trust_v2_dev_lowrisk_01",
+    "committee": {
+      "agreement": 0.75,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003758,
+        "latency_ms": 2420.9,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2505
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->initial_decisive",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017861,
+        "latency_ms": 6613.6,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5639
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000942,
+        "latency_ms": 817.66,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 628
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_lowrisk_02",
+    "committee": {
+      "agreement": 0.5,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003789,
+        "latency_ms": 4404.57,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2526
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.8,
+      "completion_reason": "initial->initial_decisive",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018013,
+        "latency_ms": 9372.42,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5687
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1328.41,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_lowrisk_03",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003758,
+        "latency_ms": 4256.79,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2505
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->initial_decisive",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017879,
+        "latency_ms": 9293.33,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5643
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000942,
+        "latency_ms": 963.59,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 628
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_lowrisk_04",
+    "committee": {
+      "agreement": 0.5,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003783,
+        "latency_ms": 4109.04,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2522
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->initial_decisive",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017967,
+        "latency_ms": 9317.59,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5674
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "initial_decisive",
+      "escalation": false,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1145.29,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_lowrisk_05",
+    "committee": {
+      "agreement": 0.5,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003721,
+        "latency_ms": 5019.85,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2481
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->initial_decisive",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017703,
+        "latency_ms": 10236.42,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5588
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "initial_decisive",
+      "escalation": false,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000933,
+        "latency_ms": 1123.76,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 622
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_highstakes_01",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003824,
+        "latency_ms": 4810.02,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2549
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.8,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018193,
+        "latency_ms": 10070.51,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5742
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000959,
+        "latency_ms": 1231.38,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 639
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_highstakes_02",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003763,
+        "latency_ms": 4838.45,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2509
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017943,
+        "latency_ms": 9828.78,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5660
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000944,
+        "latency_ms": 981.05,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 629
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_highstakes_03",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003776,
+        "latency_ms": 4557.36,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2517
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.6,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017946,
+        "latency_ms": 9975.98,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5666
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1125.6,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_highstakes_04",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003805,
+        "latency_ms": 4381.07,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2537
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.8,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.01807,
+        "latency_ms": 9623.12,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5707
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000954,
+        "latency_ms": 1068.57,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 636
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_highstakes_05",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003799,
+        "latency_ms": 4455.01,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2533
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.4,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018158,
+        "latency_ms": 9477.63,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5724
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000953,
+        "latency_ms": 1110.67,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 635
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_forecast_01",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003746,
+        "latency_ms": 4401.33,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2497
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017894,
+        "latency_ms": 10441.63,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5641
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000939,
+        "latency_ms": 1086.67,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 626
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_forecast_02",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003751,
+        "latency_ms": 4297.88,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2501
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.8,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017845,
+        "latency_ms": 9477.43,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5633
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.00094,
+        "latency_ms": 1328.42,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 627
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_forecast_03",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003733,
+        "latency_ms": 4687.19,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2489
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017836,
+        "latency_ms": 9836.65,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5623
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000936,
+        "latency_ms": 1086.84,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 624
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_forecast_04",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003758,
+        "latency_ms": 4811.08,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2505
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017852,
+        "latency_ms": 10134.06,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5637
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000942,
+        "latency_ms": 988.97,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 628
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_forecast_05",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003782,
+        "latency_ms": 4197.91,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2521
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017939,
+        "latency_ms": 9628.89,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5667
+      }
+    },
+    "expected_escalation": false,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000948,
+        "latency_ms": 1120.8,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 632
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_policy_01",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003776,
+        "latency_ms": 4777.98,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2517
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017992,
+        "latency_ms": 9823.31,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5676
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1021.9,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_policy_02",
+    "committee": {
+      "agreement": 0.75,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003751,
+        "latency_ms": 5034.43,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2501
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017899,
+        "latency_ms": 10349.93,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5645
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.00094,
+        "latency_ms": 1125.86,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 627
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_policy_03",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003758,
+        "latency_ms": 4503.71,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2505
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017888,
+        "latency_ms": 9929.45,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5645
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000942,
+        "latency_ms": 1111.09,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 628
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_policy_04",
+    "committee": {
+      "agreement": 0.75,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003733,
+        "latency_ms": 4342.95,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2489
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017728,
+        "latency_ms": 9294.52,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5599
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000936,
+        "latency_ms": 1433.3,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 624
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_policy_05",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003776,
+        "latency_ms": 4607.66,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2517
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017946,
+        "latency_ms": 9651.3,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5666
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1143.12,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_danger_01",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003782,
+        "latency_ms": 4776.06,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2521
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.6,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018029,
+        "latency_ms": 9691.74,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5687
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000948,
+        "latency_ms": 1130.23,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 632
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_danger_02",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003758,
+        "latency_ms": 4237.36,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2505
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017839,
+        "latency_ms": 9440.12,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5634
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000942,
+        "latency_ms": 1093.83,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 628
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_danger_03",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003782,
+        "latency_ms": 4239.93,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2521
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.8,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018038,
+        "latency_ms": 9774.92,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5689
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000948,
+        "latency_ms": 982.43,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 632
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_danger_04",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003776,
+        "latency_ms": 4461.99,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2517
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 1.0,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.017924,
+        "latency_ms": 9470.64,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5661
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1173.93,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  },
+  {
+    "case_id": "trust_v2_dev_danger_05",
+    "committee": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.003776,
+        "latency_ms": 4079.43,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 2517
+      }
+    },
+    "committee_plus_escalation": {
+      "agreement": 0.6,
+      "completion_reason": "initial->escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.018018,
+        "latency_ms": 9622.32,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 5682
+      }
+    },
+    "expected_escalation": true,
+    "single": {
+      "agreement": 1.0,
+      "completion_reason": "escalation_candidate",
+      "escalation": true,
+      "review_mode": "holistic_single_claim",
+      "totals": {
+        "estimated_cost_usd": 0.000947,
+        "latency_ms": 1122.49,
+        "missing_price_models": [],
+        "price_version": "openai_total_token_price_v1_2026_03_21",
+        "runtime_cost_usd": 0.0,
+        "tokens_used": 631
+      }
+    }
+  }
+]

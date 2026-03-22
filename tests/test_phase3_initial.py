@@ -34,7 +34,7 @@ def test_initial_engine_end_to_end_on_locked_golden_cases():
 
         assert result.decisions
         assert result.aggregated_by_subclaim
-        assert isinstance(result.completion.should_stop, bool)
+        assert isinstance(result.completion.is_decisive, bool)
 
         for agg in result.aggregated_by_subclaim.values():
             assert 0.0 <= agg.support_score <= 1.0

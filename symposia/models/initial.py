@@ -19,7 +19,7 @@ class SubclaimDecision(DeterministicModel):
 
 
 class CompletionDecision(DeterministicModel):
-    should_stop: bool
+    is_decisive: bool
     reason: str = Field(min_length=1)
 
 

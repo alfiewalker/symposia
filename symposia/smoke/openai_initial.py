@@ -98,7 +98,7 @@ def run_openai_initial_live_smoke(
                 "case": asdict(case),
                 "route_set_id": route_set.route_set_id,
                 "run_id": result.run_id,
-                "should_stop": result.completion.should_stop,
+                "is_decisive": result.completion.is_decisive,
                 "completion_reason": result.completion.reason,
                 "dropouts": result.runtime_stats.get("total_dropouts", 0),
                 "trace_json": str(json_path),

@@ -1,0 +1,99 @@
+{
+  "development": {
+    "rubric_default_proof": {
+      "all_required_passed": false,
+      "blocked_reasons": [
+        "evidence_tier_is_tier_c_human"
+      ],
+      "gate_results": {
+        "evidence_tier_is_tier_c_human": false,
+        "no_hard_fail_triggered": true,
+        "sample_size_gates_passed": true,
+        "trust_signal_score_meets_threshold": true
+      },
+      "required_for": "committee_default_supported"
+    },
+    "summary": {
+      "agreement_rate": 0.88,
+      "case_count": 25,
+      "critical_dissent_rate": 0.08,
+      "dataset_version": "trust_value_dataset_v2_2026_03_21",
+      "decomposition_mode": "no_decomposition",
+      "dissent_rate": 0.24,
+      "efficiency_default_support": false,
+      "efficiency_worth_it_decision": false,
+      "final_decision": "committee_opt_in_supported",
+      "overall_default_status": "committee_opt_in",
+      "pairwise_same_error_rate": null,
+      "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+      "review_mode": "holistic_single_claim",
+      "route_set_id": "default_initial_openai_nano",
+      "rubric_average_weighted_score": 1.5184,
+      "rubric_case_count_scored": 25,
+      "rubric_target_match_rate": 0.08,
+      "trace_completeness_score": 1.0,
+      "trust_default_support": false,
+      "trust_worth_it_decision": true,
+      "unique_contribution_rate": null,
+      "weighted_agreement_rate": 0.91
+    }
+  },
+  "env_files_loaded": [
+    "/workspaces/Symposia/.env"
+  ],
+  "execution_policy": {
+    "decomposition_mode": "holistic",
+    "evidence_label_tier": "tier_b_silver",
+    "splits": [
+      "development",
+      "holdout"
+    ]
+  },
+  "generated_at_utc": "2026-03-22T03:52:03.077243+00:00",
+  "holdout": {
+    "rubric_default_proof": {
+      "all_required_passed": false,
+      "blocked_reasons": [
+        "evidence_tier_is_tier_c_human"
+      ],
+      "gate_results": {
+        "evidence_tier_is_tier_c_human": false,
+        "no_hard_fail_triggered": true,
+        "sample_size_gates_passed": true,
+        "trust_signal_score_meets_threshold": true
+      },
+      "required_for": "committee_default_supported"
+    },
+    "summary": {
+      "agreement_rate": 0.84,
+      "case_count": 25,
+      "critical_dissent_rate": 0.16,
+      "dataset_version": "trust_value_dataset_v2_2026_03_21",
+      "decomposition_mode": "no_decomposition",
+      "dissent_rate": 0.32,
+      "efficiency_default_support": false,
+      "efficiency_worth_it_decision": false,
+      "final_decision": "committee_opt_in_supported",
+      "overall_default_status": "committee_opt_in",
+      "pairwise_same_error_rate": null,
+      "protocol_version": "trust_rubric_contract_v1_2026_03_21",
+      "review_mode": "holistic_single_claim",
+      "route_set_id": "default_initial_openai_nano",
+      "rubric_average_weighted_score": 1.5632,
+      "rubric_case_count_scored": 25,
+      "rubric_target_match_rate": 0.12,
+      "trace_completeness_score": 1.0,
+      "trust_default_support": false,
+      "trust_worth_it_decision": true,
+      "unique_contribution_rate": null,
+      "weighted_agreement_rate": 0.88
+    }
+  },
+  "publication_scope": "synthesis",
+  "route_setup": {
+    "committee_route_set_id": "default_initial_openai_nano",
+    "escalation_route_set_id": "escalation_high_risk_openai_mini",
+    "single_route_set_id": "default_initial_openai_nano"
+  },
+  "run_id": "2026-03-22-v2-rubric-holistic"
+}

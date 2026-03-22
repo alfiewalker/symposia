@@ -1,60 +1,68 @@
-# Governance note: what we can say from the latest trust ladder run
+# Governance Note: Holistic Synthesis Run Results
 
 Status: current  
 Last updated: 2026-03-22  
-Scope: permitted messaging for run `2026-03-21-decomposition-v1`
+Scope: public-facing summary for run `2026-03-22-v2-rubric-holistic`
 
 ## Objective
 
-This note defines the product and governance claims supported by the latest trust ladder run only.
+This note reports the observed results from the latest holistic synthesis run. It is limited to the metrics and outcomes recorded in the run artifacts for `2026-03-22-v2-rubric-holistic`.
 
-## Headline conclusion
+## Headline Result
 
-The latest run supports offering committee review as an opt-in feature, but it does not support making committee review the default.
+The run produced the same top-line outcome on both development and holdout: `committee_opt_in_supported`.
 
-## What we learned
+## Results Summary
 
-- All tested arms ended in the same place: committee review is supportable as an opt-in path.
-- None of the tested arms produced enough evidence to support committee-by-default.
-- Committee variants did not show a stable quality advantage over the cheapest single-model baseline across development and holdout.
-- Mixed-family committees did not show a stable advantage over same-family committees.
-- Committee variants did not show a clear efficiency advantage in this run.
-- Trace completeness remained perfect across every arm and split.
+| Metric | Development | Holdout |
+|---|---:|---:|
+| Final decision | `committee_opt_in_supported` | `committee_opt_in_supported` |
+| Cases scored | `25` | `25` |
+| Agreement rate | `0.88` | `0.84` |
+| Weighted agreement | `0.91` | `0.88` |
+| Dissent rate | `0.24` | `0.32` |
+| Critical dissent rate | `0.08` | `0.16` |
+| Weighted rubric score | `1.5184` | `1.5632` |
+| Rubric target match rate | `0.08` | `0.12` |
+| Trace completeness | `1.0` | `1.0` |
 
-## What we cannot claim
+## Interpretation
 
-- We cannot claim that committee review should be the default under the current evidence tier.
-- We cannot claim a stable plurality benefit over the single cheap baseline.
-- We cannot claim stable mixed-family superiority over same-family committee.
-- We cannot claim that committee variants are more efficient.
-- We cannot make same-error or unique-contribution claims, because per-juror correctness labels were not available.
+- The outcome was consistent across both splits.
+- Agreement remained high on both development and holdout.
+- Holdout showed more disagreement than development, with higher dissent and higher critical dissent.
+- Trace completeness was perfect on both splits, indicating complete artifact capture for scored cases.
+- This run should be read as a results snapshot for the tested configuration, not as a claim about every possible multi-juror setup.
 
-## Permitted messaging
+## Public Summary Wording
 
-- "In the latest trust ladder run, committees remained opt-in and none met the bar for default use."
-- "Committee variants did not show a stable advantage over the single cheap baseline."
-- "Mixed-family committees produced mixed results rather than a clear win."
-- "Current silver-tier evidence supports bounded opt-in conclusions, not a default recommendation."
+- "In the latest holistic synthesis run, both development and holdout ended with `committee_opt_in_supported`."
+- "Agreement remained high on both splits, while dissent was higher on holdout than on development."
+- "The run was fully trace-complete across all scored cases."
+- "These results apply to the tested run configuration and evidence tier."
+- "A higher evidence tier would increase external credibility, but it does not change the observed outcome of this run."
 
-## What would need to change
+## Claim Boundary
 
-- Upgrade the evidence tier to `tier_c_human` for default-proof eligibility.
-- Add per-juror correctness labels so same-error and unique-contribution can be measured.
-- Re-run the ladder under matched compute budgets and a fixed escalation policy.
-- Require consistent directional improvement across both development and holdout before changing the default position.
+- This note reports the observed output of one run configuration.
+- It does not claim that every multi-juror configuration will produce the same result.
+- It does not treat this run as a blanket statement about all user-selected juror counts or routing choices.
+- The evidence tier should be read as part of the run context, not as a reason to restate or suppress the observed result.
+- Any broader product claim should be tied to additional runs or separately stated evidence.
 
 ## Provenance
 
-- run_id: `2026-03-21-decomposition-v1`
-- generated_at_utc: `2026-03-21T15:17:58.263816+00:00`
-- publication_scope: `ladder`
+- run_id: `2026-03-22-v2-rubric-holistic`
+- generated_at_utc: `2026-03-22T03:52:03.077243+00:00`
+- publication_scope: `synthesis`
 - review_mode: `holistic_single_claim`
-- artifact_decomposition_mode: `no_decomposition`
-- ladder_protocol_version: `committee_trust_decomposition_protocol_v1_2026_03_21`
-- trust_protocol_version: `trust_rubric_contract_v1_2026_03_21`
+- execution_policy.decomposition_mode: `holistic`
+- execution_policy.evidence_label_tier: `tier_b_silver`
+- route_set_id: `default_initial_openai_nano`
 - dataset_version: `trust_value_dataset_v2_2026_03_21`
-- evidence_tier: `tier_b_silver`
-- source_artifacts:
-  - `artifacts/trust_pipeline_runs/2026-03-21-decomposition-v1/decomposition_pipeline_summary.json`
-  - `artifacts/trust_pipeline_runs/2026-03-21-decomposition-v1/development/arm_comparison_summary.json`
-  - `artifacts/trust_pipeline_runs/2026-03-21-decomposition-v1/holdout/arm_comparison_summary.json`
+- protocol_version: `trust_rubric_contract_v1_2026_03_21`
+- development.case_count: `25`
+- holdout.case_count: `25`
+- development.final_decision: `committee_opt_in_supported`
+- holdout.final_decision: `committee_opt_in_supported`
+- source_artifact: `artifacts/trust_pipeline_runs/2026-03-22-v2-rubric-holistic/pipeline_summary.json`

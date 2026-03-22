@@ -506,9 +506,9 @@ async def _run_variant(
 
     return {
         "run": {
-            "should_stop": completion.should_stop,
+            "is_decisive": completion.is_decisive,
             "completion_reason": completion.reason,
-            "escalation": not completion.should_stop,
+            "escalation": not completion.is_decisive,
             "agreement": round(_decision_agreement(decisions), 4),
         },
         "per_juror": per_juror_records,
@@ -690,7 +690,7 @@ def run_openai_initial_comparison(
             )
             committee_plus_escalation["per_juror"].extend(escalation["per_juror"])
             committee_plus_escalation["run"] = {
-                "should_stop": escalation["run"]["should_stop"],
+                "is_decisive": escalation["run"]["is_decisive"],
                 "completion_reason": f"initial->{escalation['run']['completion_reason']}",
                 "escalation": bool(committee["run"]["escalation"]),
                 "agreement": escalation["run"]["agreement"],

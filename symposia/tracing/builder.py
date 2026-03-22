@@ -129,7 +129,7 @@ def build_adjudication_trace(initial_review_result: InitialReviewResult) -> Adju
             entity_id=initial_review_result.run_id,
             message="Early stop decision recorded.",
             metadata={
-                "should_stop": initial_review_result.completion.should_stop,
+                "is_decisive": initial_review_result.completion.is_decisive,
                 "reason": initial_review_result.completion.reason,
             },
         )

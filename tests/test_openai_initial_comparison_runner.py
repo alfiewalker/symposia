@@ -370,7 +370,7 @@ def test_comparison_runner_supports_distinct_single_route_set(monkeypatch, tmp_p
         )
         return {
             "run": {
-                "should_stop": True,
+                "is_decisive": True,
                 "completion_reason": "ok",
                 "escalation": False,
                 "agreement": 1.0,

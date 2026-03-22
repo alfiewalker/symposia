@@ -29,7 +29,7 @@ def main() -> None:
         "run_id": result.run_id,
         "profile_set": result.core_trace.profile_set_selected,
         "subclaims": len(result.bundle.subclaims),
-        "should_stop": result.completion.should_stop,
+        "is_decisive": result.completion.is_decisive,
         "completion_reason": result.completion.reason,
         "escalated_subclaims": escalated,
     }
