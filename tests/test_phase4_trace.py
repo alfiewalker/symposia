@@ -5,7 +5,7 @@ pytestmark = pytest.mark.legacy
 
 from pathlib import Path
 
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 from symposia.tracing import (
     export_adjudication_trace_json,
     export_adjudication_trace_markdown,
@@ -13,7 +13,7 @@ from symposia.tracing import (
 )
 
 
-def test_phase4_trace_replay_matches_round0_aggregation():
+def test_phase4_trace_replay_matches_initial_aggregation():
     engine = InitialReviewEngine()
     result = engine.run(
         content="Water boils at lower temperatures at higher altitude due to lower atmospheric pressure.",

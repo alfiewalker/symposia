@@ -33,14 +33,14 @@ def test_model_override_provider_model_parsing_and_key_check(monkeypatch) -> Non
 def test_named_routing_requires_keys_for_all_route_providers(monkeypatch) -> None:
     monkeypatch.setenv("OPENAI_API_KEY", "test-openai-key")
     monkeypatch.setenv("ANTHROPIC_API_KEY", "test-anthropic-key")
-    monkeypatch.setenv("GOOGLE_API_KEY", "test-google-key")
+    monkeypatch.delenv("GOOGLE_API_KEY", raising=False)
 
-    result = validate(
-        content="Chest pain with shortness of breath warrants urgent evaluation.",
-        domain="medical",
-        routing="default_round0",
-    )
-    assert result.run_id.startswith("run_")
+    with pytest.raises(ValueError, match="Missing provider credentials"):
+        validate(
+            content="Chest pain with shortness of breath warrants urgent evaluation.",
+            domain="medical",
+            routing="default_initial",
+        )
 
 
 def test_custom_routing_object_supported(monkeypatch) -> None:
@@ -57,7 +57,7 @@ def test_custom_routing_object_supported(monkeypatch) -> None:
             "max_premium_jurors_per_run": 1,
             "require_provider_diversity": True,
             "require_model_family_diversity": True,
-            "premium_allowed_in_round0": False,
+            "premium_allowed_in_initial": False,
         },
         assignments=[
             {
@@ -93,12 +93,12 @@ def test_custom_routing_object_supported(monkeypatch) -> None:
         ],
     )
 
-    result = validate(
-        content="Contract clauses should be reviewed for indemnity scope.",
-        domain="legal",
-        routing=custom_route,
-    )
-    assert result.run_id.startswith("run_")
+    with pytest.raises(ValueError, match="only initial routing"):
+        validate(
+            content="Contract clauses should be reviewed for indemnity scope.",
+            domain="legal",
+            routing=custom_route,
+        )
 
 
 def test_conflict_routing_with_model_raises(monkeypatch) -> None:
@@ -108,7 +108,7 @@ def test_conflict_routing_with_model_raises(monkeypatch) -> None:
         validate(
             content="Any claim.",
             domain="general",
-            routing="default_round0",
+            routing="default_initial",
             model="openai:gpt-4o-mini",
         )
 
@@ -132,3 +132,31 @@ def test_invalid_model_format_rejected() -> None:
             model="gpt-4o-mini",
             provider_config=ProviderConfig(provider="openai", api_key="x"),
         )
+
+
+def test_auto_mode_warns_when_falling_back_to_deterministic(monkeypatch) -> None:
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("GOOGLE_API_KEY", raising=False)
+
+    with pytest.warns(UserWarning, match="deterministic mode"):
+        result = validate(
+            content="General factual statement.",
+            domain="general",
+            live=None,
+        )
+
+    assert result.run_id.startswith("run_")
+
+
+def test_explicit_live_false_warns_deterministic_mode(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_API_KEY", "test-openai-key")
+
+    with pytest.warns(UserWarning, match="deterministic mode"):
+        result = validate(
+            content="General factual statement.",
+            domain="general",
+            live=False,
+        )
+
+    assert result.run_id.startswith("run_")

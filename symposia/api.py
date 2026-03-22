@@ -1,16 +1,17 @@
 from __future__ import annotations
 
 import os
+import warnings
 
 from symposia.config.models import LLMServiceConfig
 from symposia.core.providers.base import LLMService
 from symposia.models.routing import JurorRoutingConfig
 
 from symposia.config import resolve_profile_set
-from symposia.models.round0 import InitialReviewResult
+from symposia.models.initial import InitialReviewResult
 from symposia.models.profile import ProfileSet
 from symposia.providers import ProviderConfig, ProviderRegistry
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 from symposia.routing import (
     build_routed_llm_service_factory,
     get_route_set,
@@ -24,7 +25,11 @@ _PROVIDER_ENV_MAP = {
     "google": "GOOGLE_API_KEY",
 }
 
-_DEFAULT_LIVE_MODEL = "openai:gpt-5.4-mini"
+_DEFAULT_LIVE_MODEL_BY_PROVIDER = {
+    "openai": "openai:gpt-4o-mini",
+    "anthropic": "anthropic:claude-3-5-haiku-latest",
+    "google": "google:gemini-1.5-flash",
+}
 _DEFAULT_LIVE_SINGLE_PROFILE_ID = "balanced_reviewer_v1"
 
 
@@ -106,6 +111,16 @@ def _require_provider_key(
     )
 
 
+def _resolve_default_live_model(
+    provider_registry: ProviderRegistry | None,
+) -> str | None:
+    # Prefer OpenAI first, then Anthropic, then Google for a predictable default.
+    for provider in ("openai", "anthropic", "google"):
+        if _resolve_provider_key(provider, provider_registry):
+            return _DEFAULT_LIVE_MODEL_BY_PROVIDER[provider]
+    return None
+
+
 def _build_single_model_llm_service_factory(
     provider: str,
     model_name: str,
@@ -147,7 +162,7 @@ def validate(
     routing: str | JurorRoutingConfig | None = None,
     provider_config: ProviderConfig | ProviderRegistry | None = None,
     decomposition_mode: str = "holistic",
-    live: bool = False,
+    live: bool | None = None,
 ) -> InitialReviewResult:
     """Run one deterministic validation pass and return structured results.
 
@@ -181,10 +196,11 @@ def validate(
     - If routing is provided together with model or escalation_model,
       a ValueError is raised.
     - model and escalation_model must be provider:model.
-    - default mode is OpenAI-first and fails fast when credentials are missing.
-        - live=True is required for real LLM execution and is never the default.
-        - live=True with no explicit model/routing uses a single OpenAI juror by default.
-        - committee live execution requires explicit routing and is experimental.
+    - live=None (default) auto-selects live mode when credentials are available,
+      otherwise falls back to deterministic mode with a warning.
+    - live=True forces live execution and validates provider credentials.
+    - live=False forces deterministic mode and emits a warning.
+    - committee live execution requires explicit routing and is experimental.
     """
 
     if routing is not None and (model is not None or escalation_model is not None):
@@ -193,6 +209,35 @@ def validate(
         )
 
     provider_registry = _resolve_provider_registry(provider_config)
+    default_live_model = _resolve_default_live_model(provider_registry)
+
+    explicit_live_requested = routing is not None or model is not None or escalation_model is not None
+    if live is None:
+        effective_live = explicit_live_requested or (default_live_model is not None)
+    else:
+        effective_live = live
+
+    if not effective_live:
+        if explicit_live_requested:
+            raise ValueError(
+                "routing/model/escalation_model require live execution. "
+                "Set live=True (or live=None for auto mode)."
+            )
+
+        warnings.warn(
+            "Symposia is running in deterministic mode (no live provider selected).",
+            UserWarning,
+            stacklevel=2,
+        )
+        engine = InitialReviewEngine(
+            decomposition_mode=decomposition_mode,
+        )
+        return engine.run(
+            content=content,
+            domain=domain,
+            profile_set=profile_set,
+            profile=profile,
+        )
 
     if routing is not None:
         route_set = get_route_set(routing) if isinstance(routing, str) else routing
@@ -222,38 +267,20 @@ def validate(
                 provider_registry=provider_registry,
             )
 
-    else:
-        _require_provider_key(
-            "openai",
-            context="default OpenAI-first mode",
-            provider_registry=provider_registry,
-        )
-
-    if not live:
-        engine = InitialReviewEngine(
-            decomposition_mode=decomposition_mode,
-        )
-        return engine.run(
-            content=content,
-            domain=domain,
-            profile_set=profile_set,
-            profile=profile,
-        )
-
     effective_live_model = model
     if routing is None and effective_live_model is None:
-        effective_live_model = _DEFAULT_LIVE_MODEL
+        effective_live_model = default_live_model or _DEFAULT_LIVE_MODEL_BY_PROVIDER["openai"]
 
     if escalation_model is not None:
         raise ValueError(
-            "live=True does not yet support escalation_model; only round0 live execution is currently wired"
+            "live=True does not yet support escalation_model; only initial live execution is currently wired"
         )
 
     if routing is not None:
         route_set = get_route_set(routing) if isinstance(routing, str) else routing
-        if route_set.stage != "round0":
+        if route_set.stage != "initial":
             raise ValueError(
-                "live=True currently supports only round0 routing route sets"
+                "live=True currently supports only initial routing route sets"
             )
 
         engine = InitialReviewEngine(

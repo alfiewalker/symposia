@@ -8,7 +8,7 @@ from symposia.models.base import DeterministicModel
 
 
 ModelTier = Literal["small_capable", "medium", "premium"]
-RoutingStage = Literal["round0", "escalation"]
+RoutingStage = Literal["initial", "escalation"]
 
 
 class JurorRouteFallback(DeterministicModel):
@@ -33,7 +33,7 @@ class JurorRoutingGuardrails(DeterministicModel):
     max_premium_jurors_per_run: int = Field(ge=0)
     require_provider_diversity: bool = True
     require_model_family_diversity: bool = True
-    premium_allowed_in_round0: bool = False
+    premium_allowed_in_initial: bool = False
 
 
 class JurorRoutingConfig(DeterministicModel):
@@ -59,8 +59,8 @@ class JurorRoutingConfig(DeterministicModel):
             )
 
         if (
-            self.stage == "round0"
-            and not self.guardrails.premium_allowed_in_round0
+            self.stage == "initial"
+            and not self.guardrails.premium_allowed_in_initial
             and premium_count > 0
         ):
             raise ValueError("Round0 routing must not include premium jurors")

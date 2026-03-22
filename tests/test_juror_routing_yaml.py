@@ -16,16 +16,16 @@ from symposia.routing import (
 def test_routing_loader_discovers_expected_route_sets() -> None:
     # The registry grows as new route sets are added; verify the stable baseline
     # is always present rather than locking the full set.
-    assert {"default_round0", "escalation_high_risk"}.issubset(set(list_route_sets()))
+    assert {"default_initial", "escalation_high_risk"}.issubset(set(list_route_sets()))
     assert len(list_route_sets()) >= 2
     assert ROUTING_VERSION == "v1"
     assert ROUTING_OUTPUT_SCHEMA == "juror_decision_v1"
 
 
-def test_round0_defaults_use_small_capable_models_only() -> None:
-    route = get_route_set("default_round0")
-    assert route.stage == "round0"
-    assert route.guardrails.premium_allowed_in_round0 is False
+def test_initial_defaults_use_small_capable_models_only() -> None:
+    route = get_route_set("default_initial")
+    assert route.stage == "initial"
+    assert route.guardrails.premium_allowed_in_initial is False
     assert all(a.tier != "premium" for a in route.assignments)
 
 
@@ -65,18 +65,18 @@ def test_guardrail_requires_diversity_when_enabled() -> None:
             assert len({a.model_family for a in route.assignments}) >= 2
 
 
-def test_schema_rejects_round0_premium_without_override() -> None:
+def test_schema_rejects_initial_premium_without_override() -> None:
     bad = {
         "version": "v1",
-        "route_set_id": "bad_round0",
-        "stage": "round0",
+        "route_set_id": "bad_initial",
+        "stage": "initial",
         "domain": "all",
         "output_schema": "juror_decision_v1",
         "guardrails": {
             "max_premium_jurors_per_run": 1,
             "require_provider_diversity": False,
             "require_model_family_diversity": False,
-            "premium_allowed_in_round0": False,
+            "premium_allowed_in_initial": False,
         },
         "assignments": [
             {

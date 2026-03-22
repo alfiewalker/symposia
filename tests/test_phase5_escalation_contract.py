@@ -14,7 +14,7 @@ from symposia.models import (
     MinimalTraceVote,
     SubclaimDecision,
 )
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 
 
 def test_escalation_contract_on_locked_safety_case():

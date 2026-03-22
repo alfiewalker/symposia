@@ -3,7 +3,7 @@
 ## Protocol
 - protocol_version: trust_value_protocol_v2_2026_03_21
 - dataset_version: trust_value_dataset_v1_2026_03_21
-- route_set_id: default_round0_openai
+- route_set_id: default_initial_openai
 - case_count: 129
 
 ## Trust Metrics

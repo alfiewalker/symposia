@@ -4,9 +4,9 @@ import pytest
 
 pytestmark = pytest.mark.ladder
 
-from symposia.smoke.openai_round0_comparison import (
+from symposia.smoke.openai_initial_comparison import (
     OpenAIRound0ComparisonCase,
-    default_openai_round0_comparison_cases,
+    default_openai_initial_comparison_cases,
 )
 from symposia.smoke.protocol_validation import (
     ProtocolValidationError,
@@ -17,8 +17,8 @@ from symposia.smoke.protocol_validation import (
 
 def test_protocol_validation_passes_for_default_cases_and_route() -> None:
     result = validate_comparison_protocol_contract(
-        route_set_id="default_round0_openai",
-        cases=default_openai_round0_comparison_cases(),
+        route_set_id="default_initial_openai",
+        cases=default_openai_initial_comparison_cases(),
     )
 
     assert result.protocol_version == "committee_value_protocol_v1_2026_03_21"
@@ -39,7 +39,7 @@ def test_protocol_validation_rejects_unknown_case_id() -> None:
 
     with pytest.raises(ProtocolValidationError, match="not present in dataset manifest"):
         validate_comparison_protocol_contract(
-            route_set_id="default_round0_openai",
+            route_set_id="default_initial_openai",
             cases=bad_cases,
         )
 
@@ -56,7 +56,7 @@ def test_protocol_validation_rejects_expected_escalation_mismatch() -> None:
 
     with pytest.raises(ProtocolValidationError, match="expected_escalation mismatch"):
         validate_comparison_protocol_contract(
-            route_set_id="default_round0_openai",
+            route_set_id="default_initial_openai",
             cases=bad_cases,
         )
 
@@ -64,26 +64,26 @@ def test_protocol_validation_rejects_expected_escalation_mismatch() -> None:
 def test_protocol_validation_rejects_disallowed_route() -> None:
     with pytest.raises(ProtocolValidationError, match="not in allowed_route_sets"):
         validate_comparison_protocol_contract(
-            route_set_id="default_round0",
-            cases=default_openai_round0_comparison_cases(),
+            route_set_id="default_initial",
+            cases=default_openai_initial_comparison_cases(),
         )
 
 
 def test_resolved_protocol_artifact_contains_required_audit_fields(tmp_path) -> None:
     validation = validate_comparison_protocol_contract(
-        route_set_id="default_round0_openai",
-        cases=default_openai_round0_comparison_cases(),
+        route_set_id="default_initial_openai",
+        cases=default_openai_initial_comparison_cases(),
     )
 
     artifact = build_resolved_protocol_artifact(
-        route_set_id="default_round0_openai",
+        route_set_id="default_initial_openai",
         validation=validation,
         output_dir=str(tmp_path),
     )
 
     assert artifact["protocol_version"] == "committee_value_protocol_v1_2026_03_21"
     assert artifact["dataset_manifest_version"] == "committee_value_dataset_v1_2026_03_21"
-    assert artifact["route_set_id"] == "default_round0_openai"
+    assert artifact["route_set_id"] == "default_initial_openai"
     assert isinstance(artifact["calibration"], dict)
     assert isinstance(artifact["thresholds"], dict)
     assert isinstance(artifact["statistics"], dict)

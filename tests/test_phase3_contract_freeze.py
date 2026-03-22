@@ -22,7 +22,7 @@ def test_phase3_contract_symbols_exported_and_stable():
     assert CoreTrace.__name__ == "CoreTrace"
 
 
-def test_round0_engine_run_signature_stable():
+def test_initial_engine_run_signature_stable():
     signature = inspect.signature(InitialReviewEngine.run)
     params = list(signature.parameters.keys())
     assert params == ["self", "content", "domain", "profile_set", "profile"]

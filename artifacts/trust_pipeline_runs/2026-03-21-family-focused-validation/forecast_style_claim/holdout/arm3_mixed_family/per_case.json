@@ -19,7 +19,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "totals": {
         "estimated_cost_usd": 0.006198,
@@ -68,7 +68,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "totals": {
         "estimated_cost_usd": 0.006273,
@@ -117,7 +117,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "totals": {
         "estimated_cost_usd": 0.006077,
@@ -166,7 +166,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "totals": {
         "estimated_cost_usd": 0.006244,
@@ -215,7 +215,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "totals": {
         "estimated_cost_usd": 0.006221,

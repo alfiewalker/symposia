@@ -21,7 +21,7 @@ from __future__ import annotations
 import hashlib
 from typing import List
 
-from symposia.aggregation.round0 import aggregate_round0
+from symposia.aggregation.initial import aggregate_initial
 from symposia.escalation.thresholds import (
     CONTRADICTION_CEILING,
     SUFFICIENCY_FLOOR,
@@ -31,7 +31,7 @@ from symposia.jurors.rule_based import RuleBasedJuror
 from symposia.models.claim import ClaimBundle, Subclaim
 from symposia.models.escalation import NextStageReviewInput, NextStageReviewResult
 from symposia.models.juror import JurorDecision
-from symposia.models.round0 import SubclaimDecision
+from symposia.models.initial import SubclaimDecision
 from symposia.profile_sets import get_profile_set
 
 
@@ -103,7 +103,7 @@ class ChallengeReviewEngine:
             for juror in jurors
         ]
 
-        aggregated = aggregate_round0(decisions)
+        aggregated = aggregate_initial(decisions)
 
         resolved_ids: List[str] = []
         unresolved_ids: List[str] = list(sorted(missing_ids))

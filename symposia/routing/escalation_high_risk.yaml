@@ -7,7 +7,7 @@ guardrails:
   max_premium_jurors_per_run: 2
   require_provider_diversity: true
   require_model_family_diversity: true
-  premium_allowed_in_round0: false
+  premium_allowed_in_initial: false
 assignments:
   - slot_id: esc_risk_1
     profile_id: risk_sentinel_v1

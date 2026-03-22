@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 
 
 def _load_baseline_cases(path: Path) -> list[dict]:

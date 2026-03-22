@@ -367,9 +367,9 @@ Still pending for full phase completion:
 Implemented for the next narrow slice:
 - routed live-provider service factory for YAML route assignments
 - explicit routed juror lineup support in `InitialReviewEngine`
-- OpenAI-only `default_round0_openai` route for a four-juror small-capable Round0 slice
-- dedicated smoke runner at `examples/openai_round0_live_smoke.py` that exports trace artifacts
-- explicit `validate(..., live=True)` path for round0-only live routing or a single explicit live model
+- OpenAI-only `default_initial_openai` route for a four-juror small-capable Round0 slice
+- dedicated smoke runner at `examples/openai_initial_live_smoke.py` that exports trace artifacts
+- explicit `validate(..., live=True)` path for initial-only live routing or a single explicit live model
 
 - `LLMJuror`
 - prompt builder

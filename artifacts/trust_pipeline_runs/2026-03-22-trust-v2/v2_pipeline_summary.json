@@ -27,7 +27,7 @@
       "pairwise_same_error_rate": null,
       "protocol_version": "trust_rubric_contract_v1_2026_03_21",
       "review_mode": "holistic_single_claim",
-      "route_set_id": "default_round0_openai_nano",
+      "route_set_id": "default_initial_openai_nano",
       "rubric_average_weighted_score": 1.5792,
       "rubric_case_count_scored": 25,
       "rubric_target_match_rate": 0.16,
@@ -78,7 +78,7 @@
       "pairwise_same_error_rate": null,
       "protocol_version": "trust_rubric_contract_v1_2026_03_21",
       "review_mode": "holistic_single_claim",
-      "route_set_id": "default_round0_openai_nano",
+      "route_set_id": "default_initial_openai_nano",
       "rubric_average_weighted_score": 1.6848,
       "rubric_case_count_scored": 25,
       "rubric_target_match_rate": 0.12,
@@ -91,9 +91,9 @@
   },
   "publication_scope": "synthesis",
   "route_setup": {
-    "committee_route_set_id": "default_round0_openai_nano",
+    "committee_route_set_id": "default_initial_openai_nano",
     "escalation_route_set_id": "escalation_high_risk_openai_mini",
-    "single_route_set_id": "default_round0_openai_nano"
+    "single_route_set_id": "default_initial_openai_nano"
   },
   "run_id": "2026-03-22-trust-v2"
 }

@@ -36,7 +36,7 @@ This experiment sharpens that thesis into two narrower questions:
 ### Arm 1: single cheap baseline
 
 - arm_id: arm1_single_cheap
-- proposed_route_set_id: single_round0_openai_nano_balanced_v1
+- proposed_route_set_id: single_initial_openai_nano_balanced_v1
 - composition:
   - balanced_reviewer_v1 on openai / gpt-5.4-nano
 - intent:
@@ -45,7 +45,7 @@ This experiment sharpens that thesis into two narrower questions:
 ### Arm 2: same-family cheap committee
 
 - arm_id: arm2_same_family_committee
-- proposed_route_set_id: committee_round0_openai_nano_triplet_v1
+- proposed_route_set_id: committee_initial_openai_nano_triplet_v1
 - composition:
   - balanced_reviewer_v1 on openai / gpt-5.4-nano
   - sceptical_verifier_v1 on openai / gpt-5.4-nano
@@ -56,7 +56,7 @@ This experiment sharpens that thesis into two narrower questions:
 ### Arm 3: mixed-family cheap committee
 
 - arm_id: arm3_mixed_family_committee
-- proposed_route_set_id: committee_round0_mixed_small_triplet_v1
+- proposed_route_set_id: committee_initial_mixed_small_triplet_v1
 - composition:
   - balanced_reviewer_v1 on openai / gpt-5.4-nano
   - sceptical_verifier_v1 on anthropic / claude-3-haiku-20240307

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from symposia.models.round0 import InitialReviewResult
+from symposia.models.initial import InitialReviewResult
 from symposia.models.trace import (
     AdjudicationTrace,
     TraceEvent,

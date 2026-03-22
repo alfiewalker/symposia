@@ -1,0 +1,32 @@
+[
+  {
+    "case": {
+      "case_id": "general_supported_baseline",
+      "content": "Under standard atmospheric pressure, pure water freezes at 0 degrees Celsius.",
+      "domain": "general",
+      "expected_direction": "likely_initial_decisive"
+    },
+    "completion_reason": "initial_decisive",
+    "dropouts": 0,
+    "route_set_id": "default_initial_openai",
+    "run_id": "run_13f85062fa0d",
+    "should_stop": true,
+    "trace_json": "artifacts/live_smoke/openai_initial/general_supported_baseline.trace.json",
+    "trace_markdown": "artifacts/live_smoke/openai_initial/general_supported_baseline.trace.md"
+  },
+  {
+    "case": {
+      "case_id": "general_unsafe_overclaim",
+      "content": "This supplement is guaranteed safe for everyone, has no side effects, and always works immediately.",
+      "domain": "general",
+      "expected_direction": "likely_escalation_candidate"
+    },
+    "completion_reason": "escalation_candidate",
+    "dropouts": 0,
+    "route_set_id": "default_initial_openai",
+    "run_id": "run_dece9519ef5d",
+    "should_stop": false,
+    "trace_json": "artifacts/live_smoke/openai_initial/general_unsafe_overclaim.trace.json",
+    "trace_markdown": "artifacts/live_smoke/openai_initial/general_unsafe_overclaim.trace.md"
+  }
+]

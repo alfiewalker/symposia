@@ -10,28 +10,28 @@
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -59,28 +59,28 @@
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.97,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -108,28 +108,28 @@
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -157,28 +157,28 @@
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -206,28 +206,28 @@
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.96,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": false
       }
@@ -254,28 +254,28 @@
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -303,28 +303,28 @@
       {
         "confidence": 0.97,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.96,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.97,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": true
       },
       {
         "confidence": 0.96,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": true
       }
@@ -352,28 +352,28 @@
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_balanced_1",
+        "juror_id": "initial_openai_balanced_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_sceptical_1",
+        "juror_id": "initial_openai_sceptical_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.99,
         "error_code": null,
-        "juror_id": "round0_openai_evidence_1",
+        "juror_id": "initial_openai_evidence_1",
         "parsed_ok": true,
         "vote_contradicted": false
       },
       {
         "confidence": 0.98,
         "error_code": null,
-        "juror_id": "round0_openai_risk_1",
+        "juror_id": "initial_openai_risk_1",
         "parsed_ok": true,
         "vote_contradicted": false
       }

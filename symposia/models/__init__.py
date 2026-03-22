@@ -18,7 +18,7 @@ from symposia.models.trace import (
     MinimalTraceVote,
     TraceEvent,
 )
-from symposia.models.round0 import (
+from symposia.models.initial import (
     CompletionDecision,
     InitialReviewResult,
     SubclaimDecision,

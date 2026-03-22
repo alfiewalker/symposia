@@ -3,7 +3,7 @@
 ## Protocol
 - protocol_version: trust_rubric_contract_v1_2026_03_21
 - dataset_version: trust_value_dataset_v2_2026_03_21
-- route_set_id: default_round0_openai_nano
+- route_set_id: default_initial_openai_nano
 - case_count: 25
 
 ## Trust Metrics

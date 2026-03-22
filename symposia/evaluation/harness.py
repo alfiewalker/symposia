@@ -49,7 +49,7 @@ from symposia.models.evaluation import (
 )
 from symposia.profile_sets import get_profile_set
 from symposia.profile_sets import DOMAIN_DEFAULT_PROFILE_SET
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 
 
 def _profile_set_for_domain(domain: str) -> str:

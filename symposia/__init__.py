@@ -15,7 +15,7 @@ from symposia.models import (
     Risk,
     SubclaimDecision,
 )
-from symposia.round0 import InitialReviewEngine
+from symposia.initial import InitialReviewEngine
 
 __version__ = "0.1.1"
 __author__ = "Symposia Team"

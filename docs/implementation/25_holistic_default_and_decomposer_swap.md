@@ -78,7 +78,7 @@ Add `decomposition_mode: str = "holistic"`. Resolution inside `validate()`:
 2. Else → `"holistic"`
 
 ### 2.2 `InitialReviewEngine`
-**File**: `symposia/round0/engine.py`
+**File**: `symposia/initial/engine.py`
 
 Accept `decomposition_mode: str = "holistic"`. Use `resolve_decomposer()`.
 Emit mode string in `execution_policy`.
@@ -91,21 +91,21 @@ Emit mode string in `execution_policy`.
 `RuleBasedSubclaimDecomposer` to parameterized, holistic-default.
 
 ### 3.1 Comparison runner
-**File**: `symposia/smoke/openai_round0_comparison.py`
+**File**: `symposia/smoke/openai_initial_comparison.py`
 
-- `run_openai_round0_comparison()`: add `decomposition_mode: str = "holistic"`
+- `run_openai_initial_comparison()`: add `decomposition_mode: str = "holistic"`
 - `_run_variant()`: accept `decomposer` instance instead of hardcoding
 - Replace static `REVIEW_MODE`/`DECOMPOSITION_MODE` with dynamic derivation
 - All artifact builders: mode-derived values
 
 ### 3.2 Trust evaluation runner
-**File**: `symposia/smoke/openai_round0_trust_evaluation.py`
+**File**: `symposia/smoke/openai_initial_trust_evaluation.py`
 
-Add `decomposition_mode` param to `run_openai_round0_trust_evaluation()` and
+Add `decomposition_mode` param to `run_openai_initial_trust_evaluation()` and
 `_v2()`, pass through to comparison call.
 
 ### 3.3 Silver labeling runner
-**File**: `symposia/smoke/openai_round0_silver_labeling.py`
+**File**: `symposia/smoke/openai_initial_silver_labeling.py`
 
 Same pattern — add param, pass through, update artifacts.
 
@@ -135,10 +135,10 @@ default `None`. Thread to `ask` command.
 | Test | File | What |
 |---|---|---|
 | Resolver + precedence | `test_phase1_primitives.py` | `resolve_decomposer()` returns correct class; precedence logic |
-| Engine mode string | `test_phase3_round0.py` | Default → "holistic"; explicit "rule_based"; backward compat |
-| Smoke runner defaults | `test_openai_round0_comparison_runner.py` | Default artifacts are holistic; explicit rule_based variant |
-| Trust runner defaults | `test_openai_round0_trust_evaluation_runner.py` | Holistic default fixtures |
-| Silver labeling defaults | `test_openai_round0_silver_labeling.py` | Holistic default fixtures |
+| Engine mode string | `test_phase3_initial.py` | Default → "holistic"; explicit "rule_based"; backward compat |
+| Smoke runner defaults | `test_openai_initial_comparison_runner.py` | Default artifacts are holistic; explicit rule_based variant |
+| Trust runner defaults | `test_openai_initial_trust_evaluation_runner.py` | Holistic default fixtures |
+| Silver labeling defaults | `test_openai_initial_silver_labeling.py` | Holistic default fixtures |
 | Config loading | `test_config.py` | YAML `decomposition_mode` parsed; absent → "holistic" |
 | API backward compat | `test_phase9_primary_surface.py` | Both old bool and new string work; string wins |
 
@@ -178,7 +178,7 @@ Config values are short identifiers. Artifact values are richer audit labels.
 - [x] `pytest -m ladder` — 33 passed, 212 deselected
 - [x] `bash scripts/run_experiment_ladder_tests.sh` — 158 passed, 87 deselected
 - [x] `pytest test_phase1_primitives.py -k resolve` — 9 passed, 11 deselected
-- [x] `pytest test_openai_round0_comparison_runner.py` — 10 passed
+- [x] `pytest test_openai_initial_comparison_runner.py` — 10 passed
 - [x] CLI: `--decomposition-mode {holistic,rule_based}` global option present and functional
 - [x] All output artifacts carry `review_mode` metadata via `_REVIEW_MODE_LABELS` / `_DECOMPOSITION_MODE_LABELS`
 
@@ -194,8 +194,8 @@ Config values are short identifiers. Artifact values are richer audit labels.
 | Phase | Scope | Files changed |
 |---|---|---|
 | 1 — Resolver infrastructure | Config model, decomposer registry, resolver functions | `config/models.py`, `kernel/decomposer.py`, `kernel/__init__.py` |
-| 2 — API + Engine threading | Single `decomposition_mode` param, removed `experimental_decomposition` | `api.py`, `round0/engine.py` |
-| 3 — Smoke runners holistic | All runners default to holistic; decomposition A/B is explicit opt-in | `smoke/openai_round0_comparison.py`, `smoke/openai_round0_trust_evaluation.py`, `smoke/openai_round0_silver_labeling.py` |
+| 2 — API + Engine threading | Single `decomposition_mode` param, removed `experimental_decomposition` | `api.py`, `initial/engine.py` |
+| 3 — Smoke runners holistic | All runners default to holistic; decomposition A/B is explicit opt-in | `smoke/openai_initial_comparison.py`, `smoke/openai_initial_trust_evaluation.py`, `smoke/openai_initial_silver_labeling.py` |
 | 4 — CLI flag | `--decomposition-mode` global option, threaded to services | `terminal/cli.py`, `terminal/services.py` |
 | 5 — Tests | 10 resolver/precedence tests, config default test, fixture updates | `test_phase1_primitives.py`, `test_config.py`, 3 smoke test files |
 | 6 — Ladder live | All core + ladder tests green | `scripts/run_experiment_ladder_tests.sh` |

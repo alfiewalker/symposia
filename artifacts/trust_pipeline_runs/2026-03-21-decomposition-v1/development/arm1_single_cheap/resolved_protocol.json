@@ -24,7 +24,7 @@
     "no_live_claims_until_contract_pass": true
   },
   "protocol_version": "committee_value_protocol_v1_2026_03_21",
-  "route_set_id": "single_round0_openai_nano_balanced_v1",
+  "route_set_id": "single_initial_openai_nano_balanced_v1",
   "statistics": {
     "bootstrap_iterations": 10000,
     "confidence_level": 0.95

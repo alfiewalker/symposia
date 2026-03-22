@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from symposia.models.claim import ClaimBundle, Subclaim, SubclaimKind
 from symposia.models.juror import JurorDecision
-from symposia.models.round0 import CompletionDecision, InitialReviewResult, SubclaimDecision
+from symposia.models.initial import CompletionDecision, InitialReviewResult, SubclaimDecision
 from symposia.models.trace import CoreTrace, MinimalTraceAggregation, MinimalTraceSubclaim, MinimalTraceVote
 
 # ---------------------------------------------------------------------------

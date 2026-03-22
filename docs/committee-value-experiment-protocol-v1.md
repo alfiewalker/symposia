@@ -31,7 +31,7 @@ Required comparison arms:
 
 Optional extension arm (only after required arms complete):
 
-- round0_nano_escalation_mini
+- initial_nano_escalation_mini
 
 All arms must use the same case set and same label source.
 

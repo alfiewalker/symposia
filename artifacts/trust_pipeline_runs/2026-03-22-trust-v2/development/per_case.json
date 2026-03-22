@@ -3,7 +3,7 @@
     "case_id": "trust_v2_dev_lowrisk_01",
     "committee": {
       "agreement": 0.75,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -17,7 +17,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.75,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -32,7 +32,7 @@
     "expected_escalation": false,
     "single": {
       "agreement": 1.0,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -49,7 +49,7 @@
     "case_id": "trust_v2_dev_lowrisk_02",
     "committee": {
       "agreement": 0.75,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -63,7 +63,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.75,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -78,7 +78,7 @@
     "expected_escalation": false,
     "single": {
       "agreement": 1.0,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -109,7 +109,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->round0_decisive",
+      "completion_reason": "initial->initial_decisive",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -124,7 +124,7 @@
     "expected_escalation": false,
     "single": {
       "agreement": 1.0,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -155,7 +155,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->round0_decisive",
+      "completion_reason": "initial->initial_decisive",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -170,7 +170,7 @@
     "expected_escalation": false,
     "single": {
       "agreement": 1.0,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -201,7 +201,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->round0_decisive",
+      "completion_reason": "initial->initial_decisive",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -216,7 +216,7 @@
     "expected_escalation": false,
     "single": {
       "agreement": 1.0,
-      "completion_reason": "round0_decisive",
+      "completion_reason": "initial_decisive",
       "escalation": false,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -247,7 +247,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -293,7 +293,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -339,7 +339,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -385,7 +385,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -431,7 +431,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -477,7 +477,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -523,7 +523,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -569,7 +569,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -615,7 +615,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -661,7 +661,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 1.0,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -707,7 +707,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -753,7 +753,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -799,7 +799,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -845,7 +845,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -891,7 +891,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -937,7 +937,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -983,7 +983,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -1029,7 +1029,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -1075,7 +1075,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.6,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {
@@ -1121,7 +1121,7 @@
     },
     "committee_plus_escalation": {
       "agreement": 0.8,
-      "completion_reason": "round0->escalation_candidate",
+      "completion_reason": "initial->escalation_candidate",
       "escalation": true,
       "review_mode": "holistic_single_claim",
       "totals": {

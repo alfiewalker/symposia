@@ -103,8 +103,8 @@ Purpose: test whether a weak lone judge is viable.
 
 Route setup:
 
-- `committee_route_set_id=default_round0_openai_nano`
-- `single_route_set_id=default_round0_openai_nano`
+- `committee_route_set_id=default_initial_openai_nano`
+- `single_route_set_id=default_initial_openai_nano`
 
 Interpretation:
 
@@ -118,8 +118,8 @@ Purpose: test plurality without cross-family diversity.
 
 Route setup:
 
-- `committee_route_set_id=default_round0_openai_nano`
-- `single_route_set_id=default_round0_openai_nano`
+- `committee_route_set_id=default_initial_openai_nano`
+- `single_route_set_id=default_initial_openai_nano`
 
 Primary comparison:
 
@@ -138,8 +138,8 @@ Purpose: test diversity beyond same-family plurality.
 
 Route setup:
 
-- `committee_route_set_id=committee_round0_mixed_small_triplet_v1`
-- `single_route_set_id=default_round0_openai_nano`
+- `committee_route_set_id=committee_initial_mixed_small_triplet_v1`
+- `single_route_set_id=default_initial_openai_nano`
 
 Interpretation:
 
@@ -153,8 +153,8 @@ Purpose: test whether a stronger lone judge masks committee lift.
 
 Route setup:
 
-- `committee_route_set_id=default_round0_openai_mini`
-- `single_route_set_id=default_round0_openai_mini`
+- `committee_route_set_id=default_initial_openai_mini`
+- `single_route_set_id=default_initial_openai_mini`
 
 Note: this uses the same mini route set for both paths, but the single baseline is still a one-juror execution selected from that route at runtime.
 
@@ -170,8 +170,8 @@ Purpose: test the quality-count frontier.
 
 Route setup:
 
-- `committee_route_set_id=committee_round0_openai_mini_triplet_v1`
-- `single_route_set_id=default_round0_openai_mini`
+- `committee_route_set_id=committee_initial_openai_mini_triplet_v1`
+- `single_route_set_id=default_initial_openai_mini`
 
 Interpretation:
 
@@ -228,8 +228,8 @@ Canonical runner command (evidence path):
 PYTHONPATH=. .venv/bin/python scripts/run_trust_pipeline.py \
   --run-id 2026-03-22-v2-rubric-holistic \
   --publication-scope synthesis \
-  --committee-route-set-id default_round0_openai_nano \
-  --single-route-set-id default_round0_openai_nano \
+  --committee-route-set-id default_initial_openai_nano \
+  --single-route-set-id default_initial_openai_nano \
   --escalation-route-set-id escalation_high_risk_openai_mini \
   --decomposition-mode holistic \
   --evidence-tier tier_b_silver \
@@ -242,8 +242,8 @@ Decomposition experiment command (non-canonical, explicitly experimental):
 PYTHONPATH=. .venv/bin/python scripts/run_trust_pipeline.py \
   --run-id 2026-03-22-v2-rubric-rule-based-experiment \
   --publication-scope synthesis \
-  --committee-route-set-id default_round0_openai_nano \
-  --single-route-set-id default_round0_openai_nano \
+  --committee-route-set-id default_initial_openai_nano \
+  --single-route-set-id default_initial_openai_nano \
   --escalation-route-set-id escalation_high_risk_openai_mini \
   --decomposition-mode rule_based \
   --evidence-tier tier_b_silver \
@@ -256,8 +256,8 @@ Dry plumbing check command (non-public, iterative only):
 PYTHONPATH=. .venv/bin/python scripts/run_trust_pipeline.py \
   --run-id 2026-03-22-v2-rubric-dry-dev \
   --publication-scope development \
-  --committee-route-set-id default_round0_openai_nano \
-  --single-route-set-id default_round0_openai_nano \
+  --committee-route-set-id default_initial_openai_nano \
+  --single-route-set-id default_initial_openai_nano \
   --escalation-route-set-id escalation_high_risk_openai_mini \
   --decomposition-mode holistic \
   --evidence-tier tier_b_silver \

@@ -187,6 +187,13 @@ pip install -e .
 
 ## Quickstart
 
+## Notebooks
+
+- [Getting started notebook](examples/getting_started.ipynb)
+    - Fast walkthrough of deterministic mode and live mode on one claim.
+- [Single juror vs committee use cases](examples/single_vs_committee_use_cases.ipynb)
+    - Side-by-side comparison notebook for single-juror vs committee behavior on curated claims.
+
 ### Validate content
 
 ```python
@@ -261,7 +268,7 @@ validate(
     routing=None,
     provider_config=None,
     decomposition_mode="holistic",
-    live=False,
+    live=None,
 )
 ```
 
@@ -297,7 +304,7 @@ validate(
 3. Advanced routing
 
 ```python
-validate(content, domain="medical", routing="default_round0")
+validate(content, domain="medical", routing="default_initial")
 ```
 
 4. Explicit live mode
@@ -310,7 +317,9 @@ validate(
 )
 ```
 
-This defaults to a single OpenAI live juror (`openai:gpt-5.4-mini`) for round0.
+This defaults to a single OpenAI live juror (`openai:gpt-5.4-mini`) for initial.
+In auto mode (`live=None`), Symposia selects a live default when provider
+credentials are available and falls back to deterministic mode otherwise.
 
 Single-juror live model override:
 
@@ -329,7 +338,7 @@ Committee live path (experimental, opt-in):
 validate(
     content,
     domain="medical",
-    routing="default_round0_openai",
+    routing="default_initial_openai",
     live=True,
 )
 ```
@@ -339,18 +348,20 @@ Precedence and conflict contract:
 - `routing` > `model` / `escalation_model` > built-in defaults
 - passing `routing` together with `model` or `escalation_model` raises an error
 - `model` and `escalation_model` must be in `provider:model` format
-- `live=True` is required for real LLM execution; default `validate(...)` remains deterministic
-- `live=True` with no explicit routing/model defaults to single-juror OpenAI round0
-- current live path is round0-only; live escalation is not wired yet
+- default `live=None` auto-selects live execution when provider credentials exist
+- deterministic fallback emits a warning when no live provider is available
+- `live=True` forces real LLM execution and validates provider credentials
+- `live=True` with no explicit routing/model selects a provider-default model (OpenAI-first)
+- current live path is initial-only; live escalation is not wired yet
 - committee live path is experimental and requires explicit `routing=...`
 
 Execution boundary note:
 
 - The API ladder and validation contract are wired.
-- The public `validate(...)` surface still defaults to the deterministic path.
-- The explicit live path is now wired behind `live=True`, defaulting to a single OpenAI juror.
+- The public `validate(...)` surface defaults to auto mode (`live=None`).
+- Auto mode runs live when credentials exist and warns on deterministic fallback.
 - The committee live path remains available as an explicit experimental opt-in via routing.
-- The OpenAI smoke path remains the validated narrow slice via `examples/openai_round0_live_smoke.py` and `default_round0_openai`.
+- The OpenAI smoke path remains the validated narrow slice via `examples/openai_initial_live_smoke.py` and `default_initial_openai`.
 
 ### `load_profile_set(...)`
 

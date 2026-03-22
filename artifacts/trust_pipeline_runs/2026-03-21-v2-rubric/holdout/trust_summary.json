@@ -210,13 +210,13 @@
     "required_for": "committee_default_supported"
   },
   "run_metadata": {
-    "committee_route_set_id": "default_round0_openai_nano",
+    "committee_route_set_id": "default_initial_openai_nano",
     "dataset_version": "trust_value_dataset_v2_2026_03_21",
     "escalation_route_set_id": "escalation_high_risk_openai_mini",
     "protocol_version": "trust_rubric_contract_v1_2026_03_21",
     "route_domain": "mixed",
-    "route_set_id": "default_round0_openai_nano",
-    "single_route_set_id": "default_round0_openai_nano"
+    "route_set_id": "default_initial_openai_nano",
+    "single_route_set_id": "default_initial_openai_nano"
   },
   "sample_size_gate_results": [
     {
@@ -263,7 +263,7 @@
     "model": "gpt-5.4-nano",
     "price_version": "openai_total_token_price_v1_2026_03_21",
     "protocol_version": "committee_value_protocol_v1_2026_03_21",
-    "route_set_id": "default_round0_openai_nano",
+    "route_set_id": "default_initial_openai_nano",
     "single_false_escalations": 5,
     "single_missed_escalations": 0,
     "single_total_escalation_errors": 5,
@@ -286,7 +286,7 @@
     "overall_default_status": "committee_opt_in",
     "pairwise_same_error_rate": null,
     "protocol_version": "trust_rubric_contract_v1_2026_03_21",
-    "route_set_id": "default_round0_openai_nano",
+    "route_set_id": "default_initial_openai_nano",
     "rubric_average_weighted_score": 1.6816,
     "rubric_case_count_scored": 25,
     "rubric_target_match_rate": 0.2,

@@ -67,8 +67,8 @@ route_requirements:
     - dataset_version
   accidental_default_route_forbidden: true
   allowed_route_sets:
-    - default_round0_openai
-    - default_round0_openai_nano
+    - default_initial_openai
+    - default_initial_openai_nano
 
 quality_constraints:
   no_clone_padding:

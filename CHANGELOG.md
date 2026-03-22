@@ -50,7 +50,7 @@ All notable changes to this project are documented in this file.
 - Aggregation weights are now owned by the profile model:
   - Added `Profile.weight` in [symposia/models/profile.py](symposia/models/profile.py).
   - Added explicit weights to built-in profiles in [symposia/profiles/defaults.py](symposia/profiles/defaults.py).
-  - Replaced substring-based weighting with profile-registry lookup in [symposia/aggregation/round0.py](symposia/aggregation/round0.py).
+  - Replaced substring-based weighting with profile-registry lookup in [symposia/aggregation/initial.py](symposia/aggregation/initial.py).
 - README rewritten for day-one usage around the tiny API in [README.md](README.md).
 - Package metadata version and description updated in [setup.py](setup.py).
 

@@ -11,7 +11,7 @@ GROUP B: Confidence ablation
     Proves that verdict changes between committee and single are driven by
     boolean supported/sufficient divergence across profiles, NOT by
     confidence-value weighting.
-    aggregate_round0 computes scores from boolean flags × profile weight.
+    aggregate_initial computes scores from boolean flags × profile weight.
     JurorDecision.confidence is stored in the trace but is never read by
     the aggregation function.  This group makes that mechanistic claim explicit
     and testable.
@@ -35,7 +35,7 @@ import pytest
 
 pytestmark = pytest.mark.legacy
 
-from symposia.aggregation.round0 import aggregate_round0
+from symposia.aggregation.initial import aggregate_initial
 from symposia.evaluation import EvaluationHarness
 from symposia.jurors.rule_based import RuleBasedJuror
 from symposia.models.claim import Subclaim, SubclaimKind
@@ -248,8 +248,8 @@ def test_committee_accuracy_perfect_single_accuracy_zero_on_paraphrase():
 # GROUP B — Confidence ablation
 # ---------------------------------------------------------------------------
 
-def test_aggregate_round0_ignores_confidence_field():
-    """Mechanistic proof: aggregate_round0 does not read JurorDecision.confidence.
+def test_aggregate_initial_ignores_confidence_field():
+    """Mechanistic proof: aggregate_initial does not read JurorDecision.confidence.
 
     Two decision lists identical in boolean flags and profile weights but
     differing in confidence must produce identical aggregated scores.
@@ -271,8 +271,8 @@ def test_aggregate_round0_ignores_confidence_field():
         d.model_copy(update={"confidence": 0.5}) for d in decisions_real
     ]
 
-    agg_real = aggregate_round0(decisions_real)["sc"]
-    agg_ablated = aggregate_round0(decisions_ablated)["sc"]
+    agg_real = aggregate_initial(decisions_real)["sc"]
+    agg_ablated = aggregate_initial(decisions_ablated)["sc"]
 
     assert agg_real.support_score == pytest.approx(agg_ablated.support_score)
     assert agg_real.contradiction_score == pytest.approx(agg_ablated.contradiction_score)
@@ -301,8 +301,8 @@ def test_phase8_advantage_driven_by_boolean_flags_not_confidence():
     # Ablated: all confidence = 0.5, booleans unchanged.
     ablated = [d.model_copy(update={"confidence": 0.5}) for d in decisions]
 
-    agg_real = aggregate_round0(decisions)["sc"]
-    agg_ablated = aggregate_round0(ablated)["sc"]
+    agg_real = aggregate_initial(decisions)["sc"]
+    agg_ablated = aggregate_initial(ablated)["sc"]
 
     assert agg_real.support_score == pytest.approx(agg_ablated.support_score), (
         "Confidence ablation changed support_score — confidence is being used in "
@@ -358,7 +358,7 @@ def test_weighted_aggregation_sum_with_known_profile_weights():
         RuleBasedJuror(f"j{i}", pid).decide(subclaim)
         for i, pid in enumerate(ps.profiles)
     ]
-    agg = aggregate_round0(decisions)["sc"]
+    agg = aggregate_initial(decisions)["sc"]
 
     expected_support = pytest.approx(2.05 / 5.5, abs=1e-3)
     assert agg.support_score == expected_support, (

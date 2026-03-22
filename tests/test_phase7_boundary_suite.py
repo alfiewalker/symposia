@@ -48,7 +48,7 @@ from symposia.escalation.thresholds import (
 from symposia.models.claim import ClaimBundle, Subclaim, SubclaimKind
 from symposia.models.evaluation import ExpectedVerdict
 from symposia.models.juror import JurorDecision
-from symposia.models.round0 import CompletionDecision, InitialReviewResult, SubclaimDecision
+from symposia.models.initial import CompletionDecision, InitialReviewResult, SubclaimDecision
 from symposia.models.trace import CoreTrace, MinimalTraceAggregation, MinimalTraceSubclaim
 
 

@@ -46,8 +46,8 @@ relationship_to_efficiency_protocol:
     - trust_worth_it_decision
 
 allowed_route_sets:
-  - default_round0_openai
-  - default_round0_openai_nano
+  - default_initial_openai
+  - default_initial_openai_nano
 
 comparison_arms:
   required:

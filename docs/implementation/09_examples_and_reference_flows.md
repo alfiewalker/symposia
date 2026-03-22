@@ -4,6 +4,11 @@
 
 This document shows how Symposia should behave on representative inputs.
 
+## Notebook references
+
+- `../../examples/getting_started.ipynb`
+- `../../examples/single_vs_committee_use_cases.ipynb`
+
 ## Example 1 — Medical emergency advice
 
 ### Input
@@ -143,7 +148,7 @@ Expected behaviour:
 2. profile set resolved
 3. claim bundle built
 4. evidence pack attached
-5. Round 0 jurors run
+5. Initial jurors run
 6. aggregate and evaluate stop rules
 7. if needed, escalate disputed subclaims
 8. compile verdict

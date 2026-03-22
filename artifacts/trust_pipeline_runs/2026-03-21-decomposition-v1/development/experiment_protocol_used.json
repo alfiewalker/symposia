@@ -1,8 +1,8 @@
 {
   "allowed_route_sets": [
-    "single_round0_openai_nano_balanced_v1",
-    "committee_round0_openai_nano_triplet_v1",
-    "committee_round0_mixed_small_triplet_v1"
+    "single_initial_openai_nano_balanced_v1",
+    "committee_initial_openai_nano_triplet_v1",
+    "committee_initial_mixed_small_triplet_v1"
   ],
   "dataset_version": "trust_value_dataset_v2_2026_03_21",
   "escalation_route_set_id": "escalation_high_risk_openai_mini",
@@ -10,24 +10,24 @@
   "experiment_arms": [
     {
       "arm_id": "arm1_single_cheap",
-      "committee_route_set_id": "single_round0_openai_nano_balanced_v1",
+      "committee_route_set_id": "single_initial_openai_nano_balanced_v1",
       "label": "single cheap baseline",
       "single_profile_id": "balanced_reviewer_v1",
-      "single_route_set_id": "single_round0_openai_nano_balanced_v1"
+      "single_route_set_id": "single_initial_openai_nano_balanced_v1"
     },
     {
       "arm_id": "arm2_same_family_committee",
-      "committee_route_set_id": "committee_round0_openai_nano_triplet_v1",
+      "committee_route_set_id": "committee_initial_openai_nano_triplet_v1",
       "label": "same-family cheap committee",
       "single_profile_id": "balanced_reviewer_v1",
-      "single_route_set_id": "single_round0_openai_nano_balanced_v1"
+      "single_route_set_id": "single_initial_openai_nano_balanced_v1"
     },
     {
       "arm_id": "arm3_mixed_family_committee",
-      "committee_route_set_id": "committee_round0_mixed_small_triplet_v1",
+      "committee_route_set_id": "committee_initial_mixed_small_triplet_v1",
       "label": "mixed-family cheap committee",
       "single_profile_id": "balanced_reviewer_v1",
-      "single_route_set_id": "single_round0_openai_nano_balanced_v1"
+      "single_route_set_id": "single_initial_openai_nano_balanced_v1"
     }
   ],
   "hard_case_families": [

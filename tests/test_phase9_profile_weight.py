@@ -2,7 +2,7 @@
 
 Three groups:
   A. Direct field assertions: every BUILTIN_PROFILE has the expected weight.
-  B. Numeric parity: aggregate_round0 scores match values computed from the
+  B. Numeric parity: aggregate_initial scores match values computed from the
      old substring-matching table for the same profile IDs.
   C. Registry shim: _profile_weight falls back to 1.0 for unknown IDs and
      raises nothing.
@@ -13,7 +13,7 @@ import pytest
 
 pytestmark = pytest.mark.legacy
 
-from symposia.aggregation.round0 import _profile_weight, aggregate_round0
+from symposia.aggregation.initial import _profile_weight, aggregate_initial
 from symposia.models.juror import JurorDecision
 from symposia.profiles import get_profile
 
@@ -114,7 +114,7 @@ def test_aggregate_parity(
     suf_set: set[str],
     iss_set: set[str],
 ) -> None:
-    """aggregate_round0 produces scores numerically identical to the old table."""
+    """aggregate_initial produces scores numerically identical to the old table."""
     decisions = [
         _decision(
             pid,
@@ -125,7 +125,7 @@ def test_aggregate_parity(
         )
         for pid in profile_ids
     ]
-    result = aggregate_round0(decisions)
+    result = aggregate_initial(decisions)
     sub = result["s1"]
 
     # Compute expected from old table directly

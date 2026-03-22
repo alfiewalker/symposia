@@ -94,6 +94,10 @@ Concrete examples:
 - generic factual validation
 - profile-set usage patterns
 
+Notebook references:
+- `../../examples/getting_started.ipynb`
+- `../../examples/single_vs_committee_use_cases.ipynb`
+
 ### 12. `10_repo_structure.md`
 Recommended package and repository shape.
 

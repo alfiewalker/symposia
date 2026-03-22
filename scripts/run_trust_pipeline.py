@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from symposia.env import load_env
-from symposia.smoke.openai_round0_trust_evaluation import run_openai_round0_trust_evaluation_v2
+from symposia.smoke.openai_initial_trust_evaluation import run_openai_initial_trust_evaluation_v2
 
 
 def _parse_args() -> argparse.Namespace:
@@ -37,12 +37,12 @@ def _parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--committee-route-set-id",
-        default="default_round0_openai_nano",
+        default="default_initial_openai_nano",
         help="Route set used for committee execution.",
     )
     parser.add_argument(
         "--single-route-set-id",
-        default="default_round0_openai_nano",
+        default="default_initial_openai_nano",
         help="Route set used for single baseline execution.",
     )
     parser.add_argument(
@@ -109,7 +109,7 @@ def main() -> int:
     split_reports: dict[str, dict[str, object]] = {}
     for split in args.splits:
         print(f"RUN_START {split}", flush=True)
-        report = run_openai_round0_trust_evaluation_v2(
+        report = run_openai_initial_trust_evaluation_v2(
             output_dir=str(base / split),
             split_id=split,
             committee_route_set_id=run_cfg["committee_route_set_id"],

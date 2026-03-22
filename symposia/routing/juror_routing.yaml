@@ -1,12 +1,12 @@
 version: v1
 route_files:
-  - default_round0.yaml
-  - default_round0_openai.yaml
-  - default_round0_openai_nano.yaml
-  - default_round0_openai_mini.yaml
-  - single_round0_openai_nano_balanced_v1.yaml
-  - committee_round0_openai_nano_triplet_v1.yaml
-  - committee_round0_openai_mini_triplet_v1.yaml
-  - committee_round0_mixed_small_triplet_v1.yaml
+  - default_initial.yaml
+  - default_initial_openai.yaml
+  - default_initial_openai_nano.yaml
+  - default_initial_openai_mini.yaml
+  - single_initial_openai_nano_balanced_v1.yaml
+  - committee_initial_openai_nano_triplet_v1.yaml
+  - committee_initial_openai_mini_triplet_v1.yaml
+  - committee_initial_mixed_small_triplet_v1.yaml
   - escalation_high_risk.yaml
   - escalation_high_risk_openai_mini.yaml

@@ -5,7 +5,7 @@
 - dataset_version: committee_value_dataset_v1_2026_03_21
 - calibration_metric_id: ece10
 - model: gpt-5.4-nano
-- route_set_id: default_round0_openai_nano
+- route_set_id: default_initial_openai_nano
 - escalation_route_set_id: escalation_high_risk_openai_mini
 - case_count: 8
 - price_version: openai_total_token_price_v1_2026_03_21

@@ -24,9 +24,9 @@ Ladder pack:
 
 - `tests/test_api_customization_ladder.py`
 - `tests/test_juror_routing_yaml.py`
-- `tests/test_openai_round0_comparison_runner.py`
-- `tests/test_openai_round0_trust_evaluation_runner.py`
-- `tests/test_openai_round0_silver_labeling.py`
+- `tests/test_openai_initial_comparison_runner.py`
+- `tests/test_openai_initial_trust_evaluation_runner.py`
+- `tests/test_openai_initial_silver_labeling.py`
 - `tests/test_protocol_validation.py`
 - `tests/test_trust_protocol_validation.py`
 

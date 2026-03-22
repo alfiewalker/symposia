@@ -9,7 +9,7 @@ from pathlib import Path
 import yaml
 
 from symposia.env import load_env
-from symposia.smoke.openai_round0_trust_evaluation import run_openai_round0_trust_evaluation_v2
+from symposia.smoke.openai_initial_trust_evaluation import run_openai_initial_trust_evaluation_v2
 
 
 def _load_yaml(path: Path) -> dict[str, object]:
@@ -142,7 +142,7 @@ def main() -> int:
         per_split: dict[str, dict[str, object]] = {}
         for split in splits:
             print(f"RUN_START {rung_id} {split}", flush=True)
-            report = run_openai_round0_trust_evaluation_v2(
+            report = run_openai_initial_trust_evaluation_v2(
                 output_dir=str(rung_root / split),
                 committee_route_set_id=str(rung["committee_route_set_id"]),
                 single_route_set_id=str(rung["single_route_set_id"]),

@@ -11,7 +11,7 @@ from symposia.models.escalation import (
     EscalationReason,
     NextStageReviewInput,
 )
-from symposia.models.round0 import InitialReviewResult
+from symposia.models.initial import InitialReviewResult
 
 # ---------------------------------------------------------------------------
 # Escalation thresholds — imported from symposia.escalation.thresholds.

@@ -11,8 +11,8 @@ required_arms:
   - single_mini
   - committee_mini
 allowed_route_sets:
-  - default_round0_openai
-  - default_round0_openai_nano
+  - default_initial_openai
+  - default_initial_openai_nano
 quality_vector:
   - false_safe_rate
   - false_escalation_rate

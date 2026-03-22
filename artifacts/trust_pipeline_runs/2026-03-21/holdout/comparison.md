@@ -5,7 +5,7 @@
 - dataset_version: committee_value_dataset_v1_2026_03_21
 - calibration_metric_id: ece10
 - model: gpt-5.4-mini
-- route_set_id: default_round0_openai
+- route_set_id: default_initial_openai
 - case_count: 4
 - price_version: openai_total_token_price_v1_2026_03_21
 - missing_price_models: none
