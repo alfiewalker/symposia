@@ -20,8 +20,8 @@ class ProfileSetYamlConfig(DeterministicModel):
     id: str = Field(min_length=1)
     domain: str = Field(min_length=1)
     purpose: str = Field(min_length=1)
+    domain_guidance: str = Field(default="", min_length=0)
     profiles: list[str] = Field(min_length=1)
-    juror_count: int = Field(ge=1)
     thresholds: ProfileSetThresholds
     max_rounds: int = Field(ge=1)
     issuance_policy: str = Field(min_length=1)
@@ -31,16 +31,11 @@ class ProfileSetYamlConfig(DeterministicModel):
     notes: str | None = None
 
     def to_profile_set(self) -> ProfileSet:
-        if self.juror_count != len(self.profiles):
-            raise ValueError(
-                "Profile-set schema mismatch: juror_count must equal number of profiles"
-            )
-
         return ProfileSet(
             profile_set_id=self.id,
             domain=self.domain,
             purpose=self.purpose,
-            juror_count=self.juror_count,
+            domain_guidance=self.domain_guidance,
             profiles=self.profiles,
             thresholds=self.thresholds,
             max_rounds=self.max_rounds,

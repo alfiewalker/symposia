@@ -132,6 +132,10 @@ my_set = ProfileSet(...)
 register_profile_set(my_set)
 ```
 
+When constructing a `ProfileSet`, treat `juror_count` as derived from
+`len(profiles)`. If you need custom prompt framing, set `domain_guidance` on
+the profile set so juror prompts inherit it directly.
+
 This should be available, but not featured in the README quickstart.
 
 ## Result usage

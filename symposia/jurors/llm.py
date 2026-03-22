@@ -8,6 +8,7 @@ from typing import Any
 from symposia.core.providers.base import LLMService
 from symposia.models.claim import Subclaim
 from symposia.models.juror import JurorDecision
+from symposia.jurors.prompts import JurorPromptBuilder
 
 
 def _degraded_decision(juror_id: str, profile_id: str, subclaim_id: str) -> JurorDecision:
@@ -35,47 +36,6 @@ class JurorExecutionRecord:
     retries_used: int | None = None
     tokens_used: int | None = None
     cost_usd: float | None = None
-
-
-class JurorPromptBuilder:
-    """Builds bounded prompts for LLM jurors with fixed decision schema."""
-
-    OUTPUT_SCHEMA = {
-        "supported": "boolean",
-        "contradicted": "boolean",
-        "sufficient": "boolean",
-        "issuable": "boolean",
-        "confidence": "float_0_to_1",
-    }
-
-    def build(
-        self,
-        *,
-        subclaim: Subclaim,
-        domain: str,
-        profile_id: str,
-        profile_set_id: str,
-    ) -> tuple[str, str]:
-        role_prompt = (
-            "You are a bounded juror. Return exactly one JSON object only. "
-            "Do not add explanation outside JSON. "
-            "The fields supported, contradicted, sufficient, and issuable must be JSON booleans only. "
-            "Do not return arrays, strings, objects, evidence lists, markdown, or extra keys."
-        )
-        prompt = (
-            f"Domain: {domain}\n"
-            f"Profile: {profile_id}\n"
-            f"Profile set: {profile_set_id}\n"
-            f"Subclaim: {subclaim.text}\n"
-            "Return JSON with exactly these keys: supported, contradicted, sufficient, issuable, confidence. "
-            "supported, contradicted, sufficient, and issuable must each be either true or false. "
-            "confidence must be a number between 0.0 and 1.0. "
-            "If you believe a claim is unsupported or contradicted, express that using booleans only. "
-            "Do not place explanations or evidence lists inside any field. "
-            "Example valid output: "
-            '{"supported": false, "contradicted": true, "sufficient": false, "issuable": false, "confidence": 0.2}'
-        )
-        return role_prompt, prompt
 
 
 class JurorResponseParser:

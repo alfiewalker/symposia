@@ -34,7 +34,6 @@ def test_yaml_profile_set_parity_against_previous_code_defined_defaults() -> Non
     expected = {
         "general_default_v1": {
             "domain": "general",
-            "juror_count": 5,
             "profiles": [
                 "balanced_reviewer_v1",
                 "sceptical_verifier_v1",
@@ -50,7 +49,6 @@ def test_yaml_profile_set_parity_against_previous_code_defined_defaults() -> Non
         },
         "medical_strict_v1": {
             "domain": "medical",
-            "juror_count": 5,
             "profiles": [
                 "risk_sentinel_v1",
                 "evidence_maximalist_v1",
@@ -66,7 +64,6 @@ def test_yaml_profile_set_parity_against_previous_code_defined_defaults() -> Non
         },
         "legal_strict_v1": {
             "domain": "legal",
-            "juror_count": 5,
             "profiles": [
                 "literal_parser_v1",
                 "sceptical_verifier_v1",
@@ -82,7 +79,6 @@ def test_yaml_profile_set_parity_against_previous_code_defined_defaults() -> Non
         },
         "finance_strict_v1": {
             "domain": "finance",
-            "juror_count": 5,
             "profiles": [
                 "risk_sentinel_v1",
                 "sceptical_verifier_v1",
@@ -101,7 +97,7 @@ def test_yaml_profile_set_parity_against_previous_code_defined_defaults() -> Non
     for profile_set_id, cfg in expected.items():
         loaded = get_profile_set(profile_set_id)
         assert loaded.domain == cfg["domain"]
-        assert loaded.juror_count == cfg["juror_count"]
+        assert loaded.juror_count == len(cfg["profiles"])
         assert loaded.profiles == cfg["profiles"]
         assert loaded.thresholds.support == cfg["support"]
         assert loaded.thresholds.confidence == cfg["confidence"]
@@ -118,7 +114,6 @@ def test_profile_set_yaml_schema_rejects_unknown_keys() -> None:
             domain="general",
             purpose="test",
             profiles=["balanced_reviewer_v1"],
-            juror_count=1,
             thresholds={"support": 0.7, "confidence": 0.7},
             max_rounds=1,
             issuance_policy="standard",

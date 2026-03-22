@@ -2,13 +2,16 @@ version: v1
 id: legal_strict_v1
 domain: legal
 purpose: Jurisdiction-sensitive legal validation with precision specialist.
+domain_guidance: >
+  Domain focus: legal, compliance, or policy claims.
+  Watch for scope errors, jurisdiction sensitivity, missing qualifiers,
+  and statements that are too general for something context-dependent.
 profiles:
   - literal_parser_v1
   - sceptical_verifier_v1
   - evidence_maximalist_v1
   - legal_specialist_v1
   - risk_sentinel_v1
-juror_count: 5
 thresholds:
   support: 0.78
   confidence: 0.80

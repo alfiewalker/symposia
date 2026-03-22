@@ -52,16 +52,22 @@ Receives the validation request and normalises:
 
 ### 2. Claim Kernel
 Responsible for:
-- content segmentation
-- subclaim extraction
+- holistic claim normalisation by default
+- optional experimental content segmentation
+- optional experimental subclaim extraction
 - instruction detection
-- dependency mapping
+- dependency mapping when decomposition is enabled
 - claim bundle normalisation
 
 Outputs:
 - `ClaimBundle`
 - `Subclaim[]`
 - dependency graph
+
+Default runtime policy:
+- create one subclaim containing the full claim text
+- preserve full context unless the caller explicitly opts into experimental decomposition
+- treat sentence-splitting decomposition as non-default until a more faithful dependency-aware method exists
 
 ### 3. Evidence Router
 Chooses evidence policy per request:
@@ -217,7 +223,6 @@ Examples:
 {
   "profile_set_id": "medical_strict_v1",
   "domain": "medical",
-  "juror_count": 9,
   "profiles": [
     "balanced_reviewer_v1",
     "sceptical_verifier_v1",
@@ -383,7 +388,12 @@ To prevent downstream drift, these Phase 1 object names are canonical:
 
 The decomposition contract is also canonical at this stage:
 - `SubclaimDecomposer`
+- `HolisticSubclaimDecomposer`
 - `RuleBasedSubclaimDecomposer`
+
+Interpretation:
+- `HolisticSubclaimDecomposer` is the default runtime path.
+- `RuleBasedSubclaimDecomposer` is maintained as an explicit experimental path.
 
 For Phase 3, these names are canonical for initial review execution:
 - `JurorDecision`

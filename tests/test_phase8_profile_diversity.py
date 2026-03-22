@@ -276,10 +276,8 @@ def test_medical_and_finance_specialists_have_high_safety_bias():
         )
 
 
-def test_juror_count_matches_profiles_length():
-    """juror_count field should match len(profiles) — no silent mismatch."""
+def test_juror_count_is_derived_from_profiles():
+    """juror_count property should always equal len(profiles)."""
     for ps_id in ("general_default_v1", "medical_strict_v1", "legal_strict_v1", "finance_strict_v1"):
         ps = get_profile_set(ps_id)
-        assert ps.juror_count == len(ps.profiles), (
-            f"{ps_id}: juror_count={ps.juror_count} but len(profiles)={len(ps.profiles)}"
-        )
+        assert ps.juror_count == len(ps.profiles)

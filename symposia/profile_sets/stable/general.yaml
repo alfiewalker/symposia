@@ -2,13 +2,16 @@ version: v1
 id: general_default_v1
 domain: general
 purpose: General factual validation baseline.
+domain_guidance: >
+  Domain focus: general claims and public-facing statements.
+  Watch for overclaim, missing caveats, unsupported inference, and whether
+  a careful reader should rely on the statement as written.
 profiles:
   - balanced_reviewer_v1
   - sceptical_verifier_v1
   - literal_parser_v1
   - evidence_maximalist_v1
   - risk_sentinel_v1
-juror_count: 5
 thresholds:
   support: 0.70
   confidence: 0.70

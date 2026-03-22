@@ -2,13 +2,16 @@ version: v1
 id: finance_strict_v1
 domain: finance
 purpose: Finance recommendation and factual scrutiny with risk specialist.
+domain_guidance: >
+  Domain focus: finance, investment, or market claims.
+  Watch for unsupported certainty, weak causal inference, missing downside
+  framing, and overreliance on noisy or incomplete evidence.
 profiles:
   - risk_sentinel_v1
   - sceptical_verifier_v1
   - evidence_maximalist_v1
   - finance_specialist_v1
   - balanced_reviewer_v1
-juror_count: 5
 thresholds:
   support: 0.77
   confidence: 0.79

@@ -34,8 +34,12 @@ class ProfileSet(DeterministicModel):
     profile_set_id: str = Field(min_length=1)
     domain: str = Field(min_length=1)
     purpose: str = Field(min_length=1)
-    juror_count: int = Field(ge=1)
+    domain_guidance: str = Field(default="", min_length=0)
     profiles: List[str] = Field(min_length=1)
+
+    @property
+    def juror_count(self) -> int:
+        return len(self.profiles)
     thresholds: ProfileSetThresholds
     max_rounds: int = Field(ge=1)
     issuance_policy: str = Field(min_length=1)

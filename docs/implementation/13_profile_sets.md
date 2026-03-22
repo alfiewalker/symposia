@@ -97,7 +97,6 @@ That is what keeps the public API simple.
 id: medical_strict_v1
 domain: medical
 purpose: High-risk medical validation
-juror_count: 9
 profiles:
   - balanced_reviewer_v1
   - sceptical_verifier_v1
@@ -112,6 +111,8 @@ issuance_policy: conservative
 trace_policy: standard
 calibration_snapshot: medical_2026_q1
 ```
+
+`juror_count` is derived from `len(profiles)` rather than stored in the YAML.
 
 ## 4. Build-up from simple to advanced
 

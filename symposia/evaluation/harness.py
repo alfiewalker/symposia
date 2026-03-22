@@ -205,7 +205,7 @@ class EvaluationHarness:
                     profile_set_id=temp_id,
                     domain=domain,
                     purpose=f"Single-juror comparison baseline: {single_profile_id}",
-                    juror_count=1,
+                    domain_guidance=base_ps.domain_guidance,
                     profiles=[single_profile_id],
                     thresholds=base_ps.thresholds,
                     max_rounds=1,
