@@ -69,6 +69,8 @@ coverage.xml
 
 # User configuration files
 config/
+!symposia/config/
+!symposia/config/*.py
 
 
 # VS Code
