@@ -565,4 +565,39 @@ Current release line: **0.1.1**
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+This repository is source-available for noncommercial use only.
+
+- Noncommercial use is permitted under the license in [LICENSE](LICENSE).
+- Commercial use requires a separate paid commercial license.
+
+For commercial licensing, OEM use, internal business deployment, hosted or SaaS
+use, or other revenue-generating use, contact:
+
+Alphanso Walker  
+team@symposia.ai
+
+See [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md) for the
+commercial licensing note.
+
+### Licensing FAQ
+
+**What counts as commercial use?**
+
+Commercial use includes internal business use, client work, paid consulting,
+production use by a for-profit entity, SaaS or hosted deployments, embedding in
+paid products, and redistribution in commercial offerings.
+
+**Can I use Symposia for personal research or open academic work?**
+
+Yes. Noncommercial personal study, research, experimentation, and qualifying
+educational or public-interest uses are covered by the public repository
+license.
+
+**Can my company evaluate it before buying a commercial license?**
+
+If the evaluation is for a commercial organization or anticipated commercial
+application, treat that as commercial use and request a commercial license.
+
+**Where do I ask about commercial terms or a buyout?**
+
+Contact team@symposia.ai.

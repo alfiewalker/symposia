@@ -35,7 +35,7 @@ setup(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: MIT License",
+        "License :: Other/Proprietary License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -52,6 +52,7 @@ setup(
         "dev": [
             "pytest>=7.0.0",
             "pytest-asyncio>=0.21.0",
+            "setuptools>=68.0.0",
             "jsonschema>=4.0.0",
         ],
     },
